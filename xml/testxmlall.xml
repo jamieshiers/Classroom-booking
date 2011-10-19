@@ -1,0 +1,1939 @@
+<?xml version="1.0" encoding="us-ascii"?><report source="ExportTimetable">
+    <SingleTimeTablesReport>
+        <Title>Room Timetable</Title>
+        <TimeTables>
+            <TimetableData>
+                <Comment />
+                <ResourceName>Timetable  - E8 - ICT</ResourceName>
+                <Date>as at 03/02/2011</Date>
+                <ColumnHeader>
+                    <ColName />
+                    <ColName>1Mon</ColName>
+                    <ColName>1Tue</ColName>
+                    <ColName>1Wed</ColName>
+                    <ColName>1Thu</ColName>
+                    <ColName>1Fri</ColName>
+                    <ColName>2Mon</ColName>
+                    <ColName>2Tue</ColName>
+                    <ColName>2Wed</ColName>
+                    <ColName>2Thu</ColName>
+                    <ColName>2Fri</ColName>
+                </ColumnHeader>
+                <TableRow>
+                    <CellData IsRowHeader="True">REG</CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7AT/LC</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True">1</CellData>
+                    <CellData>
+                        <CellRow>10EH/Bs1</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>13D/Bq1c</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11B/Bs1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11EH/Bs</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10EH/Bs1</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11B/Bs1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11B/Bs1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11EH/Bs</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">2</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11YS/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10EH/Bs1</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10EH/Bs1</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11XY/BcX</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11YS/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10EH/Bs1</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XC/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10HA/Bc1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">3</CellData>
+                    <CellData>
+                        <CellRow>10B/Bs1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10YC/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>13D/Bq1c</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11YC/Bc1b</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Bs1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Bs1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10YC/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>13D/Bq1c</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11YC/Bc1a</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Bs1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">4</CellData>
+                    <CellData>
+                        <CellRow>11EH/Bs</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>12D/Bq1b</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10HA/Bc1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10HA/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11XC/Bc1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11EH/Bs</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>12D/Bq1b</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10HA/Bc1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10HA/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11XC/Bc1</CellRow>
+                        <CellRow>Mrs C C Fox</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">5</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XS/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Bs1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XC/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10YS/Bc1</CellRow>
+                        <CellRow>Mrs C C Fox</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XS/Bc1</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XY/BcX1</CellRow>
+                        <CellRow>Mr M Kiddy</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>12D/Bq1b</CellRow>
+                        <CellRow>Miss H Mutchell</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10YS/Bc1</CellRow>
+                        <CellRow>Mrs C C Fox</CellRow>
+                    </CellData>
+                </TableRow>
+            </TimetableData>
+            <TimetableData>
+                <Comment />
+                <ResourceName>Timetable  - H5 - ICT</ResourceName>
+                <Date>as at 03/02/2011</Date>
+                <ColumnHeader>
+                    <ColName />
+                    <ColName>1Mon</ColName>
+                    <ColName>1Tue</ColName>
+                    <ColName>1Wed</ColName>
+                    <ColName>1Thu</ColName>
+                    <ColName>1Fri</ColName>
+                    <ColName>2Mon</ColName>
+                    <ColName>2Tue</ColName>
+                    <ColName>2Wed</ColName>
+                    <ColName>2Thu</ColName>
+                    <ColName>2Fri</ColName>
+                </ColumnHeader>
+                <TableRow>
+                    <CellData IsRowHeader="True">REG</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True">1</CellData>
+                    <CellData>
+                        <CellRow>12A/Ic1b</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IY/Ic2</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IY/Ic3</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9A/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IY/Ic2</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7A/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IY/Ic3</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">2</CellData>
+                    <CellData>
+                        <CellRow>11TZ/It1b</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IZ/Ic2</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>9A/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IZ/Ic3</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7A/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>12A/Ic1a</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IZ/Ic2</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IZ/Ic3</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>12A/Ic1b</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">3</CellData>
+                    <CellData>
+                        <CellRow>8C/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>12A/Ic1b</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>7S/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8P/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8C/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>7S/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">4</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9F/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>9S/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>13A/Ic1a</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>9E/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9F/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>9S/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>13A/Ic1a</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>9E/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">5</CellData>
+                    <CellData>
+                        <CellRow>10IX/Ic2</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IX/Ic3</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7B/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>13E/Ic1b</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8B/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IX/Ic2</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IX/Ic3</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7B/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8B/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8P/It</CellRow>
+                        <CellRow>Miss S Rana</CellRow>
+                    </CellData>
+                </TableRow>
+            </TimetableData>
+            <TimetableData>
+                <Comment />
+                <ResourceName>Timetable  - H6 - ICT</ResourceName>
+                <Date>as at 03/02/2011</Date>
+                <ColumnHeader>
+                    <ColName />
+                    <ColName>1Mon</ColName>
+                    <ColName>1Tue</ColName>
+                    <ColName>1Wed</ColName>
+                    <ColName>1Thu</ColName>
+                    <ColName>1Fri</ColName>
+                    <ColName>2Mon</ColName>
+                    <ColName>2Tue</ColName>
+                    <ColName>2Wed</ColName>
+                    <ColName>2Thu</ColName>
+                    <ColName>2Fri</ColName>
+                </ColumnHeader>
+                <TableRow>
+                    <CellData IsRowHeader="True">REG</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True">1</CellData>
+                    <CellData>
+                        <CellRow>7P/It</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IY/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IY/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>12A/Ic1a</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IY/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IY/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">2</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IZ/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IZ/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8F/It</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7P/It</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IZ/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IZ/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8F/It</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">3</CellData>
+                    <CellData>
+                        <CellRow>7T/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7C/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>7E/It</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7T/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7C/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9C/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7E/It</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">4</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9P/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>13E/Ic1a</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9P/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>13E/Ic1a</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">5</CellData>
+                    <CellData>
+                        <CellRow>10IX/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IX/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9C/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8T/It</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IX/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IX/Ic1</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XY/Mo1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8S/It</CellRow>
+                        <CellRow>Mr A Kyffin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8T/It</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                </TableRow>
+            </TimetableData>
+            <TimetableData>
+                <Comment />
+                <ResourceName>Timetable  - H7 - ICT</ResourceName>
+                <Date>as at 03/02/2011</Date>
+                <ColumnHeader>
+                    <ColName />
+                    <ColName>1Mon</ColName>
+                    <ColName>1Tue</ColName>
+                    <ColName>1Wed</ColName>
+                    <ColName>1Thu</ColName>
+                    <ColName>1Fri</ColName>
+                    <ColName>2Mon</ColName>
+                    <ColName>2Tue</ColName>
+                    <ColName>2Wed</ColName>
+                    <ColName>2Thu</ColName>
+                    <ColName>2Fri</ColName>
+                </ColumnHeader>
+                <TableRow>
+                    <CellData IsRowHeader="True">REG</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True">1</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11TZ/It1a</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11TZ/It1a</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">2</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IZ/It1</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>12C/Ic1</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IZ/It1</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">3</CellData>
+                    <CellData>
+                        <CellRow>10B/Md1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>12E/Ai1a</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Md1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Md1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>12E/Ai1a</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Md1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">4</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>12A/Ic1c</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>12A/Ic1c</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">5</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11TZ/It1b</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Md1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11TZ/It1a</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+            </TimetableData>
+            <TimetableData>
+                <Comment />
+                <ResourceName>Timetable  - H8 - ICT</ResourceName>
+                <Date>as at 03/02/2011</Date>
+                <ColumnHeader>
+                    <ColName />
+                    <ColName>1Mon</ColName>
+                    <ColName>1Tue</ColName>
+                    <ColName>1Wed</ColName>
+                    <ColName>1Thu</ColName>
+                    <ColName>1Fri</ColName>
+                    <ColName>2Mon</ColName>
+                    <ColName>2Tue</ColName>
+                    <ColName>2Wed</ColName>
+                    <ColName>2Thu</ColName>
+                    <ColName>2Fri</ColName>
+                </ColumnHeader>
+                <TableRow>
+                    <CellData IsRowHeader="True">REG</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True">1</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IY/Ic3</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IY/Ic2</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IY/Ic3</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IY/Ic2</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">2</CellData>
+                    <CellData>
+                        <CellRow>7F/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IZ/Ic3</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IZ/Ic2</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8A/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>7F/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IZ/Ic3</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IZ/Ic2</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8A/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">3</CellData>
+                    <CellData>
+                        <CellRow>8E/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10YC/FrG2</CellRow>
+                        <CellRow>Mrs R West</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9T/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>12E/Ai1b</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8E/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10YC/FrG2</CellRow>
+                        <CellRow>Mrs R West</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9B/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>12E/Ai1b</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">4</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>13E/Ai1b</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9B/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>9EP/Ep</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>13E/Ai1b</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9T/It</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">5</CellData>
+                    <CellData>
+                        <CellRow>10IX/Ic3</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IX/Ic2</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XC/Mo1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>8S/It</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IX/Ic3</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11IX/Ic2</CellRow>
+                        <CellRow>Mrs M C Galloway</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XY/Bt1</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>9EP/Ep</CellRow>
+                        <CellRow>Mr A Livingstone</CellRow>
+                    </CellData>
+                </TableRow>
+            </TimetableData>
+            <TimetableData>
+                <Comment />
+                <ResourceName>Timetable  - M31 - LRCA</ResourceName>
+                <Date>as at 03/02/2011</Date>
+                <ColumnHeader>
+                    <ColName />
+                    <ColName>1Mon</ColName>
+                    <ColName>1Tue</ColName>
+                    <ColName>1Wed</ColName>
+                    <ColName>1Thu</ColName>
+                    <ColName>1Fri</ColName>
+                    <ColName>2Mon</ColName>
+                    <ColName>2Tue</ColName>
+                    <ColName>2Wed</ColName>
+                    <ColName>2Thu</ColName>
+                    <ColName>2Fri</ColName>
+                </ColumnHeader>
+                <TableRow>
+                    <CellData IsRowHeader="True">REG</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True">1</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11B/Md1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11B/Md1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>11B/Md1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">2</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">3</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">4</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11XS/Bc1</CellRow>
+                        <CellRow>Mrs C C Fox</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>11XS/Bc1</CellRow>
+                        <CellRow>Miss L Maclachlan</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">5</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XC/Bt1</CellRow>
+                        <CellRow>Mrs C C Fox</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XY/BcY1</CellRow>
+                        <CellRow>Mrs C C Fox</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+            </TimetableData>
+            <TimetableData>
+                <Comment />
+                <ResourceName>Timetable  - M32 - LRCB</ResourceName>
+                <Date>as at 03/02/2011</Date>
+                <ColumnHeader>
+                    <ColName />
+                    <ColName>1Mon</ColName>
+                    <ColName>1Tue</ColName>
+                    <ColName>1Wed</ColName>
+                    <ColName>1Thu</ColName>
+                    <ColName>1Fri</ColName>
+                    <ColName>2Mon</ColName>
+                    <ColName>2Tue</ColName>
+                    <ColName>2Wed</ColName>
+                    <ColName>2Thu</ColName>
+                    <ColName>2Fri</ColName>
+                </ColumnHeader>
+                <TableRow>
+                    <CellData IsRowHeader="True">REG</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True">1</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10TZ/It1</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10TZ/It1</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">2</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IZ/Ic4</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10IZ/Ic4</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10XC/Mo1</CellRow>
+                        <CellRow>Ms L Ferguson</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">3</CellData>
+                    <CellData>
+                        <CellRow>10B/Md2</CellRow>
+                        <CellRow>Mr R Carrington</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>English Dept</CellRow>
+                        <CellRow>Mrs M S Tinklin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Md2</CellRow>
+                        <CellRow>Mr R Carrington</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Md2</CellRow>
+                        <CellRow>Mr R Carrington</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>English Dept</CellRow>
+                        <CellRow>Mrs M S Tinklin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Md2</CellRow>
+                        <CellRow>Mr R Carrington</CellRow>
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="After">4</CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>English Dept</CellRow>
+                        <CellRow>Mrs M S Tinklin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>English Dept</CellRow>
+                        <CellRow>Mrs M S Tinklin</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+                <TableRow>
+                    <CellData IsRowHeader="True" PeriodBreak="Before">5</CellData>
+                    <CellData>
+                        <CellRow>10TZ/It1</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10B/Md2</CellRow>
+                        <CellRow>Mr R Carrington</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10TZ/It1</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                    <CellData>
+                        <CellRow>10TZ/It1</CellRow>
+                        <CellRow>Mrs J B Fuller</CellRow>
+                    </CellData>
+                    <CellData>
+                        <CellRow />
+                        <CellRow />
+                    </CellData>
+                </TableRow>
+            </TimetableData>
+        </TimeTables>
+    </SingleTimeTablesReport>
+</report>
