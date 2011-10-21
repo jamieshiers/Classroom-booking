@@ -11,11 +11,8 @@
 ?>
 <h1>Manage Rooms</h1>
 
-<<<<<<< HEAD
 <a href=<?php echo site_url('rooms/rooms/add_room')?> class="button blue">Add New Room</a>
-=======
-<a href=<?php echo site_url('rooms/rooms/add_room')?>><img  src="<?php echo base_url();?>/images/add.gif"  border="0" />Add New Room</a>
->>>>>>> parent of e0a55b4... styling
+
 <table class="zebra-striped">
 <tr>
 	<th>Name</th>

@@ -58,14 +58,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="content">
+			<div class="content sidebar">
 				<div id="main">
 				<?php echo $template['body'];?>
-				</div><!-- End of Main Content -->
-				<!-- Sidebar -->
+				</div>
 				<div id="sidebar">
 					<?php echo $template['partials']['right_sidebar']; ?>	
-				</div><!-- End of Sidebar -->
+				</div>
 		
 		</div></div>
 		<!-- End of Container -->

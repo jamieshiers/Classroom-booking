@@ -189,8 +189,7 @@
 				
 				echo '<a href="'.site_url().'"</a>';
 				
-				echo '<a href="'.site_url().'/booking/booking/add/'.$item->roomid.'/'.$newdate.'/'.$period->periodid.'/'.$weeks['weeknums'][$weeknum].'/'.$weeks['yearid'].'" border="0" title="Add Booking" class="colorbox">';
-								echo '<img class="booking" src="'.base_url().'images/icons/add_booking.png" alt="Add booking" title="Add booking" border="0"/></a>';
+				echo '<a href="'.site_url().'/booking/booking/add/'.$item->roomid.'/'.$newdate.'/'.$period->periodid.'/'.$weeks['weeknums'][$weeknum].'/'.$weeks['yearid'].'" border="0" title="Add Booking" class="colorbox button green">Add Booking</a>';
 
 				
 				

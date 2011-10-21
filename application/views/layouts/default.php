@@ -32,7 +32,6 @@
 							<li><a href="<?php echo site_url();?>/dashboard" class="button blue">Dashboard</a></li>
 							<li><a href="<?php echo site_url();?>/users/admin/logout" title="Logout" class="button red">Logout</a></li>
 						</ul>	
-<<<<<<< HEAD
 					</div><!-- Nav  -->
 				</div><!-- header content -->
 			</div><!-- header-bar -->
@@ -43,57 +42,7 @@
 					<?php echo $template['body'];?>
 			
 			</div>
-=======
-					</div>
-				</div>
-				<!-- End of Top-->
-			
-				<!-- The navigation bar -->
-				
-				<!-- End of navigation bar" -->
-			
-			</div>
-			<!-- End of Header -->
-			
-			<!-- Background wrapper -->
-			<div id="bgwrap">
-		
-				<!-- Main Content -->
-				<div id="content">
-					<div id="main">
-						<?php 
-						echo $this->session->flashdata('msg');
-						echo $this->session->flashdata('error');
-						
-						?>
-						
-					<?php echo $template['body'];?>
-					
-					<div class="pad20">
-					<!-- Big buttons -->
-					</div>
-						<!-- End of Big buttons -->
-					
-					
-			
-					
-							
-							
-						
-						
-					</div>
-				</div>
-				<!-- End of Main Content -->
-				
-				<!-- Sidebar -->
-				<div id="sidebar">
-					
-					
-					
-				</div>
-				<!-- End of Sidebar -->
-				
->>>>>>> parent of e0a55b4... styling
+
 			</div>
 			
 		
