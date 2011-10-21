@@ -15,7 +15,13 @@
 		$end = array(
 			'name' 		=> 'date_end',
 			'class' 	=> 'datepicker');
-		echo form_input($end); echo "<br />";
-		echo form_submit('submit', 'Save');
+		echo form_input($end); 
+		$data = array(
+		    'name'        => 'submit',
+		    'type'        => 'submit',
+		    'class' 	  => 'button green',
+			'value'		  => 'Save Year',
+		    );
+		echo form_submit($data);
 		echo form_close();
 		?>

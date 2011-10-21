@@ -21,6 +21,7 @@ Class Holiday_model extends CI_Model
 	
 	public function get_holidays()
 	{
+		$this->db->order_by('date_start');
 		$query = $this->db->get('holidays');
 		
 		$data = $query->result_array();

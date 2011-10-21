@@ -24,17 +24,35 @@
 	echo form_label('Holiday Name');
 	echo form_input('name', $hol['name']); 
 	echo form_label('Start Date');
+	
+	$startdate = explode("-", $hol['date_start']);
+	$start_date = $startdate['2']; 
+	$start_date .= "/";
+	$start_date .= $startdate['1'];
+	$start_date .= "/";
+	$start_date .= $startdate['0']; 
+	
+	$enddate = explode("-", $hol['date_end']);
+	$end_date = $enddate['2']; 
+	$end_date .= "/";
+	$end_date .= $enddate['1'];
+	$end_date .= "/";
+	$end_date .= $enddate['0'];
+	
+	
+	
+	
 	$date_start = array(
 		              'name'        => 'date_start',
 		              'class'       => 'datepicker',
-					  'value' 		=> $hol['date_start']
+					  'value' 		=> $start_date
 		            );
 	echo form_input($date_start);
 	echo form_label('End Date');
 	$date_end = array(
 		              'name'        => 'date_end',
 		              'class'       => 'datepicker',
-					  'value' 		=> $hol['date_end']
+					  'value' 		=> $end_date
 		            );?>
 	<?php echo form_input($date_end); 
 	$data = array(

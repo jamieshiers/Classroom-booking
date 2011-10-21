@@ -8,12 +8,7 @@
 * @since 		Version "BETA"
 * 
 */
- $name = $this->session->userdata['logged_in']; 
- 	
- 	echo $this->session->flashdata('msg');
- 	
- 	
- 
+ $name = $this->session->userdata['logged_in'];  
  ?>
 
 <h1>Welcome, <span><?php echo $name;?>!</span></h1>
@@ -78,14 +73,14 @@
 			</a>
 		</li>
 		<li>
-			<a href="<?php echo site_url();?>/booking/booking/uploadcsv">
-				<img src="<?php echo base_url();?>images/icons/upload_csv.png" alt="Upload CSV" title="Upload a CSV" />
-				<span>Upload CSV</span>
+			<a href="<?php echo site_url();?>/users/admin/">
+				<img src="<?php echo base_url();?>images/icons/upload_csv.png" alt="Manage Users" title="Manage Users" />
+				<span>Manage Users</span>
 			</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url();?>/settings/settings/dashboard">
-				<img src="<?php echo base_url();?>images/icons/upload_csv.png" alt="Upload CSV" title="Upload a CSV" />
+				<img src="<?php echo base_url();?>images/icons/upload_csv.png" alt="Settings" title="Settings" />
 				<span>Settings</span>
 			</a>
 		</li>

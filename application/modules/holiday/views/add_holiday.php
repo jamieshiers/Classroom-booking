@@ -32,7 +32,15 @@
 	<?php $data = array('name' => 'date_end', 'class' => 'datepicker');?>
 	<label for="date_end"> End Date:
 	<?php echo form_input($data); ?></label><br />
-	<?php echo form_submit('submit', 'Create Holiday');
+	
+	<?php 
+	$data = array(
+	    'name'        => 'submit',
+	    'type'        => 'submit',
+	    'class' 	  => 'button green',
+		'value'		  => 'Create Holiday',
+	    );
+	echo form_submit($data);
 	echo form_close();
 	?>
 	

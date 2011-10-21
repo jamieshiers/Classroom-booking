@@ -189,7 +189,7 @@
 				
 				echo '<a href="'.site_url().'"</a>';
 				
-				echo '<a href="'.site_url().'/booking/booking/add/'.$item->roomid.'/'.$newdate.'/'.$period->periodid.'/'.$weeks['weeknums'][$weeknum].'/'.$weeks['yearid'].'" border="0" title="Add Booking" class="colorbox button green">Add Booking</a>';
+				echo '<a href="'.site_url().'/booking/booking/add/'.$item->roomid.'/'.$newdate.'/'.$period->periodid.'/'.$weeks['weeknums'][$weeknum].'/'.$weeks['yearid'].'" border="0" title="" class="colorbox button green">Add Booking</a>';
 
 				
 				

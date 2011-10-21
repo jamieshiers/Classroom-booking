@@ -43,10 +43,15 @@
 	if($this->session->userdata('accesslevel') == 'admin')
 	{
 		echo form_label('Block Booking'); 
-		echo form_checkbox('booking'); echo "<br />";
+		echo form_checkbox('booking'); 
 	}
 	
-	echo "<br />";
-	echo form_submit('submit', 'Create Booking');
+	$data = array(
+	    'name'        => 'submit',
+	    'type'        => 'submit',
+	    'class' 	  => 'button green',
+		'value'		  => 'Add Booking',
+	    );
+	echo form_submit($data);
 	echo form_close();
 	?>

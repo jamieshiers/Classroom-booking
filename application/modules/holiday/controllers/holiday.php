@@ -56,19 +56,22 @@ Class Holiday extends Controller
 			$date_start = $this->input->post('date_start');
 		 	$date_end = $this->input->post('date_end');			
 			
+			
+			
+			
 			$date_start = explode("/", $date_start);
 			$datestart = $date_start[2];
 			$datestart .= "-";
-			$datestart .= $date_start[0];
-			$datestart .= "-";
 			$datestart .= $date_start[1];
+			$datestart .= "-";
+			$datestart .= $date_start[0];
 			
 			$date_end = explode("/", $date_end);
 			$dateend= $date_end[2];
 			$dateend.= "-";
-			$dateend.= $date_end[0];
-			$dateend.= "-";
 			$dateend.= $date_end[1];
+			$dateend.= "-";
+			$dateend.= $date_end[0];
 			
 			$update = array(
 				'name' => $this->input->post('name', TRUE), 
@@ -118,17 +121,17 @@ Class Holiday extends Controller
 			$date_start = explode("/", $date_start);
 			$datestart = $date_start[2];
 			$datestart .= "-";
-			$datestart .= $date_start[0];
-			$datestart .= "-";
 			$datestart .= $date_start[1];
+			$datestart .= "-";
+			$datestart .= $date_start[0];
+			
 			
 			$date_end = explode("/", $date_end);
 			$dateend= $date_end[2];
 			$dateend.= "-";
-			$dateend.= $date_end[0];
-			$dateend.= "-";
 			$dateend.= $date_end[1];
-			
+			$dateend.= "-";
+			$dateend.= $date_end[0];
 			
 			$update = array(
 				'id' => $id,

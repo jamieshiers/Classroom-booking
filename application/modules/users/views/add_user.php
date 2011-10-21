@@ -40,6 +40,13 @@
 <label for="username"> Confirm:
 <?php echo form_password('password_confirm'); ?></label><br />
 <?php
-echo form_submit('submit', 'Add User');
+
+$data = array(
+    'name'        => 'submit',
+    'type'        => 'submit',
+    'class' 	  => 'button green',
+	'value'		  => 'Add User',
+    );
+echo form_submit($data);
 echo form_close(); ?>
 </div>

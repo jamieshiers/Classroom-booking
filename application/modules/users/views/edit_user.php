@@ -8,7 +8,6 @@
 * @since 		Version "BETA"
 * 
 */
-Print_r($users);
 ?>
 
 <?php $data = array( 'admin' => 'Admin', 'user' => 'user') ;?>
@@ -37,11 +36,19 @@ echo form_hidden('id', $user['id']);?>
 <?php echo form_input('email', $user['email']); ?></label><br />
 <label for="last_name"> Group:
 <?php echo form_dropdown('user_group', $data); ?></label><br />
-<label for="username"> Password:
+<label for="username"> Password:(leave blank, if you dont want to change password)
 <?php echo form_password('password'); ?></label> <br />
 <label for="username"> Confirm:
 <?php echo form_password('password_confirm'); ?></label><br />
 <?php
-echo form_submit('submit', 'Edit User');
+
+$data = array(
+    'name'        => 'submit',
+    'type'        => 'submit',
+    'class' 	  => 'button green',
+	'value'		  => 'Edit User',
+    );
+
+echo form_submit($data);
 echo form_close(); }?>
 </div>

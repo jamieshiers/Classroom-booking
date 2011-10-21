@@ -5,13 +5,9 @@
 		 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>/js/jquery.colorbox-min.js"></script>
-		<link rel="stylesheet" href="<?php echo base_url();?>/css/colorbox.css" type="text/css" >
-		<link rel="stylesheet" href="/css/datepicker.css" type="text/css" >
+		<link href="<?php echo base_url();?>/css/colorbox.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>/css/style.css" type="text/css">
 		
-		
-		
-		<link rel="stylesheet/less" href="<?php echo base_url();?>/css/style.less" type="text/css" >
-		<script src="<?php echo base_url();?>/js/less.js" type="text/javascript"></script>
 		<!-- Date Picker Set up -->
 			<script type="text/javascript">
 				var address = "<?php echo site_url();?>";
@@ -60,6 +56,20 @@
 			</div>
 			<div class="content sidebar">
 				<div id="main">
+					<div id="flashdata">
+						<?php 
+							if ($this->session->flashdata('error'))
+							{
+								echo "<div class='message error'><p>". $this->session->flashdata('error')."</p></div>";
+							}
+
+							if ($this->session->flashdata('msg'))
+							{
+								echo "<div class='message msg'><p>". $this->session->flashdata('msg')."</p></div>";
+							}
+
+							?>
+					</div>
 				<?php echo $template['body'];?>
 				</div>
 				<div id="sidebar">

@@ -12,9 +12,7 @@
 			</script>
 
 			
-		
-		<link rel="stylesheet/less" href="<?php echo base_url();?>/css/style.less" type="text/css" >
-		<script src="<?php echo base_url();?>/js/less.js" type="text/javascript"></script>
+			<link rel="stylesheet" href="<?php echo base_url();?>/css/style.css" type="text/css">
 		
 		
 		

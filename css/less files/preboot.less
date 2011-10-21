@@ -22,6 +22,7 @@
 @backgroundgrey:#F5F5F5;
 @darkgreen:#439E43;
 @errorred:#FAE5E3;
+@successgreen:#D1EED1;
 
 // Accent Colors
 @blue:              #049CDB;
@@ -139,11 +140,7 @@
 }
 
 // Grid System
-.container {
-  width: @siteWidth;
-  margin: 0 auto;
-  .clearfix();
-}
+
 .columns(@columnSpan: 1) {
   width: (@gridColumnWidth * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1));
 }

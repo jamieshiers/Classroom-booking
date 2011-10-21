@@ -26,7 +26,7 @@
 
 
 <div class="sidebar_title"><h2>My Bookings</h2></div>
-<div class="container">
+
 
 <?php
 
@@ -53,7 +53,6 @@ else
 
 ?>
 
-</div>
 
 
 

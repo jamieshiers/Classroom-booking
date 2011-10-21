@@ -9,15 +9,15 @@
 			
 				$(document).ready(function(){
 					$('a.colorbox').colorbox();
-					$(".datepicker").datepicker();
+					$(".datepicker").datepicker({ dateFormat: 'dd/mm/yy'});
 				});
 			</script>
 			<script type="text/javascript" src="<?php echo base_url();?>js/jquery.colorbox-min.js"></script>
 			<link rel="stylesheet" href="<?php echo base_url();?>/css/colorbox.css" type="text/css" >
 			
 		<link rel="stylesheet" href="/css/datepicker.css" type="text/css" >
-		<link rel="stylesheet/less" href="<?php echo base_url();?>/css/style.less" type="text/css" >
-		<script src="<?php echo base_url();?>/js/less.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="<?php echo base_url();?>/css/style.css" type="text/css">
+		
 		<title><?php echo $template['title'];?> | Classroom Booking </title>
 	</head>
 	<body>
@@ -37,7 +37,18 @@
 			</div><!-- header-bar -->
 			<div class="content">
 				<div id="flashdata">
-					<?php echo $this->session->flashdata('msg'); echo $this->session->flashdata('error');?>
+					<?php 
+						if ($this->session->flashdata('error'))
+						{
+							echo "<div class='message error'><p>". $this->session->flashdata('error')."</p></div>";
+						}
+						
+						if ($this->session->flashdata('msg'))
+						{
+							echo "<div class='message msg'><p>". $this->session->flashdata('msg')."</p></div>";
+						}
+
+						?>
 				</div>
 					<?php echo $template['body'];?>
 			

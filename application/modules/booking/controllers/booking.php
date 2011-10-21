@@ -86,14 +86,6 @@ Class Booking extends Controller
 		
 		$user = $this->session->userdata['logged_in'];
 		$data['bookingss'] = $this->booking_model->get_booking($user);
-		
-	
-		
-		$this->load->library('calendar');
-		
-		$data['calendar'] = $this->calendar->generate();
-		
-		
 		$this->template->set_layout('sidebar');
 		$this->template->set_partial('right_sidebar', 'sidebar', $data);
 		$this->template->title('View Bookings'); 
