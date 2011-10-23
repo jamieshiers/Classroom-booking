@@ -48,68 +48,71 @@ if($_POST) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+		<link rel="stylesheet" href="../css/style.css" type="text/css">
+		
+	
+		
 		<title>Install | Classroom Booking</title>
-
-		<style type="text/css">
-		  body {
-		    font-size: 75%;
-		    font-family: Helvetica,Arial,sans-serif;
-		    width: 300px;
-		    margin: 0 auto;
-		  }
-		  input, label {
-		    display: block;
-		    font-size: 18px;
-		    margin: 0;
-		    padding: 0;
-		  }
-		  label {
-		    margin-top: 20px;
-		  }
-		  input.input_text {
-		    width: 270px;
-		  }
-		  input#submit {
-		    margin: 25px auto 0;
-		    font-size: 25px;
-		  }
-		  fieldset {
-		    padding: 15px;
-		  }
-		  legend {
-		    font-size: 18px;
-		    font-weight: bold;
-		  }
-		  .error {
-		    background: #ffd1d1;
-		    border: 1px solid #ff5858;
-        padding: 4px;
-		  }
-		</style>
+		
 	</head>
 	<body>
+		<div id="container">
+			<div class="header-bar">
+				<div class="header content">
+					<div class="logo"> 
+						<img src="../images/logo.png" alt="Dashboard" /></a> 
+					</div>
+					<div class="nav-setup">
+							<h2>Need Help?</h2>
+							<h4>Call 0330 321 1718 <br />Mon - Fri 9am - 5pm</h4>
+							
+					</div><!-- Nav  -->
+				</div><!-- header content -->
+			</div><!-- header-bar -->
+			<div class="content sidebar">
+				<div id="main">
+				    <h1>One Time Install</h1>
+					<h3>It only takes a minute</h3>
+				    <?php if(is_writable($db_config_path)):?>
 
-    <h1>Install</h1>
-    <?php if(is_writable($db_config_path)):?>
+						  <?php if(isset($message)) {echo '<p class="error">' . $message . '</p>';}?>
 
-		  <?php if(isset($message)) {echo '<p class="error">' . $message . '</p>';}?>
+						  <form id="install_form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+							<fieldset>
+					          <legend>Site Settings</legend>
+					          <label for="url">URL to access classroom booking</label><input type="text" id="url" class="input_text" name="url" placeholder="http://localhost/booking">
+					        </fieldset>
+						
+				        <fieldset>
+				          <legend>Database settings</legend>
+				          <label for="hostname">Hostname</label><input type="text" id="hostname" value="localhost" class="input_text" name="hostname" />
+				          <label for="username">Username</label><input type="text" id="username" class="input_text" name="username" />
+				          <label for="password">Password</label><input type="password" id="password" class="input_text" name="password" />
+				          <label for="database">Database Name</label><input type="text" id="database" class="input_text" name="database" />
+				        </fieldset>
+						<input type="submit" value="Install" id="submit" class="button green" />
+						  </form>
+						
+				
+				</div>
+				<div id="sidebar">
+					<h2>Help</h2>
+					<H3>URL</h3>
+						<p>This should be the URL of where you plan to access classroom booking from. E.G. http://booking.domain.com or http://localhost/booking.</p>
+				</div>
+		
+		</div>
+			<div id="footer">
 
-		  <form id="install_form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <fieldset>
-          <legend>Database settings</legend>
-          <label for="hostname">Hostname</label><input type="text" id="hostname" value="localhost" class="input_text" name="hostname" />
-          <label for="username">Username</label><input type="text" id="username" class="input_text" name="username" />
-          <label for="password">Password</label><input type="password" id="password" class="input_text" name="password" />
-          <label for="database">Database Name</label><input type="text" id="database" class="input_text" name="database" />
-          <input type="submit" value="Install" id="submit" />
-        </fieldset>
-		  </form>
+				<p class="footer_text">Powered by <a href="http://www.digitalschool.co.uk">Digital School</a></p>
+				<p class="footer_text">&copy; <a href="http://www.digitalschool.co.uk">Digital School Limited</a> <?php echo date('Y');?> All Rights Reserved</p>
+			</div>
+		<!-- End of Footer -->
 
 	  <?php else: ?>
       <p class="error">Please make the /application/config/database.php file writable. <strong>Example</strong>:<br /><br /><code>chmod 777 application/config/database.php</code></p>
 	  <?php endif; ?>
-
+	</div>
 	</body>
 </html>
 

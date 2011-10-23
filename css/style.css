@@ -215,6 +215,13 @@ Header Styling
 .nav ul li {
   display: inline;
 }
+
+.nav-setup{
+	float:right;
+
+	margin-top:5px;
+	
+}
 /*---------------------------------------------------------------------------
 LOGIN STYLES
 ---------------------------------------------------------------------------*/
@@ -286,6 +293,11 @@ MSGS Styling
   width: 100%;
   margin: 10px 0 10px 0;
 }
+
+.validate{
+	display:inline;
+}
+
 .information {
   background: #c3e4fd url('../images/icons/info_48.png') 20px 50% no-repeat;
   border: 1px solid #688fdc;
@@ -300,7 +312,7 @@ label {
   margin-bottom: 5px;
   display: inline-block;
 }
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=url] {
   font-size: 15px;
   height: 32px;
   background: #fff;
