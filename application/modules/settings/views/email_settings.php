@@ -22,8 +22,16 @@ echo form_input('smtp', $this->config->item('smtp_host'));
 echo form_label('Username', 'username');
 echo form_input('username', $this->config->item('smtp_user'));
 echo form_label('Password', 'password');
-echo form_password('password', $this->config->item('smtp_pass'));
-echo form_submit('submit', 'Save');
+echo form_password('password');
+
+$data = array(
+    'name'        => 'submit',
+    'type'        => 'submit',
+    'class' 	  => 'button green',
+	'value'		  => 'Save',
+    );
+
+echo form_submit($data);
 echo form_close();
 
 

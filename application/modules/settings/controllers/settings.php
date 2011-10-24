@@ -74,11 +74,17 @@ Class Settings extends Controller
 		   	$new  = str_replace("%USERNAME%",$this->input->post('username'),$new);
         
 		   }
-		   // Update Password
-		   if($this->input->post('password'))
-		   {
-		   	$new  = str_replace("%PASSWORD%",$this->input->post('password'),$new);
-		   }
+			// Update password
+			   if($this->input->post('password'))
+			   {
+			   	$new  = str_replace("%PASSWORD%",$this->input->post('password'),$new);
+			   }else{
+				$this->load->config('email'); 
+
+				$smtp_password = $this->config->item('smtp_pass');
+
+				$new  = str_replace("%PASSWORD%",$smtp_password,$new);	
+				}
 		   
 		   
 		   
@@ -149,9 +155,14 @@ Class Settings extends Controller
 		   // Update password
 		   if($this->input->post('password'))
 		   {
-		   	
 		   	$new  = str_replace("%PASSWORD%",$this->input->post('password'),$new);
-		   }
+		   }else{
+			$this->load->config('users/ldap'); 
+			
+			$ad_password = $this->config->item('ad_password');
+			
+			$new  = str_replace("%PASSWORD%",$ad_password,$new);	
+			}
 		   
 		   
         

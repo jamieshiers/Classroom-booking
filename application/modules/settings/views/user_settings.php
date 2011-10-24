@@ -79,12 +79,20 @@ echo form_label('Domain Controller', 'controller');
 echo form_input('controller', $controller);
 echo form_label('Username', 'username');
 echo form_input('username', $this->config->item('ad_username'));
-echo form_label('Password','password');
-echo form_password('password', $this->config->item('ad_password'));
+echo form_label('Password (If you don\'t want to change the password leave this blank)','password');
+echo form_password('password');
 ?>
 </div>
 <?php
-echo form_submit('submit', 'Save');
+
+$data = array(
+    'name'        => 'submit',
+    'type'        => 'submit',
+    'class' 	  => 'button green',
+	'value'		  => 'Save',
+    );
+
+echo form_submit($data);
 echo form_close();
 
 
