@@ -8,7 +8,7 @@
         options = jQuery.extend({
             expression: "return true;",
             message: "",
-            error_class: "validate error",
+            error_class: "error",
             error_field_class: "ErrorField",
             live: true
         }, options);

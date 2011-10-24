@@ -12,7 +12,7 @@
 |
 */
 
-    $config['base_url'] = '%base_url%/';
+    $config['base_url'] = '%BASE_URL%/';
 
 
 /*

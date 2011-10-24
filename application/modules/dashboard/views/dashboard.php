@@ -11,8 +11,51 @@
  $name = $this->session->userdata['logged_in'];  
  ?>
 
+<?php 
+if($this->session->userdata['logged_in'] == 'superuser' && $this->session->userdata['counter'] < 4)
+
+{?>
+	<div class="wrapper">
+	<div class="getting_started">
+		<h2>Getting Started</h2>
+		<p>Get set up in 6 simple steps, once complete you'll be the booking master! This section will disappear after your third login. </p>
+		<ul class="get_started">
+			<li>
+				<h4>Set up your academic year</h4>
+				<a href="<?php echo site_url();?>/weeks/add_year" class="button green">Add</a>
+			</li>
+			<li>
+				<h4>Add your holidays</h4>
+				<a href="<?php echo site_url();?>/holiday" class="button green">Add</a>
+			</li>
+			<li>
+				<h4>Add Classrooms</h4>
+				<a href="<?php echo site_url();?>/rooms" class="button green">Add</a>
+			</li>
+			<li>
+				<h4>Add Teaching Periods</h4>
+				<a href="<?php echo site_url();?>/period" class="button green">Add</a>
+			</li>
+			<li>
+				<h4>Add Teaching Subjects</h4>
+				<a href="<?php echo site_url();?>/subjects" class="button green">Add</a>
+			</li>
+			<li>
+				<h4>Add Extra Users</h4>
+				<a href="<?php echo site_url();?>/users/admin" class="button green">Add</a>
+			</li>
+		</ul>
+	</div></div>
+
+<?php }?>
+
+<div class="clear"></div>
 <h1>Welcome, <span><?php echo $name;?>!</span></h1>
 <p>What would you like to do today?</p>
+
+
+
+
 
 <h2> Make a booking </h2>
 <hr />

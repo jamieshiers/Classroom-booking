@@ -38,14 +38,21 @@ class User_Auth
 			{
 				$row = $query->row(); 
 				// Our user exists - upadate the table 
-				$date = date('yy-mm-dd');
-				$data = array( 'last_login' => $date);
+				
+				$counter = $row->counter;
+				
+				$counter++;
+				
+				
+				$date = date('Y-m-d');
+				$data = array( 'last_login' => $date, 'counter' => $counter);
 				$this->_ci->db->where('id', $row->id); 
 				$this->_ci->db->update('users', $data);
 				//Set the session  
 				$this->_ci->session->set_userdata('logged_in', $username); 
 				$this->_ci->session->set_userdata('userid', $row->id); 
 				$this->_ci->session->set_userdata('accesslevel', $row->user_group);
+				$this->_ci->session->set_userdata('counter', $counter);
 				return TRUE;
 			}
 		}
@@ -66,16 +73,19 @@ class User_Auth
 
 				if($query->num_rows() == 1)
 				{
+					$counter = $row->counter;
+					$counter++;
 					$row = $query->row(); 
 					// Our user exists - upadate the table 
-					$date = date('yy-mm-dd');
-					$data = array( 'last_login' => $date);
+					$date = date('Y-m-d');
+					$data = array( 'last_login' => $date, 'counter' => $counter);
 					$this->_ci->db->where('id', $row->id); 
 					$this->_ci->db->update('users', $data);
 					//Set the session  
 					$this->_ci->session->set_userdata('logged_in', $username); 
 					$this->_ci->session->set_userdata('userid', $row->id); 
 					$this->_ci->session->set_userdata('accesslevel', $row->user_group);
+					$this->_ci->session->set_userdata('counter', $counter);
 					return TRUE;
 				}
 				

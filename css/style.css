@@ -1,6 +1,10 @@
 /* Preboot.less
  * Variables and mixins to pre-ignite any new web development project
  * ------------------------------------------------------------------ */
+.clear{
+	clear:both;
+}
+
 .clearfix {
   zoom: 1;
 }
@@ -98,6 +102,18 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/*---------------------------------------------------------------------------
+INSTALLER
+---------------------------------------------------------------------------*/
+
+fieldset{
+	border:1px solid #D8D4D4;
+	margin:10px;
+	padding:10px;
+}
+
+
 /*---------------------------------------------------------------------------
 sidebar styling
 ---------------------------------------------------------------------------*/
@@ -179,6 +195,43 @@ ul.dash li a span {
   margin-top: 10px;
   font-size: 11px;
 }
+
+.wrapper{
+	background:#FAFCE0;
+	height:155px;
+	padding:5px;
+	border:1px solid #F4F7CF;
+}
+
+.wrapper h2{
+	margin:10px;
+}
+.wrapper p{
+	margin:10px;
+}
+
+ul.get_started{
+	float: left;
+  display: block;
+  margin: 0 0 20px 0;
+
+
+}
+
+ul.get_started li{
+	float: left;
+	display: inline;
+	list-style:none;	
+	width:105px;
+	margin: 0 0 0 10px;
+	border-right:1px solid #EAEAE8;
+	text-align:center;
+}
+
+ul.get_started li a{
+	margin-top:10px;
+}
+
 /*---------------------------------------------------------------------------
 Text Styling
 ---------------------------------------------------------------------------*/

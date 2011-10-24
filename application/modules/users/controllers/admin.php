@@ -213,8 +213,9 @@ class Admin extends Controller
 	{
 		$admins = $this->input->post('admins'); 
 		$users = $this->input->post('users');
+		$disabled = $this->input->post('disabled');
 		
-		$data['success'] = $this->user_model->save_ldap($admins,$users);
+		$data['success'] = $this->user_model->save_ldap($admins,$users,$disabled);
 		
 		redirect('dashboard');
 	}

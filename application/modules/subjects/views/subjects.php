@@ -31,7 +31,7 @@
 </tr>
 <?php }
 } else {
-echo '<td colspan="4" align="center" style="padding:16px 0">No Rooms Set Up</td>';
+echo '<td colspan="4" align="center" style="padding:16px 0">No Subjects Set Up</td>';
 }
 ?>
 </table>

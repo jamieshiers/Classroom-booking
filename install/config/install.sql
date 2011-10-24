@@ -155,7 +155,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `users` WRITE;
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `user_group`, `last_login`, `password`, `counter`) VALUES (1, 'A', 'User', 'superuser', 'jamieshiers@hotmail.com', 'admin', '2011-10-24', '10160d7b5e756752ed0842987e3ad9080c8e369a', 0);
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `user_group`, `last_login`, `password`, `counter`) VALUES (1, 'A', 'User', 'superuser', '%EMAIL%', 'admin', '2011-10-24', '%PASSWORD%', 0);
 UNLOCK TABLES;
 
 

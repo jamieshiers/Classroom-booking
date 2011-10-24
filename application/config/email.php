@@ -30,11 +30,11 @@
 $config['useragent']        = 'CodeIgniter';        
 $config['protocol']         = 'mail';        
 $config['mailpath']         = '/usr/sbin/sendmail';
-$config['smtp_host']        = 'mail.jamieshiers.co.uk';
-$config['smtp_user']        = 'jamieshiers@gmail.com';
-$config['smtp_pass']        = 'studioworks';
-$config['from_email'] 		= 'bookingbot@classroombooking.com';
-$config['from_name']		= 'Booking Bot';
+$config['smtp_host']        = '';
+$config['smtp_user']        = '';
+$config['smtp_pass']        = '';
+$config['from_email'] 		= '';
+$config['from_name']		= '';
 $config['smtp_port']        = 25;
 $config['smtp_timeout']     = 5;
 $config['wordwrap']         = TRUE;
