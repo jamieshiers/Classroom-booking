@@ -365,7 +365,7 @@ label {
   margin-bottom: 5px;
   display: inline-block;
 }
-input[type=text], input[type=password], input[type=url] {
+input[type=text], input[type=password], input[type=url]{
   font-size: 15px;
   height: 32px;
   background: #fff;
@@ -381,6 +381,11 @@ select {
   display: block;
   width: 100%;
 }
+
+ input[type=checkbox]{
+	margin-left:10px;
+}
+
 input[type=submit] {
   display: block;
 }

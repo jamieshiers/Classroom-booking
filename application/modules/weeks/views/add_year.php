@@ -1,3 +1,5 @@
+<h2>Add Academic Year</h2>
+
 <?php echo form_open('weeks/weeks/add_year');?>
 <?php if(validation_errors())
 {
