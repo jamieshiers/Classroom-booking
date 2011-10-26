@@ -96,12 +96,12 @@ class Weeks extends Controller
 			if($insert == TRUE)
 			{
 				$this->session->set_flashdata('msg', 'Year Saved');
-				redirect('weeks');
+				redirect('dashboard');
 			}
 			else
 			{
 				$this->session->set_flashdata('error', "Year couldn't be saved!");
-				redirect('weeks');
+				redirect('dashboard');
 			}
 		}
 		

@@ -77,7 +77,7 @@ if($this->session->userdata['logged_in'] == 'superuser' && $this->session->userd
 
 <?php if($this->session->userdata['accesslevel'] == "admin")
 { ?>
-	
+	<div class="clear"></div>
 	<h2>Admin Tasks</h2>
 	<hr />
 	
@@ -86,44 +86,44 @@ if($this->session->userdata['logged_in'] == 'superuser' && $this->session->userd
 		
 		<li>
 			<a href="<?php echo site_url();?>/rooms">
-				<img src="<?php echo base_url();?>images/icons/manage_room.png" alt="Manage Rooms" title="Manage Rooms"/>
+				<img src="<?php echo base_url();?>images/icons/room.png" alt="Manage Rooms" title="Manage Rooms"/>
 				<span>Manage Rooms</span>
 			</a>
 		</li>
 		
 		<li>
 			<a href="<?php echo site_url();?>/holiday">
-				<img src="<?php echo base_url();?>images/icons/manage_holiday.png" alt="Manage Holidays" title="Manage Holidays"/>
+				<img src="<?php echo base_url();?>images/icons/holiday.png" alt="Manage Holidays" title="Manage Holidays"/>
 				<span>Manage Holidays</span>
 			</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url();?>/weeks/add_year">
-				<img src="<?php echo base_url();?>images/icons/manage_holiday.png" alt="Manage Year" title="Manage Years" />
+				<img src="<?php echo base_url();?>images/icons/holiday.png" alt="Manage Year" title="Manage Years" />
 				<span>Manage Year</span>
 			</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url();?>/subjects">
-				<img src="<?php echo base_url();?>images/icons/add_period.png" alt="Add Period" title="Add a Period"/>
+				<img src="<?php echo base_url();?>images/icons/subject.png" alt="Add Period" title="Add a Period"/>
 				<span>Manage Subjects</span>
 			</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url();?>/period">
-				<img src="<?php echo base_url();?>images/icons/manage_period.png" alt="Manage Periods" title="Manage Periods" />
+				<img src="<?php echo base_url();?>images/icons/period.png" alt="Manage Periods" title="Manage Periods" />
 				<span>Manage Periods</span>
 			</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url();?>/users/admin/">
-				<img src="<?php echo base_url();?>images/icons/upload_csv.png" alt="Manage Users" title="Manage Users" />
+				<img src="<?php echo base_url();?>images/icons/user.png" alt="Manage Users" title="Manage Users" />
 				<span>Manage Users</span>
 			</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url();?>/settings/settings/dashboard">
-				<img src="<?php echo base_url();?>images/icons/upload_csv.png" alt="Settings" title="Settings" />
+				<img src="<?php echo base_url();?>images/icons/settings.png" alt="Settings" title="Settings" />
 				<span>Settings</span>
 			</a>
 		</li>

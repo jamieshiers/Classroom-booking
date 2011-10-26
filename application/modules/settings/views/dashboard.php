@@ -20,19 +20,19 @@
 		
 		<li>
 			<a href="<?php echo site_url();?>/settings/settings/user_settings">
-				<img src="<?php echo base_url();?>images/icons/add_room.png" alt="Add Room" title="Add a Room"/>
+				<img src="<?php echo base_url();?>images/icons/user.png" alt="Add Room" title="Add a Room"/>
 				<span>User login options</span>
 			</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url();?>/users/admin/ldap">
-				<img src="<?php echo base_url();?>images/icons/add_room.png" alt="Add Room" title="Add a Room"/>
+				<img src="<?php echo base_url();?>images/icons/group.png" alt="Add Room" title="Add a Room"/>
 				<span>LDAP Groups</span>
 			</a>
 		</li>
 		<li>
 			<a href="<?php echo site_url();?>/settings/settings/email_settings">
-				<img src="<?php echo base_url();?>images/icons/add_room.png" alt="Add Room" title="Add a Room"/>
+				<img src="<?php echo base_url();?>images/icons/email.png" alt="Add Room" title="Add a Room"/>
 				<span>Email Server Settings</span>
 			</a>
 		</li>
