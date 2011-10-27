@@ -13,10 +13,10 @@
 				});
 			</script>
 			<script type="text/javascript" src="<?php echo base_url();?>js/jquery.colorbox-min.js"></script>
-			<link rel="stylesheet" href="<?php echo base_url();?>/css/colorbox.css" type="text/css" >
+			<link rel="stylesheet" href="<?php echo base_url();?>css/colorbox.css" type="text/css" >
 			
-		<link rel="stylesheet" href="/css/datepicker.css" type="text/css" >
-		<link rel="stylesheet" href="<?php echo base_url();?>/css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/datepicker.css" type="text/css" >
+		<link rel="stylesheet" href="<?php echo base_url();?>css/style.css" type="text/css">
 		
 		<title><?php echo $template['title'];?> | Classroom Booking </title>
 	</head>

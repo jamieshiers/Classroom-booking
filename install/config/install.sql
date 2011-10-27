@@ -160,8 +160,8 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `year` WRITE;
+INSERT INTO `year` (`id`, `name`, `date_start`, `date_end`) VALUES (1, 'YEAR', '2011-09-05', '2012-07-27');
 UNLOCK TABLES;
-
 
 
 

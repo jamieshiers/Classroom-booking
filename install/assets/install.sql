@@ -142,7 +142,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `settings` WRITE;
-INSERT INTO `settings` (`id`, `setting_name`, `setting_value`) VALUES (1, 'weeks', '1'), (2, 'Version', '0.1'), (3, 'ldap_standard_users', NULL), (7, 'ldap_disabled_users', 'CN=Students,OU=Groups,OU=CSE,DC=HOE,DC=Local;'), (4, 'ldap_admin_users', NULL), (8, 'ldap', '0'), (17, 'Week_2_name', 'Week 2'), (16, 'Week_1_name', 'Week 2');
+INSERT INTO `settings` (`id`, `setting_name`, `setting_value`) VALUES (1, 'weeks', '1'), (2, 'Version', '0.1'), (3, 'ldap_standard_users', NULL), (7, 'ldap_disabled_users', ''), (4, 'ldap_admin_users', NULL), (8, 'ldap', '0'), (17, 'Week_2_name', 'Week 2'), (16, 'Week_1_name', 'Week 2');
 UNLOCK TABLES;
 
 

@@ -24,8 +24,9 @@ Class Settings extends Controller
 	
 	public function dashboard()
 	{
-		$this->template->title('Dashboard'); 
-		$this->template->build('dashboard');
+		$data['ldap'] = $this->settings_model->get_setting('ldap');
+		$this->template->title('Settings Dashboard'); 
+		$this->template->build('dashboard', $data);
 	}
 	
 	public function user_settings()

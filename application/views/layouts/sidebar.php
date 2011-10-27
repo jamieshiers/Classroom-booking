@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="<?php echo base_url();?>/js/jquery.colorbox-min.js"></script>
-		<link href="<?php echo base_url();?>/css/colorbox.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>/css/style.css" type="text/css">
+		<script type="text/javascript" src="<?php echo base_url();?>js/jquery.colorbox-min.js"></script>
+		<link rel="stylesheet" href="<?php echo base_url();?>css/colorbox.css" type="text/css">
+		<link rel="stylesheet" href="<?php echo base_url();?>css/style.css" type="text/css">
 		
 		<!-- Date Picker Set up -->
 			<script type="text/javascript">
