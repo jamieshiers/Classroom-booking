@@ -16,19 +16,19 @@
 	<?php echo form_open('booking/booking/add/'.$room.'/'.$date.'/'.$period.'/'.$week)?>
 	<label for="Class">Year Group</label>
 	
-	<?php $years = array(
-						'Select' => 'Select a Year Group',
-						'Year 7' => 'Year 7', 
-						'Year 8' => 'Year 8', 
-						'Year 9' => 'Year 9', 
-						'Year 10'=> 'Year 10', 
-						'Year 11'=> 'Year 11', 
-						'Year 12'=> 'Year 12', 
-						'Year 13'=> 'Year 13'
-						);
+	<?php 
+										
+	$year_groups = array(); 
+	
+	foreach($years as $year)
+	{
+		$year_groups[$year['year_name']] = $year['year_name'];
+	}
 	
 	
-	echo form_dropdown('Class', $years, 'select'); ?><br />
+	
+	
+	echo form_dropdown('Class', $year_groups, 'select'); ?><br />
 	<label for="Lesson"> Lesson:</label>
 	<select name="Lesson">
 	<?php 

@@ -102,6 +102,7 @@ Class Booking extends Controller
 		
 		$data['users'] = $this->booking_model->get_users();
 		$data['subjects'] = $this->booking_model->get_subjects();
+		$data['years'] = $this->booking_model->get_years();
 	
 		//$this->template->set_layout('default'); 
 		$this->template->title('Add New Booking');

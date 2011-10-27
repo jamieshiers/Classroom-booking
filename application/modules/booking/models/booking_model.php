@@ -140,6 +140,19 @@ Class Booking_model extends CI_Model
 			return $query->result();
 		}
 	}
+//---------------------------------------------------------------------------
+
+	public function get_years()
+	{
+		$this->db->order_by('year_name', 'asc');
+		$query = $this->db->get('years');
+		
+		$data = $query->result_array();
+		
+		return $data;
+	}
+	
+	
 	
 //---------------------------------------------------------------------------
 

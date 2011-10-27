@@ -115,7 +115,11 @@ CREATE TABLE `year` (
   `date_end` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-
+CREATE TABLE `years` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `year_name` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -163,6 +167,8 @@ LOCK TABLES `year` WRITE;
 INSERT INTO `year` (`id`, `name`, `date_start`, `date_end`) VALUES (1, 'YEAR', '2011-09-05', '2012-07-27');
 UNLOCK TABLES;
 
+LOCK TABLES `years` WRITE;
+UNLOCK TABLES;
 
 
 SET FOREIGN_KEY_CHECKS = 1;

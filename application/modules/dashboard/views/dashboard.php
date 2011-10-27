@@ -122,6 +122,12 @@ if($this->session->userdata['logged_in'] == 'superuser' && $this->session->userd
 			</a>
 		</li>
 		<li>
+			<a href="<?php echo site_url();?>/years">
+				<img src="<?php echo base_url();?>images/icons/period.png" alt="Manage Year Groups" title="Manage Year Groups" />
+				<span>Manage Year Groups</span>
+			</a>
+		</li>
+		<li>
 			<a href="<?php echo site_url();?>/users/admin/">
 				<img src="<?php echo base_url();?>images/icons/user.png" alt="Manage Users" title="Manage Users" />
 				<span>Manage Users</span>
