@@ -35,9 +35,9 @@
 */
 
 // The following values will probably need to be changed.
-$db['default']['username'] = "root";
-$db['default']['password'] = "root";
-$db['default']['database'] = "school6";
+$db['default']['username'] = "";
+$db['default']['password'] = "";
+$db['default']['database'] = "";
 
 // The following values can probably stay the same.
 $db['default']['hostname'] = "localhost";

@@ -12,7 +12,7 @@
 |
 */
 
-    $config['base_url'] = 'http://localhost/classroom-booking/';
+    $config['base_url'] = '';
 
 
 /*
