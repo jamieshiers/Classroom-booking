@@ -133,9 +133,9 @@ if($_POST) {
 						<H3>Hostname</h3>
 							<p>This is where your mysql database is hosted, normally it is localhost.</p>
 						<H3>Database username and password</h3>
-							<p>This is the username and password that you use to connect to your database</p>
+							<p>This is the username and password that you use to connect to your database.</p>
 						<H3>Database Name</h3>
-							<p>We will automatically create a database for you .</p>
+							<p>This is the name of the database you wish to store your booking info in. </p>
 				</div>
 		
 		</div>

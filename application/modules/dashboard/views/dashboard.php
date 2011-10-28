@@ -18,11 +18,15 @@ if($this->session->userdata['logged_in'] == 'superuser' && $this->session->userd
 	<div class="wrapper">
 	<div class="getting_started">
 		<h2>Getting Started</h2>
-		<p>Get set up in 6 simple steps, once complete you'll be the booking master! This section will disappear after your third login. </p>
+		<p>Get set up in 7 simple steps, once complete you'll be the booking master! This section will disappear after your third login. </p>
 		<ul class="get_started">
 			<li>
 				<h4>Set up your academic year</h4>
 				<a href="<?php echo site_url();?>/weeks/add_year" class="button green">Add</a>
+			</li>
+			<li>
+				<h4>Set up your week structure</h4>
+				<a href="<?php echo site_url();?>/weeks" class="button green">Add</a>
 			</li>
 			<li>
 				<h4>Add your holidays</h4>

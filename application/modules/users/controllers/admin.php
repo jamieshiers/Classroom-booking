@@ -148,6 +148,16 @@ class Admin extends Controller
 	public function login()
 	{
 	
+		$install = base_url()."install/index.php";
+		
+		if(file_exists("./install/index.php")){?>
+			
+		<h1>Whoa there!<h1>	
+			<h3>You need to delete the install directory before you proceed.</h3>
+			
+		<?
+		exit();	
+		}
 		
 		$this->form_validation->set_rules('username', 'Username', 'required'); 
 		$this->form_validation->set_rules('password', 'Password', 'required'); 
@@ -184,6 +194,7 @@ class Admin extends Controller
 			}
 		}
 	}
+
 //---------------------------------------------------------------------------
 
 	public function logout()
