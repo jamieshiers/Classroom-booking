@@ -28,13 +28,13 @@
   *  
   */                       
 $config['useragent']        = 'CodeIgniter';        
-$config['protocol']         = 'smtp';        
+$config['protocol']         = 'mail';        
 $config['mailpath']         = '/usr/sbin/sendmail';
-$config['smtp_host']        = '';
-$config['smtp_user']        = '';
-$config['smtp_pass']        = '';
-$config['from_email'] 		= '';
-$config['from_name']		= '';
+$config['smtp_host']        = 'mail.jamieshiers.co.uk';
+$config['smtp_user']        = 'jamie@jamieshiers.co.uk';
+$config['smtp_pass']        = 'Monday1';
+$config['from_email'] 		= 'jamie@jamieshiers.co.uk';
+$config['from_name']		= 'Jamie Shiers';
 $config['smtp_port']        = 25;
 $config['smtp_timeout']     = 5;
 $config['wordwrap']         = TRUE;

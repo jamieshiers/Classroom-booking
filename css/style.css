@@ -354,9 +354,79 @@ MSGS Styling
   background: #c3e4fd url('../images/icons/info_48.png') 20px 50% no-repeat;
   border: 1px solid #688fdc;
 }
-.message:hover {
-  cursor: pointer;
+
+/*---------------------------------------------------------------------------
+NOTIFICATION MESSAGE
+---------------------------------------------------------------------------*/
+.swap{
+	overflow:hidden;
+	height:40px;
+	background:#DDF4FB;
+	border:1px solid #C6EDF9;
 }
+
+.swap h3{
+	padding:12px;
+}
+small{
+	color:#439E43;
+}
+
+.swap a{
+	bottom: 36px;
+	float: right;
+ 	position: relative;
+ 	right: 10px;
+}
+
+.margin{
+	margin:10px;
+}
+
+#booking_info
+{
+	width:130px;
+	height:130px;
+}
+
+
+/*---------------------------------------------------------------------------
+INDIVUGUAL NOTIFICATIONS
+---------------------------------------------------------------------------*/
+
+.notification{
+	overflow:hidden;
+	height:70px;
+	margin-top:15px;
+	background:#DDF4FB;
+	border:1px solid #C6EDF9;
+}
+
+.notification h3{
+	padding:12px;
+	width:70%;
+	
+}
+
+.decide{
+	width:170px;
+	position:relative;
+	float:right;
+	margin:10px;
+	bottom:60px;
+}
+
+.decide p{
+	margin:0 auto;
+}
+
+
+
+
+
+
+
+
 /*---------------------------------------------------------------------------
 Form Styling
 ---------------------------------------------------------------------------*/
