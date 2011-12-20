@@ -92,6 +92,9 @@ CREATE TABLE `swap` (
   `room_name` varchar(128) NOT NULL,
   `periods` varchar(128) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `periods` varchar(128) NOT NULL,
+  `date` date DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8
 
 
 CREATE TABLE `users` (
