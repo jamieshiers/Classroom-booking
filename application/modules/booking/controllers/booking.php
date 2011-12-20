@@ -268,7 +268,8 @@ Class Booking extends Controller
 			'user' => $emails['user'], 
 			'request_user' => $emails['request_user'], 
 			'room_name' => $emails['room']->name, 
-			'periods' => $emails['periods']->period_name
+			'periods' => $emails['periods']->period_name, 
+			'date' => $date
 		);
 		
 		$this->booking_model->add_swap($update);
@@ -303,20 +304,81 @@ Class Booking extends Controller
 
 	public function swapconfirm()
 	{
-		$id = $this->uri->segment(4); 
-		$user = $this->uri->segment(5);
-		$swap_id = $this->uri->segment(6);
+		$id = $this->uri->segment(3); 
+		$user = $this->uri->segment(4);
+		$username['room'] = $this->uri->segment(5);
+		$username['date'] = $this->uri->segment(6);
 		$update = array(
-			'class' => '',
-			'lesson' => '',
 			'user' => $user
 		);	
 		
+		$this->load->model('users/user_model');
+		$username['user'] = $this->user_model->get_user_by_username($user);
+		
 		$this->booking_model->update_booking($id,$update);
 		
-		$this->booking_model->delete_swap($swap_id);
+		$delete = $this->booking_model->delete_swap($id);
+
+		
+		if($delete == TRUE)
+		{
+			// send an email to the swap requester
+			$this->email->from('bookingbot@classroombooking.com', 'Booking Bot'); 
+			$this->email->to($username['user']['email']);
+			$this->email->subject('Room Swap Confirmation');
+
+			$message = $this->load->view('room_swap_confirm', $username, True);
+
+			$this->email->message($message); 
+
+			$this->email->send();
+			
+			$this->session->set_flashdata('msg', 'Swap Confirmed'); 
+		}
+		else
+		{
+			$this->session->set_flashdata('msg', 'An Error has occurred'); 
+		}
+		
+		
 		
 		redirect('dashboard');
+	}
+	
+	public function swapdecline()
+	{
+		$id = $this->uri->segment(3); 
+		$user = $this->uri->segment(4);
+		$username['room'] = $this->uri->segment(5);
+		$username['date'] = $this->uri->segment(6);
+		
+		$this->load->model('users/user_model');
+		$username['user'] = $this->user_model->get_user_by_username($user);
+		
+		$delete = $this->booking_model->delete_swap($id);
+		
+		if($delete == TRUE)
+		{
+			// send an email to the swap requester
+			$this->email->from('bookingbot@classroombooking.com', 'Booking Bot'); 
+			$this->email->to($username['user']['email']);
+			$this->email->subject('Room Swap Declined');
+
+			$message = $this->load->view('room_swap_decline', $username, True);
+
+			$this->email->message($message); 
+
+			$this->email->send();
+			
+			$this->session->set_flashdata('msg', 'Swap Declined'); 
+		}
+		else
+		{
+			$this->session->set_flashdata('msg', 'An Error has occurred'); 
+		}
+		
+		redirect('dashboard');
+		
 	}
 	
 		

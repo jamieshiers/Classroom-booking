@@ -51,7 +51,42 @@ if($this->session->userdata['logged_in'] == 'superuser' && $this->session->userd
 		</ul>
 	</div></div>
 
-<?php }?>
+<?php }
+
+if($swaps)
+{
+	$number = count($swaps);
+	
+	if($number === 1)
+	{
+		$note = "notification";
+	}
+	else
+	{
+		$note = "notifications";
+	}
+	
+	?>
+	
+	<div class="message msg swap">
+		<h3>You have <?php echo $number; echo " new ".$note;?></h3>
+		<a href="<?php echo site_url();?>/dashboard/notifications" class="button blue">Read</a>
+	</div>
+	
+	
+	
+	<?php 
+}
+
+
+
+
+
+
+?>
+
+
+
 
 <div class="clear"></div>
 <h1>Welcome, <span><?php echo $name;?>!</span></h1>

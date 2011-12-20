@@ -365,8 +365,8 @@ Class Booking_model extends CI_Model
 
 	public function delete_swap($id)
 	{
-		$this->db->where('id', $id); 
-		$this->db->delete('swap'); 
+		$this->db->where('booking_id', $id);
+		$this->db->delete('swap');
 		
 		if($this->db->affected_rows() == 0)
 		{

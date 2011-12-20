@@ -26,7 +26,7 @@ Class Dashboard extends Controller
 		
 		$username = $this->session->userdata('logged_in');
 
-		//$swap['swaps'] = $this->dashboard_model->swap($username);
+		$data['swaps'] = $this->dashboard_model->swap($username);
 		
 		$user = $this->session->userdata['logged_in'];
 		$data['bookings'] = $this->dashboard_model->get_booking($user);	
@@ -35,6 +35,22 @@ Class Dashboard extends Controller
 		$this->template->build('dashboard', $data);
 	}
 //---------------------------------------------------------------------------
+
+	public function notifications()
+	{
+		
+		
+		$username = $this->session->userdata('logged_in');
+
+		$data['swaps'] = $this->dashboard_model->swap($username);
+		
+		$user = $this->session->userdata['logged_in'];
+		$data['bookings'] = $this->dashboard_model->get_booking($user);	
+		$this->template->title('Dashboard'); 
+		$this->template->set_partial('right_sidebar', 'sidebar', $data);
+		$this->template->build('notifications', $data);
+	}
+
 
 	
 }

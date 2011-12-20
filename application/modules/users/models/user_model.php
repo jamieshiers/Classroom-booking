@@ -64,7 +64,6 @@ class User_model extends CI_Model
 	public function get_user_by_username($username)
 	{
 		$this->db->from('users')
-				//->join('user_groups', 'user_groups = group_id', 'left')
 				->where('username', $username);
 				
 		$query = $this->db->get(); 

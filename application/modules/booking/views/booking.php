@@ -156,22 +156,14 @@
 							echo "<p>". $booking->lesson."</p>"; 
 							echo "<p class='lowercase'>". $booking->user."</p>"; 
 							
-							//if($booking->block == false)
-							//{
-							//	echo '<a id="page-help" href="'.site_url().'/booking/booking/info/'.$booking->id.'" title="Booking Options">Options</a>';
-							//}
 							
 							
-							if($this->session->userdata('logged_in') == $booking->user || $this->session->userdata('accesslevel') == 'admin')
+							
+							if($this->session->userdata('logged_in') == $booking->user || $this->session->userdata('accesslevel') == 'admin' || $booking->block == false)
 							{
-								echo '<a href="'.site_url().'/booking/booking/delete/'.$booking->id.'"><img src="'.base_url().'/images/no.gif"></a>';
+								echo '<a id="page-help" href="'.site_url().'/booking/booking/info/'.$booking->id.'"  class="colorbox">Options</a>';
 							}		
 							
-						
-						
-						
-
-						
 							// This cell is not bookable now, so we mark it as such and break
 							$bookable = 0;
 							break; // No point in keep looping, we've already found our booking for today
