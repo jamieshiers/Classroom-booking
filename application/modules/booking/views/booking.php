@@ -161,7 +161,7 @@
 							
 							if($this->session->userdata('logged_in') == $booking->user || $this->session->userdata('accesslevel') == 'admin' || $booking->block == false)
 							{
-								echo '<a id="page-help" href="'.site_url().'/booking/booking/info/'.$booking->id.'"  class="colorbox">Options</a>';
+								echo '<a id="page-help" href="'.site_url().'/booking/booking/info/'.$booking->id.'"  class="colorbox"><img src="'.base_url().'/images/icons/info.png" class="info_icon"></a>';
 							}		
 							
 							// This cell is not bookable now, so we mark it as such and break

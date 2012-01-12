@@ -551,12 +551,15 @@ Booking styles
   background: none repeat scroll 0 0 #E8F3DD;
   border: 1px solid #D1E397;
   text-align: center;
+	clear:both;
 }
 #normal_booking {
   background: none repeat scroll 0 0 #D6F0FC;
   border: 1px solid #96CFF1;
   text-align: center;
+
 }
+
 /*---------------------------------------------------------------------------
 TABLE Styling
 ---------------------------------------------------------------------------*/
