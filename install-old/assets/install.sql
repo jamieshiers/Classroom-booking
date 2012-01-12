@@ -90,9 +90,8 @@ CREATE TABLE `swap` (
   `user` varchar(128) NOT NULL,
   `request_user` varchar(128) NOT NULL,
   `room_name` varchar(128) NOT NULL,
-  `periods` varchar(128) NOT NULL,
-  `date` date DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8
+  `periods` varchar(128) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `users` (
@@ -116,7 +115,11 @@ CREATE TABLE `year` (
   `date_end` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-
+CREATE TABLE `years` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `year_name` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -143,7 +146,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `settings` WRITE;
-INSERT INTO `settings` (`id`, `setting_name`, `setting_value`) VALUES (1, 'weeks', '1'), (2, 'Version', '0.1'), (3, 'ldap_standard_users', NULL), (7, 'ldap_disabled_users', ''), (4, 'ldap_admin_users', NULL), (8, 'ldap', '0'), (17, 'Week_2_name', 'Week 2'), (16, 'Week_1_name', 'Week 2');
+INSERT INTO `settings` (`id`, `setting_name`, `setting_value`) VALUES (1, 'weeks', '1'), (2, 'Version', '0.1'), (3, 'ldap_standard_users', NULL), (7, 'ldap_disabled_users', 'CN=Students,OU=Groups,OU=CSE,DC=HOE,DC=Local;'), (4, 'ldap_admin_users', NULL), (8, 'ldap', '0'), (17, 'Week_2_name', 'Week 2'), (16, 'Week_1_name', 'Week 2');
 UNLOCK TABLES;
 
 
@@ -161,9 +164,11 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `year` WRITE;
+INSERT INTO `year` (`id`, `name`, `date_start`, `date_end`) VALUES (1, 'YEAR', '2011-09-05', '2012-07-27');
 UNLOCK TABLES;
 
-
+LOCK TABLES `years` WRITE;
+UNLOCK TABLES;
 
 
 SET FOREIGN_KEY_CHECKS = 1;
