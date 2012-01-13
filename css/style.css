@@ -360,16 +360,24 @@ MSGS Styling
 
 .swap{
 	overflow:hidden;
+	height:40px;
+	background:#DDF4FB;
+	border:1px solid #C6EDF9;
 }
 
 .swap h3{
-	width:50%;
+	padding:12px;
 }
 
+small{ 
+	color:#439E43;
+}
 
 .swap a{
+	bottom:36px;
 	position:relative;
 	float:right;
+	right:10px;
 }
 
 .margin{
@@ -381,6 +389,38 @@ MSGS Styling
 	width:130px;
 	height:130px;
 }
+
+/*---------------------------------------------------------------------------
++INDIVUGUAL NOTIFICATIONS
++---------------------------------------------------------------------------*/
+
+.notification{
+    overflow:hidden;
+    height:70px;
+    margin-top:15px;
+    background:#DDF4FB;
+    border:1px solid #C6EDF9;
+}
+
+.notification h3{
+    padding:12px;
+    width:70%;
+    
+}
+
+.decide{
+    width:170px;
+    position:relative;
+    float:right;
+    margin:10px;
+    bottom:60px;
+}
+
+.decide p{
+    margin:0 auto;
+ }
+
+
 /*---------------------------------------------------------------------------
 Form Styling
 ---------------------------------------------------------------------------*/
@@ -510,7 +550,10 @@ Booking styles
   background: none repeat scroll 0 0 #D6F0FC;
   border: 1px solid #96CFF1;
   text-align: center;
+	height:20px;
 }
+
+
 /*---------------------------------------------------------------------------
 TABLE Styling
 ---------------------------------------------------------------------------*/
