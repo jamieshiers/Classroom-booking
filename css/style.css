@@ -354,10 +354,10 @@ MSGS Styling
   background: #c3e4fd url('../images/icons/info_48.png') 20px 50% no-repeat;
   border: 1px solid #688fdc;
 }
+.message:hover {
+  cursor: pointer;
+}
 
-/*---------------------------------------------------------------------------
-NOTIFICATION MESSAGE
----------------------------------------------------------------------------*/
 .swap{
 	overflow:hidden;
 	height:40px;
@@ -368,15 +368,16 @@ NOTIFICATION MESSAGE
 .swap h3{
 	padding:12px;
 }
-small{
+
+small{ 
 	color:#439E43;
 }
 
 .swap a{
-	bottom: 36px;
-	float: right;
- 	position: relative;
- 	right: 10px;
+	bottom:36px;
+	position:relative;
+	float:right;
+	right:10px;
 }
 
 .margin{
@@ -389,42 +390,35 @@ small{
 	height:130px;
 }
 
-
 /*---------------------------------------------------------------------------
-INDIVUGUAL NOTIFICATIONS
----------------------------------------------------------------------------*/
++INDIVUGUAL NOTIFICATIONS
++---------------------------------------------------------------------------*/
 
 .notification{
-	overflow:hidden;
-	height:70px;
-	margin-top:15px;
-	background:#DDF4FB;
-	border:1px solid #C6EDF9;
+    overflow:hidden;
+    height:70px;
+    margin-top:15px;
+    background:#DDF4FB;
+    border:1px solid #C6EDF9;
 }
 
 .notification h3{
-	padding:12px;
-	width:70%;
-	
+    padding:12px;
+    width:70%;
+    
 }
 
 .decide{
-	width:170px;
-	position:relative;
-	float:right;
-	margin:10px;
-	bottom:60px;
+    width:170px;
+    position:relative;
+    float:right;
+    margin:10px;
+    bottom:60px;
 }
 
 .decide p{
-	margin:0 auto;
-}
-
-
-
-
-
-
+    margin:0 auto;
+ }
 
 
 /*---------------------------------------------------------------------------
@@ -551,14 +545,14 @@ Booking styles
   background: none repeat scroll 0 0 #E8F3DD;
   border: 1px solid #D1E397;
   text-align: center;
-	clear:both;
 }
 #normal_booking {
   background: none repeat scroll 0 0 #D6F0FC;
   border: 1px solid #96CFF1;
   text-align: center;
-
+	height:20px;
 }
+
 
 /*---------------------------------------------------------------------------
 TABLE Styling

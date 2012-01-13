@@ -30,16 +30,19 @@ else
 
 		$date = date('l j F Y', mktime(0,0,0,$month,$day,$year));
 	?>	
-	<div class="notification">
-	<h3><?php echo $swap->request_user;?> has requested <?php echo $swap->room_name;?><br /> <small>on <?php echo $date;?> - <?php echo $swap->periods;?></small></h3>
-	<div class="decide">
-		<center>Want to swap rooms?</center>
-		<a href="<?php echo site_url();?>/booking/swapconfirm/<?php echo $swap->booking_id;?>/<?php echo $swap->request_user;?>/<?php echo $swap->room_name;?>/<?php echo $date;?>" class="button green">Yes</a>
-		<span>or</span>
-		<a href="<?php echo site_url();?>/booking/swapdecline/<?php echo $swap->booking_id;?>/<?php echo $swap->request_user;?>/<?php echo $swap->room_name;?>/<?php echo $date;?>" class="button red">No</a>
 
+	    <div class="notification">
+	    <h3><?php echo $swap->request_user;?> has requested <?php echo $swap->room_name;?><br /> <small>on <?php echo $date;?> - <?php echo $swap->periods;?></small></h3>
+	    <div class="decide">
+	       <center>Want to swap rooms?</center>
+	        <a href="<?php echo site_url();?>/booking/swapconfirm/<?php echo $swap->booking_id;?>/<?php echo $swap->request_user;?>/<?php echo $swap->room_name;?>/<?php echo $date;?>" class="button green">Yes</a>
+	        <span>or</span>
+	         <a href="<?php echo site_url();?>/booking/swapdecline/<?php echo $swap->booking_id;?>/<?php echo $swap->request_user;?>/<?php echo $swap->room_name;?>/<?php echo $date;?>" class="button red">No</a>
+
+	    </div>
 	</div>
-</div>
+	
+
 
 	<?php }
 }

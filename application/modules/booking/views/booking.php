@@ -141,16 +141,16 @@
 						if($settings['no_weeks'] == 2 && $booking->week_num == $weeks['weeknums'][$weeknum] || $settings['no_weeks'] == 1) {
 							// Find out if the user wants booked lessons to be shaded differently
 							
-							echo '<div ';
+							
 							if ($booking->block == true)
 							{
-								echo 'id="block_booking"';
+								echo '<div id="block_booking">';
 							}
 							else
 							{
-								echo 'id="normal_booking"';
+								echo '<div id="normal_booking">';
 							}
-							echo '>';
+						
 							//echo '<p>'.$booking->class.'<br />'.$booking->lesson.'<br /><br />'.$booking->user.'</p>';
 							echo "<p>". $booking->class."</p>"; 
 							echo "<p>". $booking->lesson."</p>"; 
@@ -161,9 +161,9 @@
 							
 							if($this->session->userdata('logged_in') == $booking->user || $this->session->userdata('accesslevel') == 'admin' || $booking->block == false)
 							{
-								echo '<a id="page-help" href="'.site_url().'/booking/booking/info/'.$booking->id.'"  class="colorbox"><img src="'.base_url().'/images/icons/info.png" class="info_icon"></a>';
+								echo '<a id="page-help" href="'.site_url().'/booking/booking/info/'.$booking->id.'"  class="colorbox"><img src="'.base_url().'images/icons/info.png"></a>';
 							}		
-							
+							echo '</div>';
 							// This cell is not bookable now, so we mark it as such and break
 							$bookable = 0;
 							break; // No point in keep looping, we've already found our booking for today
