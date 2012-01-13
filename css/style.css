@@ -364,12 +364,15 @@ MSGS Styling
 
 .swap h3{
 	width:50%;
+	margin: 10px;
+	poition:absolute;
 }
 
 
 .swap a{
 	position:relative;
 	float:right;
+	margin: 0 10px 0 0;
 }
 
 .margin{
