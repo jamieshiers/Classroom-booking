@@ -10,7 +10,7 @@
 */
 ?>
 
-
+<div style="padding:20px;">
 
 
 	<?php echo form_open('booking/booking/add/'.$room.'/'.$date.'/'.$period.'/'.$week)?>
@@ -55,3 +55,4 @@
 	echo form_submit($data);
 	echo form_close();
 	?>
+</div>
