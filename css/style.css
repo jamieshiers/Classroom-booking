@@ -553,6 +553,14 @@ Booking styles
 	height:20px;
 }
 
+#temp_booking {
+  background: none repeat scroll 0 0 #EFACFC;
+  border: 1px solid #EFACFC;
+  text-align: center;
+	height:20px;
+}
+
+
 
 /*---------------------------------------------------------------------------
 TABLE Styling

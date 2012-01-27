@@ -17,6 +17,7 @@
 <tr>
 	<th>Name</th>
 	<th>Bookable</th>
+	<th>Room Admin</th>
 	<th></th>
 	<th></th>
 	
@@ -31,6 +32,7 @@
 	<?php } else {?>
 		<td class="padding"><img src="<?php echo base_url();?>/images/accept.gif" border="0"></td>
 		<?php } ?>
+<td class="padding"><?php echo $date['admin'];?></td>
 	
 <td class="padding"><a href=<?php echo site_url('rooms/rooms/edit_room/'.$date['roomid']) ?> class="button blue">Edit</a></td>
 <td>

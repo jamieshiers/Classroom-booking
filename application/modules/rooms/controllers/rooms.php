@@ -50,8 +50,9 @@ Class Rooms extends Controller
 		else
 		{
 			$update = array(
-				'name' => $this->input->post('name', TRUE), 
-				'bookable' => (isset($_POST['bookable'])) ? 1 : 0
+				'name'		 => $this->input->post('name', TRUE), 
+				'admin'		 => $this->input->post('admin', TRUE),
+				'bookable'	 => (isset($_POST['bookable'])) ? 1 : 0
 				);
 			
 			$insert = $this->rooms_model->add_room($update);

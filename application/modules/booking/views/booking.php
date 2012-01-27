@@ -140,11 +140,14 @@
 					if ($booking->period_id == $period->periodid && $booking->date == $newdate || $booking->block == true && $booking->period_id == $period->periodid && $daynum == $i && $weeks['yearid'] == $booking->year_id) {
 						if($settings['no_weeks'] == 2 && $booking->week_num == $weeks['weeknums'][$weeknum] || $settings['no_weeks'] == 1) {
 							// Find out if the user wants booked lessons to be shaded differently
-							
-							
-							if ($booking->block == true)
+					
+							if ($booking->block == 1)
 							{
 								echo '<div id="block_booking">';
+							}
+							if($booking->block == 3)
+							{
+								echo '<div id="temp_booking">';
 							}
 							else
 							{

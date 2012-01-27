@@ -77,7 +77,7 @@ Class Booking extends Controller
 		$data['periods'] = $this->booking_model->get_periods();
 		
 		$data['bookings'] = $this->booking_model->get_bookings($id, $data['date'], $enddate, $year_end); 
-		
+
 		$data['item'] = $this->booking_model->get_room($id);
 		
 		$data['weeks'] = $this->booking_model->cal($data['date']);
@@ -103,6 +103,7 @@ Class Booking extends Controller
 		$data['users'] = $this->booking_model->get_users();
 		$data['subjects'] = $this->booking_model->get_subjects();
 		$data['years'] = $this->booking_model->get_years();
+		$data['room_info'] = $this->booking_model->get_room($data['room']);
 	
 		//$this->template->set_layout('default'); 
 		$this->template->title('Add New Booking');
@@ -110,6 +111,15 @@ Class Booking extends Controller
 		
 		$this->form_validation->set_rules('Class', 'Class Name', 'required');
 		$validate = $this->form_validation->run(); 
+		
+		if($this->input->post('admin') == 1)
+		{
+			$block_booking = "3";
+		}
+		else
+		{
+			$block_booking = (isset($_POST['booking'])) ? 1 : 0;
+		}
 		
 		if ($validate == FALSE)
 		{
@@ -125,7 +135,7 @@ Class Booking extends Controller
 				'room_id'	=> $data['room'],
 				'period_id' => $data['period'],
 				'date'		=> $data['date'],
-				'block'    	=> (isset($_POST['booking'])) ? 1 : 0, 
+				'block'    	=> $block_booking,  
 				'week_num'	=> $data['week'],
 				'user'	    => $this->session->userdata('logged_in'),
 				'email' 	=> $this->session->userdata('email'),
