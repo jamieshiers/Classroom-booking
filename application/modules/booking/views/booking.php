@@ -78,7 +78,7 @@
 						}
 					}
 				}
-				echo "</td>";
+				
 			} 
 			
 			// However, if a booking has not been found, and this cell is marked as bookable
@@ -105,5 +105,3 @@
 	</tr>
 	<?php } ?>	
 </table>
-
-
