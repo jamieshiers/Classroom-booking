@@ -1,0 +1,30 @@
+class,lesson,room_id,period_id,date,block,week_num,user,year_id,staff
+7AT/LC ,REG,E8,Before School ,2011-02-07,1,1,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-08,1,1,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-09,1,1,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-10,1,1,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-11,1,1,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-14,1,2,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-15,1,2,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-16,1,2,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-17,1,2,LC,1,LC
+7AT/LC ,REG,E8,Before School ,2011-02-18,1,2,LC,1,LC
+10EH/Bs1 ,Business,E8,Period 1,2011-02-07,1,1,AL,1,AL
+10EH/Bs1 ,Business,E8,Period 1,2011-02-14,1,2,AL,1,AL
+13D/BQ1C,Business,E8,Period 1,2011-02-08,1,1,LC,1,LC
+11B/BS1,Business,E8,Period 1,2011-02-09,1,1,LC,1,LC
+11EH/BS,Business,E8,Period 1,2011-02-11,1,1,LC ,1,LC
+11B/BS1,Business,E8,Period 1,2011-02-15,1,2,LC,1,LC
+11B/BS1,Business,E8,Period 1,2011-02-16,1,2,LC,1,LC
+11EH/BS,Business,E8,Period 1,2011-02-18,1,2,LC,1,LC
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
