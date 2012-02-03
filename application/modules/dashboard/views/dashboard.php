@@ -68,7 +68,7 @@ if($swaps)
 	
 	?>
 	
-	<div class="message msg swap">
+	<div class="message swap">
 		<h3>You have <?php echo $number; echo " new ".$note;?></h3>
 		<a href="<?php echo site_url();?>/dashboard/notifications" class="button blue">Read</a>
 	</div>

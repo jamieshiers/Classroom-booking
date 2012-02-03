@@ -10,7 +10,7 @@
 	
 	<p>If you would like to let <?php echo $request_user;?> use this room, please log into the booking system or by clicking <a href="<?php echo site_url();?>">Here</a></p>
 	
-	
+	<p>The Friendly ClassroomBooking Email Bot</p>
 	
 	
 

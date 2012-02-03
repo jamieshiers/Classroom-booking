@@ -23,6 +23,7 @@
 		echo "<p>Your booking will be approved by ".$room_info->admin."</p>";
 		echo "</div>";
 		echo form_hidden('admin', '1');
+		echo form_hidden('admin_username', $room_info->admin);
 	}
 	
 	?>

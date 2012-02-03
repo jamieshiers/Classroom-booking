@@ -22,6 +22,9 @@
 <div id="block_booking" style="padding:10px; margin-top:10px;">
 	<p>Timetabled Lesson</p>
 </div>
+<div id="temp_booking" style="padding:10px; margin-top:10px;">
+	<p>Awaiting Approval</p>
+</div>
 
 
 

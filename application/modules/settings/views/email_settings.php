@@ -17,6 +17,8 @@ echo form_label('From Email', 'from');
 echo form_input('from', $this->config->item('from_email')); 
 echo form_label('From Name', 'from_name');
 echo form_input('from_name', $this->config->item('from_name'));
+echo form_label('Sending Domain', 'from_domain');
+echo form_input('from_domain', $this->config->item('from_domain'));
 echo form_label('SMTP Server', 'smtp');
 echo form_input('smtp', $this->config->item('smtp_host'));
 echo form_label('Username', 'username');

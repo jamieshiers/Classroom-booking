@@ -144,6 +144,21 @@ Class Booking extends Controller
 				
 				$user_id = $this->booking_model->add_booking($update);
 				
+				if($block_booking == 3)
+				{
+					$email['room'] = $this->booking_model->get_room($data['room']);
+					$email['period'] = $this->booking_model->get_single_period($data['period']);
+					$email['week'] = $data['week'];
+					$admin_email = $this->input->post('admin_user').$this->config->item('from_domain');
+					// email the room admin to let them know they have a booking awaiting approval.
+					
+					
+					
+					// email booker to let them know that there booking is awaiting approval.
+					
+					
+					
+				}
 				
 				$email['room'] = $this->booking_model->get_room($data['room']);
 				$email['period'] = $this->booking_model->get_single_period($data['period']);
@@ -159,7 +174,7 @@ Class Booking extends Controller
 				$this->email->to($this->session->userdata('email')); 
 				$this->email->subject('Your Booking Confirmation');
 				
-				$message = $this->load->view('booking_confirm_email', $email, TRUE);
+				$message = $this->load->view('email_templates/booking_confirm_email', $email, TRUE);
 			
 				$this->email->message($message);
 		
@@ -295,7 +310,7 @@ Class Booking extends Controller
 		$this->email->to($email);
 		$this->email->subject('Room Request');
 		
-		$message = $this->load->view('room_swap_request_email', $emails, True);
+		$message = $this->load->view('email_templates/room_swap_request_email', $emails, True);
 		
 		$this->email->message($message); 
 		
@@ -337,7 +352,7 @@ Class Booking extends Controller
 			$this->email->to($username['user']['email']);
 			$this->email->subject('Room Swap Confirmation');
 
-			$message = $this->load->view('room_swap_confirm', $username, True);
+			$message = $this->load->view('email_templates/room_swap_confirm', $username, True);
 
 			$this->email->message($message); 
 
@@ -374,7 +389,7 @@ Class Booking extends Controller
 			$this->email->to($username['user']['email']);
 			$this->email->subject('Room Swap Declined');
 
-			$message = $this->load->view('room_swap_decline', $username, True);
+			$message = $this->load->view('email_templates/room_swap_decline', $username, True);
 
 			$this->email->message($message); 
 

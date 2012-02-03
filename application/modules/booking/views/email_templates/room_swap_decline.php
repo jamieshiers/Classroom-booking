@@ -8,5 +8,7 @@
 	
 	<p>This is a quick email to confirm that your room swap request for <?php echo $room;?> on <?php echo $date;?> has been declined.</p>
 
+<p>The Friendly ClassroomBooking Email Bot</p>
+
 </body>
 </html>

@@ -56,8 +56,10 @@ Class Dashboard_model extends CI_Model
 
 	public function swap($username) 
 	{
+		$date = date('Y-m-d');
 		$this->db->from('swap')
-		->where('user', $username);
+		->where('user', $username)
+		->where('date >=', $date);
 		
 		$query = $this->db->get(); 
 		

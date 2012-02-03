@@ -73,7 +73,7 @@
 							{
 								echo 'id="temp_booking"><a id="page-help" href="'.site_url().'/booking/booking/info/'.$booking->id.'"  class="colorbox">';
 							}
-							else
+							if($booking->block == 0)
 							{
 								echo 'id="normal_booking"><a id="page-help" href="'.site_url().'/booking/booking/info/'.$booking->id.'"  class="colorbox">';
 							}

@@ -64,10 +64,14 @@ Class Settings extends Controller
 			   	$new  = str_replace("%FROM_EMAIL%",$this->input->post('from'),$new);
 			   }
 		
-			if($this->input->post('from_name'))
-				   {
-				   	$new  = str_replace("%FROM_NAME%",$this->input->post('from_name'),$new);
-				   }
+		if($this->input->post('from_name'))
+			{
+				$new  = str_replace("%FROM_NAME%",$this->input->post('from_name'),$new);
+			}
+		if($this->input->post('from_domain'))
+			{
+				$new  = str_replace("%FROM_DOMAIN%",$this->input->post('from_domain'),$new);
+			}
 		
 		   // Update username 
 		   if($this->input->post('username'))
