@@ -6,14 +6,7 @@
 <body>
 	<p>Hey there, <?php echo $this->session->userdata('logged_in');?></p>
 	
-	<p>Just a quick email to confirm your booking, that you just made;</p>
-	
-	<p>Room: <?php echo $room->name;?></p>
-	
-	<p>Period: <?php echo $period->period_name;?> <i><?php echo $period->start_time .'-'.$period->end_time ;?></i> Week:<?php echo $week;?></p>
-	
-	<p>Date: <?php echo $date;?></p>
-
+	<p>The booking you have just made requires approval from <?php echo $admin_user;?>. You will receive another email letting you know whether your booking was successful or not.</p>
 
 </body>
 </html>

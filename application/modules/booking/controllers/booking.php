@@ -149,40 +149,67 @@ Class Booking extends Controller
 					$email['room'] = $this->booking_model->get_room($data['room']);
 					$email['period'] = $this->booking_model->get_single_period($data['period']);
 					$email['week'] = $data['week'];
+					$email['admin_user'] = $this->input->post('admin_user');
+					$email['user'] = $this->session->userdata('logged_in');
 					$admin_email = $this->input->post('admin_user').$this->config->item('from_domain');
 					// email the room admin to let them know they have a booking awaiting approval.
 					
-					
-					
+					$this->config->load('email');
+					$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
+					$this->email->to($admin_email); 
+					$this->email->subject('A booking requires your approval');
+
+					$message = $this->load->view('email_templates/room_admin_approval', $email, TRUE);
+
+					$this->email->message($message);
+
+					$this->email->send();
+			
 					// email booker to let them know that there booking is awaiting approval.
 					
 					
-					
-				}
-				
-				$email['room'] = $this->booking_model->get_room($data['room']);
-				$email['period'] = $this->booking_model->get_single_period($data['period']);
-				$email['week'] = $data['week'];
-				
-				
-				list($year,$month,$day) = explode('-', $data['date']);
-				
-				$email['date'] = date('l j F Y', mktime(0,0,0,$month,$day,$year));
-				
-				$this->config->load('email');
-				$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
-				$this->email->to($this->session->userdata('email')); 
-				$this->email->subject('Your Booking Confirmation');
-				
-				$message = $this->load->view('email_templates/booking_confirm_email', $email, TRUE);
-			
-				$this->email->message($message);
-		
-				$this->email->send();
-				
-				$this->session->set_flashdata('msg', 'Settings Saved'); 
-				
-				redirect('booking/booking/view/'. $data['room'].'/'.$data['date']);
+	  			$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
+	  			$this->email->to($this->session->userdata('email')); 
+	  			$this->email->subject('Your booking requires approval');
+    
+	  			$message = $this->load->view('email_templates/room_admin_wait', $email, TRUE);
+    
+	  			$this->email->message($message);
+    
+	  			$this->email->send();
+	  			
+	  			
+	  		}
+	  		else
+	  		{
+	  		
+	  			$email['room'] = $this->booking_model->get_room($data['room']);
+	  			$email['period'] = $this->booking_model->get_single_period($data['period']);
+	  			$email['week'] = $data['week'];
+    
+    
+	  			list($year,$month,$day) = explode('-', $data['date']);
+    
+	  			$email['date'] = date('l j F Y', mktime(0,0,0,$month,$day,$year));
+    
+	  			$this->config->load('email');
+	  			$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
+	  			$this->email->to($this->session->userdata('email')); 
+	  			$this->email->subject('Your Booking Confirmation');
+    
+	  			$message = $this->load->view('email_templates/booking_confirm_email', $email, TRUE);
+    
+	  			$this->email->message($message);
+    
+	  			$this->email->send();
+	  			
+	  		}
+	  		
+	  		
+	  		
+	  		$this->session->set_flashdata('msg', 'Booking Saved'); 
+	  		
+	  		redirect('booking/booking/view/'. $data['room'].'/'.$data['date']);
 		}
 	}
 //---------------------------------------------------------------------------
