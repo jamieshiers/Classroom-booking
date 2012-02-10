@@ -72,6 +72,29 @@ Class Dashboard_model extends CI_Model
 			return $query->result();
 		}		
 	}
+//---------------------------------------------------------------------------
+
+	public function room_admin($username)
+	{
+		$date = date('Y-m-d');
+		$this->db->from('bookings')
+		->where('room_admin', $username)
+		->where('date >=', $date)
+		->where('responded', NULL);
+
+		$query = $this->db->get();
+
+		if($query->num_rows() == 0)
+		{
+			return FALSE;
+		}
+		else
+		{
+			return $query->result();
+		}
+
+
+	}
 
 
 

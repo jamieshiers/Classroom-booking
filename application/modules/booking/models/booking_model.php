@@ -354,6 +354,17 @@ Class Booking_model extends CI_Model
 			
 		return $query->result();
 	}
+//---------------------------------------------------------------------------
+
+	public function get_booking_id($id)
+	{
+		$this->db->from('bookings')
+			->where('id', $id); 
+			
+		$query = $this->db->get();
+			
+		return $query->row_array();
+	}
 
 //---------------------------------------------------------------------------
 
