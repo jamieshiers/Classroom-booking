@@ -26,6 +26,20 @@ html, body{
 	
 }
 
+
+/*---------------------------------------------------------------------------
+INSTALLER
+---------------------------------------------------------------------------*/
+
+fieldset{
+	border:1px solid #D8D4D4;
+	margin:10px;
+	padding:10px;
+}
+
+
+
+
 /*---------------------------------------------------------------------------
 sidebar styling
 ---------------------------------------------------------------------------*/
@@ -65,6 +79,44 @@ sidebar styling
 #sidebar.container{
 	width:100%;
 }
+
+
+.wrapper{
+	background:#FAFCE0;
+	height:155px;
+	padding:5px;
+	border:1px solid #F4F7CF;
+}
+
+.wrapper h2{
+	margin:10px;
+}
+.wrapper p{
+	margin:10px;
+}
+
+ul.get_started{
+	float: left;
+  display: block;
+  margin: 0 0 20px 0;
+
+
+}
+
+ul.get_started li{
+	float: left;
+	display: inline;
+	list-style:none;	
+	width:105px;
+	margin: 0 0 0 10px;
+	text-align:center;
+}
+
+ul.get_started li a{
+	margin-top:10px;
+}
+
+
 
 /*---------------------------------------------------------------------------
 Dashboard Styling
@@ -129,6 +181,84 @@ h1{
 h2{
 	margin:7px 0 7px 0;
 }
+
+
+.nav-setup{
+	float:right;
+
+	margin-top:5px;
+	
+}
+
+.swap{
+	overflow:hidden;
+	height:40px;
+	background:#DDF4FB;
+	border:1px solid #C6EDF9;
+	width:100%;
+}
+
+.swap h3{
+	padding:12px;
+}
+
+
+small{ 
+	color:#439E43;
+}
+
+.swap a{
+	bottom:36px;
+	position:relative;
+	float:right;
+	right:10px;
+}
+
+.margin{
+	margin:10px;
+}
+
+#booking_info
+{
+	width:130px;
+	height:130px;
+}
+
+/*---------------------------------------------------------------------------
++INDIVUGUAL NOTIFICATIONS
++---------------------------------------------------------------------------*/
+
+.notification{
+    overflow:hidden;
+    height:70px;
+    margin-top:15px;
+    background:#DDF4FB;
+    border:1px solid #C6EDF9;
+}
+
+.notification h3{
+    padding:12px;
+    width:70%;
+    
+}
+
+.decide{
+    width:170px;
+    position:relative;
+    float:right;
+    margin:10px;
+    bottom:60px;
+}
+
+.decide p{
+    margin:0 auto;
+ }
+
+ .notification_heading{
+ 	margin: 10px 0px 0 0;
+ }
+
+
 
 /*---------------------------------------------------------------------------
 Header Styling
@@ -382,24 +512,60 @@ Button Styling
 /*---------------------------------------------------------------------------
 Booking styles
 ---------------------------------------------------------------------------*/
-.booking-thin{
-	background:@grayLighter;
+
+@booking_blue:#D6F0FC;
+@booking_green:#E8F3DD;
+@booking_red:#FCCCCC; 
+
+.booking-thin {
+  background: #e6e6e6;
+}
+#block_booking {
+  background: none repeat scroll 0 0 @booking_green;
+  border: 1px solid #D1E397;
+  text-align: center;
+  text-decoration:none;
+	a {
+		text-decoration:none;
+		color:@grayDark;
+	}
+	&:hover{
+		background:darken(@booking_green, 7%);
+		text-decoration:underline;
+	}
+}
+#normal_booking {
+  background: none repeat scroll 0 0 @booking_blue;
+  border: 1px solid #96CFF1;
+  text-align: center;
+  height:20px;
+  text-decoration:none;
+	a {
+		text-decoration:none;
+		color:@grayDark;
+	}
+	&:hover{
+		background:darken(@booking_blue, 7%);
+		text-decoration:underline;
+	}
+
 }
 
 
-#block_booking{
-	background: none repeat scroll 0 0 #E8F3DD;
-    border: 1px solid #D1E397;
-    text-align: center;
+#temp_booking {
+  background: none repeat scroll 0 0 @booking_red;
+  border: 1px solid darken(@booking_red, 10%);
+  text-align: center;
+	height:20px;
+	a {
+		text-decoration:none;
+		color:@grayDark;
+	}
+	&:hover{
+		background:darken(@booking_red, 7%);
+		text-decoration:underline;
+	}
 }
-
-#normal_booking{
-    background: none repeat scroll 0 0 #D6F0FC;
-    border: 1px solid #96CFF1;
-    text-align: center;
-}
-
-
 
 
 /*---------------------------------------------------------------------------

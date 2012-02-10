@@ -1,10 +1,6 @@
 /* Preboot.less
  * Variables and mixins to pre-ignite any new web development project
  * ------------------------------------------------------------------ */
-.clear{
-	clear:both;
-}
-
 .clearfix {
   zoom: 1;
 }
@@ -102,18 +98,14 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 /*---------------------------------------------------------------------------
 INSTALLER
 ---------------------------------------------------------------------------*/
-
-fieldset{
-	border:1px solid #D8D4D4;
-	margin:10px;
-	padding:10px;
+fieldset {
+  border: 1px solid #D8D4D4;
+  margin: 10px;
+  padding: 10px;
 }
-
-
 /*---------------------------------------------------------------------------
 sidebar styling
 ---------------------------------------------------------------------------*/
@@ -148,6 +140,34 @@ sidebar styling
 }
 #sidebar.container {
   width: 100%;
+}
+.wrapper {
+  background: #FAFCE0;
+  height: 155px;
+  padding: 5px;
+  border: 1px solid #F4F7CF;
+}
+.wrapper h2 {
+  margin: 10px;
+}
+.wrapper p {
+  margin: 10px;
+}
+ul.get_started {
+  float: left;
+  display: block;
+  margin: 0 0 20px 0;
+}
+ul.get_started li {
+  float: left;
+  display: inline;
+  list-style: none;
+  width: 105px;
+  margin: 0 0 0 10px;
+  text-align: center;
+}
+ul.get_started li a {
+  margin-top: 10px;
 }
 /*---------------------------------------------------------------------------
 Dashboard Styling
@@ -195,42 +215,6 @@ ul.dash li a span {
   margin-top: 10px;
   font-size: 11px;
 }
-
-.wrapper{
-	background:#FAFCE0;
-	height:155px;
-	padding:5px;
-	border:1px solid #F4F7CF;
-}
-
-.wrapper h2{
-	margin:10px;
-}
-.wrapper p{
-	margin:10px;
-}
-
-ul.get_started{
-	float: left;
-  display: block;
-  margin: 0 0 20px 0;
-
-
-}
-
-ul.get_started li{
-	float: left;
-	display: inline;
-	list-style:none;	
-	width:105px;
-	margin: 0 0 0 10px;
-	text-align:center;
-}
-
-ul.get_started li a{
-	margin-top:10px;
-}
-
 /*---------------------------------------------------------------------------
 Text Styling
 ---------------------------------------------------------------------------*/
@@ -240,6 +224,63 @@ h1 {
 }
 h2 {
   margin: 7px 0 7px 0;
+}
+.nav-setup {
+  float: right;
+  margin-top: 5px;
+}
+.swap {
+  overflow: hidden;
+  height: 40px;
+  background: #DDF4FB;
+  border: 1px solid #C6EDF9;
+  width: 100%;
+}
+.swap h3 {
+  padding: 12px;
+}
+small {
+  color: #439E43;
+}
+.swap a {
+  bottom: 36px;
+  position: relative;
+  float: right;
+  right: 10px;
+}
+.margin {
+  margin: 10px;
+}
+#booking_info {
+  width: 130px;
+  height: 130px;
+}
+/*---------------------------------------------------------------------------
++INDIVUGUAL NOTIFICATIONS
++---------------------------------------------------------------------------*/
+.notification {
+  overflow: hidden;
+  height: 70px;
+  margin-top: 15px;
+  background: #DDF4FB;
+  border: 1px solid #C6EDF9;
+}
+.notification h3 {
+  padding: 12px;
+  width: 70%;
+}
+.decide {
+  width: 170px;
+  position: relative;
+  float: right;
+  margin: 10px;
+  bottom: 60px;
+}
+.decide p {
+  margin: 0 auto;
+}
+.notification_heading {
+  margin: 10px 0px 0 0;
 }
 /*---------------------------------------------------------------------------
 Header Styling
@@ -266,13 +307,6 @@ Header Styling
 }
 .nav ul li {
   display: inline;
-}
-
-.nav-setup{
-	float:right;
-
-	margin-top:5px;
-	
 }
 /*---------------------------------------------------------------------------
 LOGIN STYLES
@@ -345,11 +379,6 @@ MSGS Styling
   width: 100%;
   margin: 10px 0 10px 0;
 }
-
-.validate{
-	display:inline;
-}
-
 .information {
   background: #c3e4fd url('../images/icons/info_48.png') 20px 50% no-repeat;
   border: 1px solid #688fdc;
@@ -357,70 +386,6 @@ MSGS Styling
 .message:hover {
   cursor: pointer;
 }
-
-.swap{
-	overflow:hidden;
-	height:40px;
-	background:#DDF4FB;
-	border:1px solid #C6EDF9;
-}
-
-.swap h3{
-	padding:12px;
-}
-
-small{ 
-	color:#439E43;
-}
-
-.swap a{
-	bottom:36px;
-	position:relative;
-	float:right;
-	right:10px;
-}
-
-.margin{
-	margin:10px;
-}
-
-#booking_info
-{
-	width:130px;
-	height:130px;
-}
-
-/*---------------------------------------------------------------------------
-+INDIVUGUAL NOTIFICATIONS
-+---------------------------------------------------------------------------*/
-
-.notification{
-    overflow:hidden;
-    height:70px;
-    margin-top:15px;
-    background:#DDF4FB;
-    border:1px solid #C6EDF9;
-}
-
-.notification h3{
-    padding:12px;
-    width:70%;
-    
-}
-
-.decide{
-    width:170px;
-    position:relative;
-    float:right;
-    margin:10px;
-    bottom:60px;
-}
-
-.decide p{
-    margin:0 auto;
- }
-
-
 /*---------------------------------------------------------------------------
 Form Styling
 ---------------------------------------------------------------------------*/
@@ -428,7 +393,7 @@ label {
   margin-bottom: 5px;
   display: inline-block;
 }
-input[type=text], input[type=password], input[type=url]{
+input[type=text], input[type=password] {
   font-size: 15px;
   height: 32px;
   background: #fff;
@@ -444,11 +409,6 @@ select {
   display: block;
   width: 100%;
 }
-
- input[type=checkbox]{
-	margin-left:10px;
-}
-
 input[type=submit] {
   display: block;
 }
@@ -542,18 +502,48 @@ Booking styles
   background: #e6e6e6;
 }
 #block_booking {
-  background: none repeat scroll 0 0 #E8F3DD;
+  background: none repeat scroll 0 0 #e8f3dd;
   border: 1px solid #D1E397;
   text-align: center;
+  text-decoration: none;
+}
+#block_booking a {
+  text-decoration: none;
+  color: #404040;
+}
+#block_booking:hover {
+  background: #d6eac3;
+  text-decoration: underline;
 }
 #normal_booking {
-  background: none repeat scroll 0 0 #D6F0FC;
+  background: none repeat scroll 0 0 #d6f0fc;
   border: 1px solid #96CFF1;
   text-align: center;
-	height:20px;
+  height: 20px;
+  text-decoration: none;
 }
-
-
+#normal_booking a {
+  text-decoration: none;
+  color: #404040;
+}
+#normal_booking:hover {
+  background: #b5e4fa;
+  text-decoration: underline;
+}
+#temp_booking {
+  background: none repeat scroll 0 0 #fccccc;
+  border: 1px solid #f99c9c;
+  text-align: center;
+  height: 20px;
+}
+#temp_booking a {
+  text-decoration: none;
+  color: #404040;
+}
+#temp_booking:hover {
+  background: #faaaaa;
+  text-decoration: underline;
+}
 /*---------------------------------------------------------------------------
 TABLE Styling
 ---------------------------------------------------------------------------*/

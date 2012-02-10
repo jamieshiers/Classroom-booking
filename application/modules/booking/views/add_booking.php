@@ -14,9 +14,23 @@
 
 
 	<?php echo form_open('booking/booking/add/'.$room.'/'.$date.'/'.$period.'/'.$week)?>
+	
+	<?php
+	
+	if($room_info->admin !== NULL)
+	{
+		echo "<div class='room_admin'>";
+		echo "<p>Your booking will be approved by ".$room_info->admin."</p>";
+		echo "</div>";
+		echo form_hidden('admin', '1');
+		echo form_hidden('admin_user', $room_info->admin);
+	}
+	
+	?>
 	<label for="Class">Year Group</label>
 	
 	<?php 
+		
 										
 	$year_groups = array(); 
 	
@@ -38,6 +52,7 @@
 		echo "<option>".$subject->subject."</option>";
 	}
 	echo "</select>"; echo "<br />";
+	
 	
 	
 	if($this->session->userdata('accesslevel') == 'admin')

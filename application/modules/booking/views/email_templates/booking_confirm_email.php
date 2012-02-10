@@ -13,9 +13,7 @@
 	<p>Period: <?php echo $period->period_name;?> <i><?php echo $period->start_time .'-'.$period->end_time ;?></i> Week:<?php echo $week;?></p>
 	
 	<p>Date: <?php echo $date;?></p>
-	<p>With Love,</p>
-	<p>The Booking Bot</p>
-	<p>P.S Please don't reply to this email, I'm only a computer and can't write back!</p>
+
 
 </body>
 </html>

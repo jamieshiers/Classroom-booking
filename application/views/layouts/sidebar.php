@@ -30,9 +30,11 @@
 				</script>
 				
 				<script type="text/javascript">
+				
 					$(document).ready(function(){
 						$('a.colorbox').colorbox();
 					});
+					
 				</script> 
 				
 				

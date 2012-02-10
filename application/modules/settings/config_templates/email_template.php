@@ -28,13 +28,14 @@
   *  
   */                       
 $config['useragent']        = 'CodeIgniter';        
-$config['protocol']         = 'mail';        
+$config['protocol']         = 'SMTP';        
 $config['mailpath']         = '/usr/sbin/sendmail';
 $config['smtp_host']        = '%SMTP%';
 $config['smtp_user']        = '%USERNAME%';
 $config['smtp_pass']        = '%PASSWORD%';
 $config['from_email'] 		= '%FROM_EMAIL%';
 $config['from_name']		= '%FROM_NAME%';
+$config['from_domain']		= '%FROM_DOMAIN%';
 $config['smtp_port']        = 25;
 $config['smtp_timeout']     = 5;
 $config['wordwrap']         = TRUE;

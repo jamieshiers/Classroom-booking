@@ -53,10 +53,11 @@ if($this->session->userdata['logged_in'] == 'superuser' && $this->session->userd
 
 <?php }
 
-if($swaps)
+if($swaps || $room_admin)
 {
-	$number = count($swaps);
-	
+	$number1 = count($swaps);
+	$number2 = count($room_admin);
+	$number = $number1+$number2;
 	if($number === 1)
 	{
 		$note = "notification";
@@ -68,7 +69,7 @@ if($swaps)
 	
 	?>
 	
-	<div class="message msg swap">
+	<div class="message swap">
 		<h3>You have <?php echo $number; echo " new ".$note;?></h3>
 		<a href="<?php echo site_url();?>/dashboard/notifications" class="button blue">Read</a>
 	</div>

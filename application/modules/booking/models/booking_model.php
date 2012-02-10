@@ -124,6 +124,24 @@ Class Booking_model extends CI_Model
 			return $query->result();
 		}
 	}
+	
+//---------------------------------------------------------------------------
+
+	function get_single_user()
+	{
+		$this->db->from('users')->where('username', $username);
+		$query = $this->db->get();
+		
+		if($query->num_rows() == 0)
+		{
+			return FALSE; 
+		}
+		else
+		{
+			return $query->result();
+		}
+	}
+	
 //---------------------------------------------------------------------------
 	function get_subjects() 
 	{
@@ -335,6 +353,17 @@ Class Booking_model extends CI_Model
 		$query = $this->db->get();
 			
 		return $query->result();
+	}
+//---------------------------------------------------------------------------
+
+	public function get_booking_id($id)
+	{
+		$this->db->from('bookings')
+			->where('id', $id); 
+			
+		$query = $this->db->get();
+			
+		return $query->row_array();
 	}
 
 //---------------------------------------------------------------------------

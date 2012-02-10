@@ -77,7 +77,7 @@ Class Booking extends Controller
 		$data['periods'] = $this->booking_model->get_periods();
 		
 		$data['bookings'] = $this->booking_model->get_bookings($id, $data['date'], $enddate, $year_end); 
-		
+
 		$data['item'] = $this->booking_model->get_room($id);
 		
 		$data['weeks'] = $this->booking_model->cal($data['date']);
@@ -103,6 +103,7 @@ Class Booking extends Controller
 		$data['users'] = $this->booking_model->get_users();
 		$data['subjects'] = $this->booking_model->get_subjects();
 		$data['years'] = $this->booking_model->get_years();
+		$data['room_info'] = $this->booking_model->get_room($data['room']);
 	
 		//$this->template->set_layout('default'); 
 		$this->template->title('Add New Booking');
@@ -111,12 +112,28 @@ Class Booking extends Controller
 		$this->form_validation->set_rules('Class', 'Class Name', 'required');
 		$validate = $this->form_validation->run(); 
 		
+		if($this->input->post('admin') == 1)
+		{
+			$block_booking = "3";
+			$room_admin = $this->input->post('admin_user');
+		}
+		else
+		{
+			$block_booking = (isset($_POST['booking'])) ? 1 : 0;
+			$room_admin = "NULL";		}
+		
 		if ($validate == FALSE)
 		{
 			$this->template->build('add_booking',$data);
 		}
 		else
 		{
+
+			$room_real = $this->booking_model->get_room($data['room']);
+			$room_real_name = $room_real->name;
+
+			$period_real = $this->booking_model->get_single_period($data['period']);
+			$period_real_name = $period_real->period_name;
 			
 			
 			$update = array(
@@ -125,39 +142,84 @@ Class Booking extends Controller
 				'room_id'	=> $data['room'],
 				'period_id' => $data['period'],
 				'date'		=> $data['date'],
-				'block'    	=> (isset($_POST['booking'])) ? 1 : 0, 
+				'block'    	=> $block_booking,  
 				'week_num'	=> $data['week'],
 				'user'	    => $this->session->userdata('logged_in'),
+				'room_admin' => $room_admin,
 				'email' 	=> $this->session->userdata('email'),
-				'year_end' 	=> $this->booking_model->get_year(),			
+				'year_end' 	=> $this->booking_model->get_year(),
+				'room_name' => $room_real_name,
+				'period_name' => $period_real_name,		
 					); 
 				
 				$user_id = $this->booking_model->add_booking($update);
 				
-				
-				$email['room'] = $this->booking_model->get_room($data['room']);
-				$email['period'] = $this->booking_model->get_single_period($data['period']);
-				$email['week'] = $data['week'];
-				
-				
-				list($year,$month,$day) = explode('-', $data['date']);
-				
-				$email['date'] = date('l j F Y', mktime(0,0,0,$month,$day,$year));
-				
-				$this->config->load('email');
-				$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
-				$this->email->to($this->session->userdata('email')); 
-				$this->email->subject('Your Booking Confirmation');
-				
-				$message = $this->load->view('booking_confirm_email', $email, TRUE);
+				if($block_booking == 3)
+				{
+					$email['room'] = $this->booking_model->get_room($data['room']);
+					$email['period'] = $this->booking_model->get_single_period($data['period']);
+					$email['week'] = $data['week'];
+					$email['admin_user'] = $this->input->post('admin_user');
+					$email['user'] = $this->session->userdata('logged_in');
+					$admin_email = $this->input->post('admin_user').$this->config->item('from_domain');
+					// email the room admin to let them know they have a booking awaiting approval.
+					
+					$this->config->load('email');
+					$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
+					$this->email->to($admin_email); 
+					$this->email->subject('A booking requires your approval');
+
+					$message = $this->load->view('email_templates/room_admin_approval', $email, TRUE);
+
+					$this->email->message($message);
+
+					$this->email->send();
 			
-				$this->email->message($message);
-		
-				$this->email->send();
-				
-				$this->session->set_flashdata('msg', 'Settings Saved'); 
-				
-				redirect('booking/booking/view/'. $data['room'].'/'.$data['date']);
+					// email booker to let them know that there booking is awaiting approval.
+					
+					
+	  		   		$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
+	  		   		$this->email->to($this->session->userdata('email')); 
+	  		   		$this->email->subject('Your booking requires approval');
+               		
+	  		   		$message = $this->load->view('email_templates/room_admin_wait', $email, TRUE);
+               		
+	  		   		$this->email->message($message);
+               		
+	  		   		$this->email->send();
+	  			
+	  			
+	  			}
+	  			else
+	  			{
+	  		
+	  			$email['room'] = $this->booking_model->get_room($data['room']);
+	  			$email['period'] = $this->booking_model->get_single_period($data['period']);
+	  			$email['week'] = $data['week'];
+    
+    
+	  			list($year,$month,$day) = explode('-', $data['date']);
+    
+	  			$email['date'] = date('l j F Y', mktime(0,0,0,$month,$day,$year));
+    
+	  			$this->config->load('email');
+	  			$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
+	  			$this->email->to($this->session->userdata('email')); 
+	  			$this->email->subject('Your Booking Confirmation');
+    
+	  			$message = $this->load->view('email_templates/booking_confirm_email', $email, TRUE);
+    
+	  			$this->email->message($message);
+    
+	  			$this->email->send();
+	  			
+	  		}
+	  		
+	  		
+	  		
+	  		$this->session->set_flashdata('msg', 'Booking Saved'); 
+	  		
+	  		redirect('booking/booking/view/'. $data['room'].'/'.$data['date']);
 		}
 	}
 //---------------------------------------------------------------------------
@@ -285,7 +347,7 @@ Class Booking extends Controller
 		$this->email->to($email);
 		$this->email->subject('Room Request');
 		
-		$message = $this->load->view('room_swap_request_email', $emails, True);
+		$message = $this->load->view('email_templates/room_swap_request_email', $emails, True);
 		
 		$this->email->message($message); 
 		
@@ -323,11 +385,11 @@ Class Booking extends Controller
 		if($delete == TRUE)
 		{
 			// send an email to the swap requester
-			$this->email->from('bookingbot@classroombooking.com', 'Booking Bot'); 
+			$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
 			$this->email->to($username['user']['email']);
 			$this->email->subject('Room Swap Confirmation');
 
-			$message = $this->load->view('room_swap_confirm', $username, True);
+			$message = $this->load->view('email_templates/room_swap_confirm', $username, True);
 
 			$this->email->message($message); 
 
@@ -341,6 +403,42 @@ Class Booking extends Controller
 		}
 		
 		
+		
+		redirect('dashboard');
+	}
+
+	public function adminconfirm()
+	{
+		$id = $this->uri->segment(3); 
+		
+		$update = array(
+			'block' => "0",
+			'responded' => "1",
+		);	
+		
+		
+		$this->booking_model->update_booking($id,$update);
+		$email['booking'] = $this->booking_model->get_booking_id($id);
+
+			
+		list($year,$month,$day) = explode('-', $email['booking']['date']);
+
+		$email['date'] = date('l j F Y', mktime(0,0,0,$month,$day,$year));
+		
+			// send an email to the swap requester
+			$this->config->load('email');
+			$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
+			$this->email->to($email['booking']['email']);
+			$this->email->subject('Your Booking has been approved');
+
+			$message = $this->load->view('email_templates/room_approval', $email, True);
+
+			$this->email->message($message); 
+
+			$this->email->send();
+			
+			$this->session->set_flashdata('msg', 'Booking approved'); 
+
 		
 		redirect('dashboard');
 	}
@@ -360,11 +458,11 @@ Class Booking extends Controller
 		if($delete == TRUE)
 		{
 			// send an email to the swap requester
-			$this->email->from('bookingbot@classroombooking.com', 'Booking Bot'); 
+			$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
 			$this->email->to($username['user']['email']);
 			$this->email->subject('Room Swap Declined');
 
-			$message = $this->load->view('room_swap_decline', $username, True);
+			$message = $this->load->view('email_templates/room_swap_decline', $username, True);
 
 			$this->email->message($message); 
 
@@ -381,6 +479,34 @@ Class Booking extends Controller
 		
 	}
 	
+	public function admindecline()
+	{
+		$id = $this->uri->segment(3); 
+	
 		
+		$email['booking'] = $this->booking_model->get_booking_id($id);
+		$this->booking_model->delete_booking($id);
+			
+		list($year,$month,$day) = explode('-', $email['booking']['date']);
+
+		$email['date'] = date('l j F Y', mktime(0,0,0,$month,$day,$year));
+		
+			// send an email to the swap requester
+			$this->config->load('email');
+			$this->email->from($this->config->item('from_email'), $this->config->item('from_name')); 
+			$this->email->to($email['booking']['email']);
+			$this->email->subject('Your Booking has been declined');
+
+			$message = $this->load->view('email_templates/room_declined', $email, True);
+
+			$this->email->message($message); 
+
+			$this->email->send();
+			
+			$this->session->set_flashdata('msg', 'Booking Declined'); 
+
+		
+		redirect('dashboard');
+	}
 	
 }

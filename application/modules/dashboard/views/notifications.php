@@ -14,15 +14,14 @@
 ?>
 
 <h1>Notifications</h1>
-<h2>Room Swap Requests</h2>
+
 <?php
 
-if(!$swaps)
+if($swaps)
 {
-	echo "No new notifications";
-}
-else
-{
+
+	echo "<h2>Room Swap Requests</h2>";echo "<hr />";
+
 	foreach($swaps as $swap)
 	{
 
@@ -41,7 +40,33 @@ else
 
 	    </div>
 	</div>
+	<?php
 	
+
+	}
+
+}
+if($room_admin)
+{
+	echo "<h2 class='notification_heading'>Bookings requiring approval</h2>";echo "<hr />";
+
+	foreach($room_admin as $admin)
+	{
+		
+		list($year,$month,$day) = explode('-', $admin->date);
+
+		$date_admin = date('l j F Y', mktime(0,0,0,$month,$day,$year));
+	?>
+	<div class="notification">
+	    <h3><?php echo $admin->user;?> has booked <?php echo $admin->room_name;?><br /> <small>on <?php echo $date_admin;?> - <?php echo $admin->period_name;?></small></h3>
+	    <div class="decide">
+	       <center>Approve this booking?</center>
+	        <a href="<?php echo site_url();?>/booking/adminconfirm/<?php echo $admin->id;?>/<?php echo $date_admin?>" class="button green">Yes</a>
+	        <span>or</span>
+	         <a href="<?php echo site_url();?>/booking/admindecline/<?php echo $admin->id;?>/<?php echo $date_admin;?>" class="button red">No</a>
+
+	    </div>
+	</div>
 
 
 	<?php }

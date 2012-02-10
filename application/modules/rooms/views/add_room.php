@@ -23,8 +23,10 @@
 	<?php
 	
 	echo form_open('rooms/rooms/add_room'); 
-	echo form_label('Name:');
-	echo form_input('name', 'Room Name');
+	echo form_label('Room Name');
+	echo form_input('name');
+	echo form_label('Room Admin');
+	echo form_input('admin');
 	echo form_label('Bookable'); 
 	echo form_checkbox('bookable');
 	

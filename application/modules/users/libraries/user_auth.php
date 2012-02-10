@@ -52,6 +52,7 @@ class User_Auth
 				$this->_ci->session->set_userdata('logged_in', $username); 
 				$this->_ci->session->set_userdata('userid', $row->id); 
 				$this->_ci->session->set_userdata('accesslevel', $row->user_group);
+				$this->_ci->session->set_userdata('email', $row->email);
 				$this->_ci->session->set_userdata('counter', $counter);
 				return TRUE;
 			}

@@ -27,6 +27,7 @@ Class Dashboard extends Controller
 		$username = $this->session->userdata('logged_in');
 
 		$data['swaps'] = $this->dashboard_model->swap($username);
+		$data['room_admin'] = $this->dashboard_model->room_admin($username);
 		
 		$user = $this->session->userdata['logged_in'];
 		$data['bookings'] = $this->dashboard_model->get_booking($user);	
@@ -43,6 +44,7 @@ Class Dashboard extends Controller
 		$username = $this->session->userdata('logged_in');
 
 		$data['swaps'] = $this->dashboard_model->swap($username);
+		$data['room_admin'] = $this->dashboard_model->room_admin($username);
 		
 		$user = $this->session->userdata['logged_in'];
 		$data['bookings'] = $this->dashboard_model->get_booking($user);	

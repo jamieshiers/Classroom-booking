@@ -35,12 +35,12 @@
 */
 
 // The following values will probably need to be changed.
-$db['default']['username'] = "root";
-$db['default']['password'] = "root";
-$db['default']['database'] = "test_classroom";
+$db['default']['username'] = "web156-classroo";
+$db['default']['password'] = "cf664bz";
+$db['default']['database'] = "web156-classroo";
 
 // The following values can probably stay the same.
-$db['default']['hostname'] = "localhost";
+$db['default']['hostname'] = "79.170.44.156";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
