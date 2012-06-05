@@ -76,16 +76,16 @@ class Weeks extends Controller
 			$date_start = explode("/", $date_start);
 			$datestart = $date_start[2];
 			$datestart .= "-";
-			$datestart .= $date_start[0];
-			$datestart .= "-";
 			$datestart .= $date_start[1];
+			$datestart .= "-";
+			$datestart .= $date_start[0];
 			
 			$date_end = explode("/", $date_end);
 			$dateend= $date_end[2];
 			$dateend.= "-";
-			$dateend.= $date_end[0];
-			$dateend.= "-";
 			$dateend.= $date_end[1];
+			$dateend.= "-";
+			$dateend.= $date_end[0];
 			
 			$data = array(
 				'date_start' => $datestart, 

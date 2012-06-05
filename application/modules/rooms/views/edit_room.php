@@ -25,6 +25,8 @@
 	echo form_open('rooms/rooms/edit_room/'.$p['roomid']);
 	echo form_label('Name:');
 	echo form_input('name', $p['name']);
+	echo form_label('Room Admin');
+	echo form_input('admin', $p['admin']);
 	
 	if($p['bookable'] == 0)
 	{
