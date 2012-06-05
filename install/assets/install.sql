@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS `year`;
 
 CREATE TABLE `announce` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `start_date` date DEFAULT NULL COMMENT '	',
+  `start_date` date DEFAULT NULL COMMENT '  ',
   `end_date` date DEFAULT NULL,
   `announcement` text,
   `title` varchar(128) DEFAULT NULL,
@@ -39,6 +39,8 @@ CREATE TABLE `bookings` (
   `staff` varchar(128) DEFAULT NULL,
   `email` varchar(128) DEFAULT NULL,
   `year_end` date DEFAULT NULL,
+  `room_admin` varchar(128) DEFAULT NULL,
+  `responded` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=607 DEFAULT CHARSET=utf8;
 
@@ -53,7 +55,7 @@ CREATE TABLE `holidays` (
 
 
 CREATE TABLE `periods` (
-  `periodid` int(11) NOT NULL AUTO_INCREMENT COMMENT '	',
+  `periodid` int(11) NOT NULL AUTO_INCREMENT COMMENT '  ',
   `period_name` varchar(128) DEFAULT NULL,
   `start_time` varchar(128) DEFAULT NULL,
   `end_time` varchar(128) DEFAULT NULL,
@@ -66,6 +68,7 @@ CREATE TABLE `rooms` (
   `roomid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) DEFAULT NULL,
   `bookable` tinyint(2) DEFAULT '0',
+  `admin` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`roomid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
@@ -90,7 +93,8 @@ CREATE TABLE `swap` (
   `user` varchar(128) NOT NULL,
   `request_user` varchar(128) NOT NULL,
   `room_name` varchar(128) NOT NULL,
-  `periods` varchar(128) NOT NULL
+  `periods` varchar(128) NOT NULL,
+  `date` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
@@ -114,6 +118,7 @@ CREATE TABLE `year` (
   `date_start` date DEFAULT NULL,
   `date_end` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE `years` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -146,7 +151,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `settings` WRITE;
-INSERT INTO `settings` (`id`, `setting_name`, `setting_value`) VALUES (1, 'weeks', '1'), (2, 'Version', '0.1'), (3, 'ldap_standard_users', NULL), (7, 'ldap_disabled_users', 'CN=Students,OU=Groups,OU=CSE,DC=HOE,DC=Local;'), (4, 'ldap_admin_users', NULL), (8, 'ldap', '0'), (17, 'Week_2_name', 'Week 2'), (16, 'Week_1_name', 'Week 2');
+INSERT INTO `settings` (`id`, `setting_name`, `setting_value`) VALUES (1, 'weeks', '1'), (2, 'Version', '0.1'), (3, 'ldap_standard_users', NULL), (7, 'ldap_disabled_users', 'CN=Students,OU=Groups,OU=CSE,DC=HOE,DC=Local;'), (4, 'ldap_admin_users', NULL), (8, 'ldap', '0'), (17, 'Week_2_name', 'Week 2'), (16, 'Week_1_name', 'Week 1');
 UNLOCK TABLES;
 
 
@@ -159,7 +164,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `users` WRITE;
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `user_group`, `last_login`, `password`, `counter`) VALUES (1, 'A', 'User', 'superuser', 'jamieshiers@hotmail.com', 'admin', '2011-10-24', '10160d7b5e756752ed0842987e3ad9080c8e369a', 0);
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `user_group`, `last_login`, `password`, `counter`) VALUES (1, 'A', 'User', 'superuser', 'info@digitalschool.co.uk', 'admin', '2011-10-24', '10160d7b5e756752ed0842987e3ad9080c8e369a', 0);
 UNLOCK TABLES;
 
 
