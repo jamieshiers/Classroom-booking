@@ -91,7 +91,8 @@ Class Rooms extends Controller
 		{
 			$update = array(
 				'roomid' => $id,
-				'name' => $this->input->post('name', TRUE), 
+				'name' => $this->input->post('name', TRUE),
+				'admin'		 => $this->input->post('admin', TRUE),
 				'bookable' => (isset($_POST['bookable'])) ? 1 : 0
 				);
 			
