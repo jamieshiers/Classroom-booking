@@ -51,6 +51,7 @@ if($this->session->userdata['logged_in'] == 'superuser' && $this->session->userd
 		</ul>
 	</div></div>
 
+
 <?php }
 
 if($swaps || $room_admin)
@@ -113,7 +114,7 @@ if($swaps || $room_admin)
 	<?php } ?>
 	</ul>
 	
-
+	<div style="clear:both;"></div>
 
 <?php if($this->session->userdata['accesslevel'] == "admin")
 { ?>
