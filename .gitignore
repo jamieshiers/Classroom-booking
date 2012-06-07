@@ -2,3 +2,15 @@
 install
 
 install-old
+
+install/UNLICENSE.md
+
+install/assets/install.sql
+
+install/config/config.php
+
+install/config/database.php
+
+install/config/install.sql
+
+install/includes/core_class.php
