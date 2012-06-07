@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS `year`;
 
 CREATE TABLE `announce` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `start_date` date DEFAULT NULL COMMENT '	',
+  `start_date` date DEFAULT NULL COMMENT '  ',
   `end_date` date DEFAULT NULL,
   `announcement` text,
   `title` varchar(128) DEFAULT NULL,
@@ -39,8 +39,12 @@ CREATE TABLE `bookings` (
   `staff` varchar(128) DEFAULT NULL,
   `email` varchar(128) DEFAULT NULL,
   `year_end` date DEFAULT NULL,
+  `room_name` varchar(128) DEFAULT NULL,
+  `room_admin` varchar(128) DEFAULT NULL,
+  `responded` varchar(128) DEFAULT NULL,
+  `period_name` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=607 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=669 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `holidays` (
@@ -49,25 +53,26 @@ CREATE TABLE `holidays` (
   `date_start` date DEFAULT NULL,
   `date_end` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `periods` (
-  `periodid` int(11) NOT NULL AUTO_INCREMENT COMMENT '	',
+  `periodid` int(11) NOT NULL AUTO_INCREMENT COMMENT '  ',
   `period_name` varchar(128) DEFAULT NULL,
   `start_time` varchar(128) DEFAULT NULL,
   `end_time` varchar(128) DEFAULT NULL,
   `bookable` tinyint(2) DEFAULT '0',
   PRIMARY KEY (`periodid`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `rooms` (
   `roomid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) DEFAULT NULL,
   `bookable` tinyint(2) DEFAULT '0',
+  `admin` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`roomid`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `settings` (
@@ -82,7 +87,7 @@ CREATE TABLE `subjects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `subject` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `swap` (
@@ -90,7 +95,8 @@ CREATE TABLE `swap` (
   `user` varchar(128) NOT NULL,
   `request_user` varchar(128) NOT NULL,
   `room_name` varchar(128) NOT NULL,
-  `periods` varchar(128) NOT NULL
+  `periods` varchar(128) NOT NULL,
+  `date` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
@@ -105,7 +111,7 @@ CREATE TABLE `users` (
   `password` varchar(128) DEFAULT NULL,
   `counter` int(128) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `year` (
