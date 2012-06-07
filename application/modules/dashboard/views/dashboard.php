@@ -95,9 +95,6 @@ if($swaps || $room_admin)
 <p>What would you like to do today?</p>
 
 
-
-
-
 <h2> Make a booking </h2>
 <hr />
 <?php

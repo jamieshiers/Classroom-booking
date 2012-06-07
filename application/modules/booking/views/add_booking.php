@@ -10,10 +10,10 @@
 */
 ?>
 
-<<<<<<< HEAD
-<div style="padding:20px;">
 
-=======
+<div style="padding:10px;">
+
+
 <style>
 	.roomadmin p{
 		background: #FAE5E3 20px 50% no-repeat;
@@ -26,7 +26,7 @@
 	}
 </style>
 	<div style="padding:20px;width:280px;">
->>>>>>> development
+
 
 	<?php echo form_open('booking/booking/add/'.$room.'/'.$date.'/'.$period.'/'.$week)?>
 	
@@ -85,8 +85,6 @@
 	echo form_submit($data);
 	echo form_close();
 	?>
-<<<<<<< HEAD
 </div>
-=======
+
 </div>
->>>>>>> development
