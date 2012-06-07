@@ -104,7 +104,7 @@ Class Booking extends Controller
 		$data['subjects'] = $this->booking_model->get_subjects();
 		$data['years'] = $this->booking_model->get_years();
 		$data['room_info'] = $this->booking_model->get_room($data['room']);
-	
+
 		//$this->template->set_layout('default'); 
 		$this->template->title('Add New Booking');
 		$this->template->build('add_booking', $data);

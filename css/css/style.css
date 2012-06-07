@@ -553,6 +553,14 @@ Booking styles
   background: #faaaaa;
   text-decoration: underline;
 }
+.roomadmin {
+  background: #fae5e3 20px 50% no-repeat;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
 /*---------------------------------------------------------------------------
 TABLE Styling
 ---------------------------------------------------------------------------*/

@@ -10,16 +10,31 @@
 */
 ?>
 
+<<<<<<< HEAD
 <div style="padding:20px;">
 
+=======
+<style>
+	.roomadmin p{
+		background: #FAE5E3 20px 50% no-repeat;
+  		border-radius: 2px;
+  		-webkit-border-radius: 2px;
+  		-moz-border-radius: 2px;
+  		width: 94%;
+  		margin: 10px 0 10px 0;
+  		padding:10px;
+	}
+</style>
+	<div style="padding:20px;width:280px;">
+>>>>>>> development
 
 	<?php echo form_open('booking/booking/add/'.$room.'/'.$date.'/'.$period.'/'.$week)?>
 	
 	<?php
 	
-	if($room_info->admin !== NULL)
+	if($room_info->admin !== "")
 	{
-		echo "<div class='room_admin'>";
+		echo "<div class='roomadmin'>";
 		echo "<p>Your booking will be approved by ".$room_info->admin."</p>";
 		echo "</div>";
 		echo form_hidden('admin', '1');
@@ -70,4 +85,8 @@
 	echo form_submit($data);
 	echo form_close();
 	?>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> development
