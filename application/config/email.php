@@ -28,7 +28,7 @@
   *  
   */                       
 $config['useragent']        = 'CodeIgniter';        
-$config['protocol']         = 'SMTP';        
+$config['protocol']         = 'smtp';        
 $config['mailpath']         = '/usr/sbin/sendmail';
 $config['smtp_host']        = 'smtp.sendgrid.net';
 $config['smtp_user']        = 'jamieshiers';

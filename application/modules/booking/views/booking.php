@@ -14,7 +14,7 @@
 		$week_num = $weeks['weeknums'][$weeknum];
 	}
 	
-	list($year,$month,$day) = explode('-', $date); echo $item->name; echo '- Week Commencing '.date('jS F', mktime(0,0,0,$month,$day,$year)).' - Week '.$week_num; ?>
+	list($year,$month,$day) = explode('-', $date); echo $item->name; echo ' - Week Commencing '.date('jS F', mktime(0,0,0,$month,$day,$year)).' - Week '.$week_num; ?>
 	</h3>	
 </div>
 <?php list($year,$month,$day) = explode('-', $date); ?>
