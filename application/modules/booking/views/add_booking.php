@@ -27,7 +27,7 @@
 	
 	<?php
 	
-	if($room_info->admin !== "")
+	if($room_info->admin !== NULL)
 	{
 		echo "<div class='roomadmin'>";
 		echo "<p>Your booking will be approved by ".$room_info->admin."</p>";

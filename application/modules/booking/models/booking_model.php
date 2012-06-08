@@ -127,7 +127,7 @@ Class Booking_model extends CI_Model
 	
 //---------------------------------------------------------------------------
 
-	function get_single_user()
+	function get_single_user($username)
 	{
 		$this->db->from('users')->where('username', $username);
 		$query = $this->db->get();

@@ -153,6 +153,10 @@ Class Booking extends Controller
 					); 
 				
 				$user_id = $this->booking_model->add_booking($update);
+
+				$admin_user = $this->booking_model->get_single_user($this->input->post('admin_user'));
+				
+				$admin_email = $admin_user['0']->email;
 				
 				if($block_booking == 3)
 				{
@@ -161,7 +165,11 @@ Class Booking extends Controller
 					$email['week'] = $data['week'];
 					$email['admin_user'] = $this->input->post('admin_user');
 					$email['user'] = $this->session->userdata('logged_in');
-					$admin_email = $this->input->post('admin_user').$this->config->item('from_domain');
+
+					list($year,$month,$day) = explode('-', $data['date']);
+    
+	  				$email['date'] = date('l j F Y', mktime(0,0,0,$month,$day,$year));
+
 					// email the room admin to let them know they have a booking awaiting approval.
 					
 					$this->config->load('email');
