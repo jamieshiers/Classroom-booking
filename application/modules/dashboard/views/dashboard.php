@@ -58,7 +58,7 @@ if($swaps || $room_admin)
 {?>
 	
 <div class="message swap">
-	<h3>You have <?php echo $number; echo " new ".$note;?></h3>
+	<h3>You have new notifications</h3>
 	<a href="<?php echo site_url();?>/dashboard/notifications" class="button blue">Read</a>
 </div>
 <?php } ?>
