@@ -103,6 +103,7 @@ class User_Auth
 
 
 				$user_info = $this->_ci->ldap->user_info($username);
+				$email = $user_info['0']['mail']['0'];
 				$user_group = $user_info['0']['memberof'];
 
 					$shift = array_shift($user_group);
@@ -201,7 +202,7 @@ class User_Auth
 						if($authgroup == 'admin')
 						{
 							$this->_ci->session->set_userdata('logged_in', $username); 
-
+							$this->_ci->session->set_userdata('email', $email);
 							$this->_ci->session->set_userdata('accesslevel', 'admin');
 							return TRUE;
 						}
@@ -213,7 +214,7 @@ class User_Auth
 						else
 						{
 							$this->_ci->session->set_userdata('logged_in', $username); 
-
+							$this->_ci->session->set_userdata('email', $email);
 							$this->_ci->session->set_userdata('accesslevel', 'user');
 							return TRUE;
 						}
