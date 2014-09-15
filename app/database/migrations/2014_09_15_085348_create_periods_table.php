@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateRoomTable extends Migration {
+class CreatePeriodsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,13 @@ class CreateRoomTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('rooms', function(Blueprint $table)
+		Schema::create('periods', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('RoomName');
-            $table->string('RoomType');
-            $table->string('BookingType');
-            $table->Boolean('Active');
+            $table->string('name');
+            $table->time('start');
+            $table->time('end');
+            $table->boolean('bookable');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +31,7 @@ class CreateRoomTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('rooms');
+		Schema::drop('periods');
 	}
 
 }

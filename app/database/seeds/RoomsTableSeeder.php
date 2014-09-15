@@ -1,6 +1,5 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
 class RoomsTableSeeder extends Seeder {
@@ -11,8 +10,11 @@ class RoomsTableSeeder extends Seeder {
 
 		foreach(range(1, 10) as $index)
 		{
-			Room::create([
-
+			Rooms::create([
+                'RoomName'      => $faker->firstName,
+                'RoomType'      => 'classroom',
+                'BookingType'   => 'fixed',
+                'Active'        => $faker->boolean(85),
 			]);
 		}
 	}
