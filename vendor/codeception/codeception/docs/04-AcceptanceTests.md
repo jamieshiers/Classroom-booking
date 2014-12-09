@@ -1,7 +1,7 @@
 # Acceptance Testing
 
 Acceptance testing can be performed by a non-technical person. That person can be your tester, manager or even client.
-If you are developing a web-application (and probably you are) the tester needs nothing more than a web browser to check that your site works correctly. You can reproduce a AcceptanceTester's actions in scenarios and run them automatically after each site change. Codeception keeps tests clean and simple, like if they were recorded from the words of AcceptanceTester.
+If you are developing a web-application (and probably you are) the tester needs nothing more than a web browser to check that your site works correctly. You can reproduce a AcceptanceTester's actions in scenarios and run them automatically after each site change. Codeception keeps tests clean and simple, as if they were recorded from the words of AcceptanceTester.
 
 It makes no difference what CMS or Framework is used on the site. You can even test sites created on different platforms, like Java, .NET, etc. It's always a good idea to add tests to your web site. At least you will be sure that site features work after the last changes were made.
 
@@ -44,7 +44,7 @@ Generated scenarios will be stored in your ___data__ directory in text files.
 
 ## PHP Browser
 
-This is the fastest way to run acceptance tests, since it doesn't require running an actual browser. We use a PHP web scrapper, which acts like a browser: it sends a request, then receives and parses the response. Codeception uses [Guzzle](http://guzzlephp.org) and Symfony BrowserKit to interact with HTML web pages. Please note that you can't test actual visibility of elements, or javascript interactions. Good thing about PhpBrowser is that it can be run in any environment with just PHP and cURL required.
+This is the fastest way to run acceptance tests, since it doesn't require running an actual browser. We use a PHP web scraper, which acts like a browser: it sends a request, then receives and parses the response. Codeception uses [Guzzle](http://guzzlephp.org) and Symfony BrowserKit to interact with HTML web pages. Please note that you can't test actual visibility of elements, or javascript interactions. Good thing about PhpBrowser is that it can be run in any environment with just PHP and cURL required.
 
 Common PhpBrowser drawbacks:
 
@@ -172,7 +172,7 @@ Let's submit this sample form inside the Codeception test.
           <option value="m">Male</option>
           <option value="f">Female</option>
      </select>     
-     <input type="submit" value="Update" />
+     <input type="submit" name="submitButton" value="Update" />
 </form>
 ```
 
@@ -204,8 +204,26 @@ $I->submitForm('#update_form', array('user' => array(
 ?>
 ```
 
-The `submitForm` is not emulating a user's actions, but it's quite useful in situations when the form is not formatted properly.
-Whether labels aren't set or fields have unclean names or badly written ids, or the form is sent by a javascript call, `submitForm` is quite useful. 
+The `submitForm` is not emulating a user's actions, but it's quite useful in situations when the form is not formatted properly, for example to discover that labels aren't set or that fields have unclean names or badly written ids, or the form is sent by a javascript call.
+
+By default, submitForm doesn't send values for buttons.  The last parameter allows specifying what button values should be sent, or button values can be implicitly specified in the second parameter.
+
+```php
+<?php
+$I->submitForm('#update_form', array('user' => array(
+     'name' => 'Miles',
+     'email' => 'Davis',
+     'gender' => 'm'
+)), 'submitButton');
+// this would be the same effect, but the value has to be implicitly specified
+$I->submitForm('#update_form', array('user' => array(
+     'name' => 'Miles',
+     'email' => 'Davis',
+     'gender' => 'm',
+	 'submitButton' => 'Update'
+)));
+?>
+```
 
 #### AJAX Emulation
 

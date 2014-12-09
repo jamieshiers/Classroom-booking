@@ -1,9 +1,7 @@
 <?php
-
 namespace GuzzleHttp\Post;
 
 use GuzzleHttp\Mimetypes;
-use GuzzleHttp\Stream\MetadataStreamInterface;
 use GuzzleHttp\Stream\StreamInterface;
 use GuzzleHttp\Stream\Stream;
 
@@ -18,9 +16,9 @@ class PostFile implements PostFileInterface
     private $headers = [];
 
     /**
-     * @param null            $name     Name of the form field
+     * @param string          $name     Name of the form field
      * @param mixed           $content  Data to send
-     * @param null            $filename Filename content-disposition attribute
+     * @param string|null     $filename Filename content-disposition attribute
      * @param array           $headers  Array of headers to set on the file
      *                                  (can override any default headers)
      * @throws \RuntimeException when filename is not passed or can't be determined
@@ -93,9 +91,7 @@ class PostFile implements PostFileInterface
     {
         $this->filename = $filename;
 
-        if (!$this->filename &&
-            $this->content instanceof MetadataStreamInterface
-        ) {
+        if (!$this->filename) {
             $this->filename = $this->content->getMetadata('uri');
         }
 

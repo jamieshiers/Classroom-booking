@@ -13,17 +13,17 @@ abstract class SuiteSubscriber implements EventSubscriberInterface {
     use StaticEvents;
 
     protected $defaultSettings = [
-        'enabled' => true,
+        'enabled' => false,
         'remote' => false,
         'local' => false,
         'xdebug_session' => 'codeception',
         'remote_config'  => null,
-        'show_uncovered' => false
+        'show_uncovered' => false,
+        'c3_url' => null
     ];
 
     protected $settings = [];
     protected $filters = [];
-
 
     protected $coverage;
     protected $logDir;

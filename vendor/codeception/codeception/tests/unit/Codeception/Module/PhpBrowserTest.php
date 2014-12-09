@@ -96,13 +96,26 @@ class PhpBrowserTest extends TestsForBrowsers
         $this->module->amOnPage('/redirect2');
         $this->module->seeResponseCodeIs(200);
         $this->module->seeCurrentUrlEquals('/info');
+        
+        $this->module->amOnPage('/redirect_interval');
+        $this->module->seeCurrentUrlEquals('/redirect_interval');
     }
-
+    
+    public function testMetaRefresh()
+    {
+        $this->module->amOnPage('/redirect_self');
+        $this->module->see('Redirecting to myself');
+    }
+    
     public function testRefreshRedirect()
     {
         $this->module->amOnPage('/redirect3');
         $this->module->seeResponseCodeIs(200);
         $this->module->seeCurrentUrlEquals('/info');
+        
+        $this->module->amOnPage('/redirect_header_interval');
+        $this->module->seeCurrentUrlEquals('/redirect_header_interval');
+        $this->module->see('Welcome to test app!');
     }
 
     public function testRedirectWithGetParams()
@@ -177,6 +190,29 @@ class PhpBrowserTest extends TestsForBrowsers
 
     }
 
+    public function testHttpAuth()
+    {
+        $this->module->amOnPage('/auth');
+        $this->module->seeResponseCodeIs(401);
+        $this->module->see('Unauthorized');
+        $this->module->amHttpAuthenticated('davert', 'password');
+        $this->module->amOnPage('/auth');
+        $this->module->dontSee('Unauthorized');
+        $this->module->see("Welcome, davert");
+        $this->module->amHttpAuthenticated('davert', '123456');
+        $this->module->amOnPage('/auth');
+        $this->module->see('Forbidden');
+    }
+
+    public function testRawGuzzle()
+    {
+        $code = $this->module->executeInGuzzle(function(\GuzzleHttp\Client $client) {
+            $res = $client->get('/info');
+            return $res->getStatusCode();
+        });
+        $this->assertEquals(200, $code);
+    }
+
     protected function mockResponse($body = "hello", $code = 200)
     {
         $mock = new \GuzzleHttp\Subscriber\Mock([
@@ -185,5 +221,33 @@ class PhpBrowserTest extends TestsForBrowsers
         $this->module->guzzle->getEmitter()->attach($mock);
     }
 
+    /**
+     * If we have a form with fields like
+     * ```
+     * <input type="file" name="foo" />
+     * <input type="file" name="foo[bar]" />
+     * ```
+     * then only array variable will be used while simple variable will be ignored in php $_FILES
+     * (eg $_FILES = [
+     *                 foo => [
+     *                     tmp_name => [
+     *                         'bar' => 'asdf'
+     *                     ],
+     *                     //...
+     *                ]
+     *              ]
+     * )
+     * (notice there is no entry for file "foo", only for file "foo[bar]"
+     * this will check if current element contains inner arrays within it's keys
+     * so we can ignore element itself and only process inner files
+     */
+    public function testFormWithFilesInOnlyArray()
+    {
+        $this->shouldFail();
+        $this->module->amOnPage('/form/example13');
+        $this->module->attachFile('foo', 'app/avatar.jpg');
+        $this->module->attachFile('foo[bar]', 'app/avatar.jpg');
+        $this->module->click('Submit');
+    }
 
 }

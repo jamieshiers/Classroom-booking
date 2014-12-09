@@ -43,6 +43,8 @@
  * @since      File available since Release 2.0.0
  */
 
+use SebastianBergmann\Environment\Console;
+
 /**
  * Prints the result of a TextUI TestRunner run.
  *
@@ -147,7 +149,9 @@ class PHPUnit_TextUI_ResultPrinter extends PHPUnit_Util_Printer implements PHPUn
         }
 
         if (is_bool($colors)) {
-            $this->colors = $colors;
+            $console = new Console;
+
+            $this->colors = $colors && $console->hasColorSupport();
         } else {
             throw PHPUnit_Util_InvalidArgumentHelper::factory(3, 'boolean');
         }
@@ -250,19 +254,11 @@ class PHPUnit_TextUI_ResultPrinter extends PHPUnit_Util_Printer implements PHPUn
      */
     protected function printDefectHeader(PHPUnit_Framework_TestFailure $defect, $count)
     {
-        $failedTest = $defect->failedTest();
-
-        if ($failedTest instanceof PHPUnit_Framework_SelfDescribing) {
-            $testName = $failedTest->toString();
-        } else {
-            $testName = get_class($failedTest);
-        }
-
         $this->write(
             sprintf(
                 "\n%d) %s\n",
                 $count,
-                $testName
+                $defect->getTestName()
             )
         );
     }
@@ -272,26 +268,11 @@ class PHPUnit_TextUI_ResultPrinter extends PHPUnit_Util_Printer implements PHPUn
      */
     protected function printDefectTrace(PHPUnit_Framework_TestFailure $defect)
     {
-        $this->write($defect->getExceptionAsString());
+        $e = $defect->thrownException();
+        $this->write((string) $e);
 
-        $trace = PHPUnit_Util_Filter::getFilteredStacktrace(
-            $defect->thrownException()
-        );
-
-        if (!empty($trace)) {
-            $this->write("\n" . $trace);
-        }
-
-        $e = $defect->thrownException()->getPrevious();
-
-        while ($e) {
-            $this->write(
-                "\nCaused by\n" .
-                PHPUnit_Framework_TestFailure::exceptionToString($e). "\n" .
-                PHPUnit_Util_Filter::getFilteredStacktrace($e)
-            );
-
-            $e = $e->getPrevious();
+        while ($e = $e->getPrevious()) {
+            $this->write("\nCaused by\n" . $e);
         }
     }
 
@@ -565,7 +546,7 @@ class PHPUnit_TextUI_ResultPrinter extends PHPUnit_Util_Printer implements PHPUn
         $this->lastTestFailed = false;
 
         if ($test instanceof PHPUnit_Framework_TestCase) {
-            if (!$test->hasPerformedExpectationsOnOutput()) {
+            if (!$test->hasExpectationOnOutput()) {
                 $this->write($test->getActualOutput());
             }
         }

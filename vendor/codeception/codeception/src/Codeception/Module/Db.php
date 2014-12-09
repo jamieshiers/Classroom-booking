@@ -116,7 +116,9 @@ class Db extends \Codeception\Module implements \Codeception\Lib\Interfaces\Db
             }
             $sql = file_get_contents(Configuration::projectDir() . $this->config['dump']);
             $sql = preg_replace('%/\*(?!!\d+)(?:(?!\*/).)*\*/%s', "", $sql);
-            $this->sql = explode("\n", $sql);
+            if( ! empty($sql)) {
+                $this->sql = explode("\n", $sql);
+            }
         }
 
         try {
@@ -230,7 +232,13 @@ class Db extends \Codeception\Module implements \Codeception\Lib\Interfaces\Db
             $this->fail(sprintf("Record with %s couldn't be inserted into %s", json_encode($data), $table));
         }
 
-        $lastInsertId = (int) $this->driver->lastInsertId($table);
+        try {
+            $lastInsertId = (int) $this->driver->lastInsertId($table);
+        } catch (\PDOException $e) {
+            // ignore errors due to uncommon DB structure,
+            // such as tables without _id_seq in PGSQL
+            $lastInsertId = 0;
+        }
         $this->insertedIds[] = array('table' => $table, 'id' => $lastInsertId);
 
         return $lastInsertId;

@@ -18,54 +18,72 @@
  */
 class RemoteMouse implements WebDriverMouse {
 
+  /**
+   * @var RemoteExecuteMethod
+   */
   private $executor;
 
-  public function __construct($executor) {
-    $this->executor = $executor;
+  /**
+   * @param RemoteExecuteMethod $executor
+   */
+  public function __construct(RemoteExecuteMethod $executor) {
+      $this->executor = $executor;
   }
 
   /**
-   * @return WebDriverMouse
+   * @param null|WebDriverCoordinates $where
+   *
+   * @return RemoteMouse
    */
   public function click(WebDriverCoordinates $where = null) {
     $this->moveIfNeeded($where);
-    $this->executor->execute('mouseClick', array(
+    $this->executor->execute(DriverCommand::CLICK, array(
       'button' => 0,
     ));
     return $this;
   }
 
   /**
-   * @return WebDriverMouse
+   * @param WebDriverCoordinates $where
+   *
+   * @return RemoteMouse
    */
   public function contextClick(WebDriverCoordinates $where = null) {
     $this->moveIfNeeded($where);
-    $this->executor->execute('mouseClick', array(
+    $this->executor->execute(DriverCommand::CLICK, array(
       'button' => 2,
     ));
     return $this;
   }
 
   /**
-   * @return WebDriverMouse
+   * @param WebDriverCoordinates $where
+   *
+   * @return RemoteMouse
    */
   public function doubleClick(WebDriverCoordinates $where = null) {
     $this->moveIfNeeded($where);
-    $this->executor->execute('mouseDoubleClick');
+    $this->executor->execute(DriverCommand::DOUBLE_CLICK);
     return $this;
   }
 
   /**
-   * @return WebDriverMouse
+   * @param WebDriverCoordinates $where
+   *
+   * @return RemoteMouse
    */
   public function mouseDown(WebDriverCoordinates $where = null) {
     $this->moveIfNeeded($where);
-    $this->executor->execute('mouseButtonDown');
+    $this->executor->execute(DriverCommand::MOUSE_DOWN);
     return $this;
   }
 
   /**
-   * @return WebDriverMouse
+   * @param WebDriverCoordinates $where
+   * @param int|null $x_offset
+   * @param int|null $y_offset
+   *
+   * @return RemoteMouse
    */
   public function mouseMove(WebDriverCoordinates $where = null,
                             $x_offset = null,
@@ -80,20 +98,23 @@ class RemoteMouse implements WebDriverMouse {
     if ($y_offset !== null) {
       $params['yoffset'] = $y_offset;
     }
-    $this->executor->execute('mouseMoveTo', $params);
+    $this->executor->execute(DriverCommand::MOVE_TO, $params);
     return $this;
   }
 
   /**
-   * @return WebDriverMouse
+   * @param WebDriverCoordinates $where
+   *
+   * @return RemoteMouse
    */
   public function mouseUp(WebDriverCoordinates $where = null) {
     $this->moveIfNeeded($where);
-    $this->executor->execute('mouseButtonUp');
+    $this->executor->execute(DriverCommand::MOUSE_UP);
     return $this;
   }
 
   /**
+   * @param WebDriverCoordinates $where
    * @return void
    */
   protected function moveIfNeeded(WebDriverCoordinates $where = null) {

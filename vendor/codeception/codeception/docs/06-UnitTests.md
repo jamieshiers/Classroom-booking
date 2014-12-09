@@ -80,13 +80,13 @@ class UserTest extends \Codeception\TestCase\Test
 {
     public function testValidation()
     {
-        $this->user = User::create();
+        $user = User::create();
 
-        $this->user->username = null;
-        $this->assertFalse($user->validate(['username']); 
+        $user->username = null;
+        $this->assertFalse($user->validate(['username']));
 
         $user->username = 'toolooooongnaaaaaaameeee';
-        $this->assertFalse($user->validate(['username']);         
+        $this->assertFalse($user->validate(['username']));
 
         $user->username = 'davert';
         $this->assertTrue($user->validate(['username']));           
@@ -97,7 +97,7 @@ class UserTest extends \Codeception\TestCase\Test
 
 ### BDD Specification Testing
 
-When writing tests you should prepare them to constant changes in your application. Tests should be easy to read and maintain. If a specification to your application is changed, your tests should be updated as well. If you don't have a convention inside your team on documenting tests, you will have issues figuring out what tests were affected by introduction of a new feature.
+When writing tests you should prepare them for constant changes in your application. Tests should be easy to read and maintain. If a specification to your application is changed, your tests should be updated as well. If you don't have a convention inside your team on documenting tests, you will have issues figuring out what tests were affected by introduction of a new feature.
 
 That's why it's pretty important not just to cover your application with unit tests, but make unit tests self-explanatory. We do this for scenario-driven acceptance and functional tests, and we should do this for unit and integration tests as well.
 
@@ -111,16 +111,16 @@ class UserTest extends \Codeception\TestCase\Test
 
     public function testValidation()
     {
-        $this->user = User::create();
+        $user = User::create();
 
         $this->specify("username is required", function() {
-            $this->user->username = null;
-            $this->assertFalse($user->validate(['username']); 
+            $user->username = null;
+            $this->assertFalse($user->validate(['username']));
         });
 
         $this->specify("username is too long", function() {
             $user->username = 'toolooooongnaaaaaaameeee';
-            $this->assertFalse($user->validate(['username']);         
+            $this->assertFalse($user->validate(['username']));
         });
 
         $this->specify("username is ok", function() {
@@ -214,7 +214,7 @@ class UserCest
         $t->assertFalse($user->validate(['username']); 
 
         $user->username = 'toolooooongnaaaaaaameeee';
-        $t->assertFalse($user->validate(['username']);         
+        $t->assertFalse($user->validate(['username']));
 
         $user->username = 'davert';
         $t->assertTrue($user->validate(['username']));

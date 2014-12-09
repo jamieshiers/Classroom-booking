@@ -1,11 +1,10 @@
 <?php
-
 namespace GuzzleHttp\Post;
 
 use GuzzleHttp\Stream\AppendStream;
-use GuzzleHttp\Stream\StreamInterface;
-use GuzzleHttp\Stream\StreamDecoratorTrait;
 use GuzzleHttp\Stream\Stream;
+use GuzzleHttp\Stream\StreamDecoratorTrait;
+use GuzzleHttp\Stream\StreamInterface;
 
 /**
  * Stream that when read returns bytes for a streaming multipart/form-data body
@@ -76,7 +75,7 @@ class MultipartBody implements StreamInterface
     /**
      * Create the aggregate stream that will be used to upload the POST data
      */
-    private function createStream(array $fields, array $files)
+    protected function createStream(array $fields, array $files)
     {
         $stream = new AppendStream();
 
@@ -102,8 +101,8 @@ class MultipartBody implements StreamInterface
             $stream->addStream(Stream::factory("\r\n"));
         }
 
-        // Add the trailing boundary
-        $stream->addStream(Stream::factory("--{$this->boundary}--"));
+        // Add the trailing boundary with CRLF
+        $stream->addStream(Stream::factory("--{$this->boundary}--\r\n"));
 
         return $stream;
     }

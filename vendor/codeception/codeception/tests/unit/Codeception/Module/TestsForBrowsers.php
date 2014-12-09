@@ -22,6 +22,14 @@ abstract class TestsForBrowsers extends TestsForWeb
         $this->assertEquals('http://user.google.com', $this->module->_getUrl());
     }
 
+    public function testOpenAbsoluteUrls()
+    {
+        $this->module->amOnUrl('http://codeception.com/');
+        $this->module->see('Install');
+        $this->module->amOnPage('/quickstart');
+        $this->module->see('Quickstart', 'h1');
+    }
+
     function testHeadersRedirect()
     {
         $this->module->amOnPage('/redirect');

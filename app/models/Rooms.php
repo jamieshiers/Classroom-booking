@@ -1,5 +1,8 @@
 <?php
 
-class Rooms extends \Eloquent {
-	protected $fillable = [];
+class Rooms extends Eloquent {
+
+    protected $table = 'Rooms';
+
+    protected $fillable = [];
 }

@@ -2,11 +2,12 @@
 namespace Codeception\Lib\Connector;
 
 use Symfony\Component\BrowserKit\Client;
-use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\BrowserKit\Response;
 
 class ZF1 extends Client
 {
+    use Shared\PhpSuperGlobalsConverter;
+
     /**
      * @var \Zend_Controller_Front
      */
@@ -55,7 +56,7 @@ class ZF1 extends Client
         $zendRequest->setPost($request->getParameters());
         $zendRequest->setRequestUri(str_replace('http://localhost','',$request->getUri()));
         $zendRequest->setHeaders($request->getServer());
-        $_FILES  = $request->getFiles();
+        $_FILES  = $this->remapFiles($request->getFiles());
         $_SERVER = array_merge($_SERVER, $request->getServer());
 
         $zendResponse = new \Zend_Controller_Response_HttpTestCase;
@@ -70,11 +71,34 @@ class ZF1 extends Client
         $response = new Response(
             $zendResponse->getBody(),
             $zendResponse->getHttpResponseCode(),
-            $zendResponse->getHeaders()
+            $this->_formatResponseHeaders($zendResponse)
         );
 
         return $response;
     }
+
+    /**
+     * Format up the ZF1 response headers into Symfony\Component\BrowserKit\Response headers format.
+     *
+     * @param \Zend_Controller_Response_Abstract $response The ZF1 Response Object.
+     * @return array the clean key/value headers
+     */
+    private function _formatResponseHeaders (\Zend_Controller_Response_Abstract $response) {
+        $headers = array();
+        foreach ($response->getHeaders() as $header) {
+            $name = $header['name'];
+            if (array_key_exists($name, $headers)) {
+                if ($header['replace']) {
+                    $headers[$name] = $header['value'];
+                }
+            } else {
+                $headers[$name] = $header['value'];
+            }
+        }
+        return $headers;
+    }
+
+
 
     /**
      * @return \Zend_Controller_Request_HttpTestCase

@@ -204,6 +204,20 @@ abstract class TestsForWeb extends \PHPUnit_Framework_TestCase
         $this->assertEquals('second', $form['submit']);
     }
 
+    /**
+     * Additional test to make sure no off-by-one related problem.
+     *
+     * @group testSubmitSeveralSubmitsForm
+     * @Issue https://github.com/Codeception/Codeception/issues/1183
+     */
+    public function testSubmitLotsOfSubmitsForm()
+    {
+        $this->module->amOnPage('/form/example11');
+        $this->module->click('form button[value="fifth"]');
+        $form = data::get('form');
+        $this->assertEquals('fifth', $form['submit']);
+    }
+
     public function testSelectMultipleOptionsByText()
     {
         $this->module->amOnPage('/form/select_multiple');
@@ -267,7 +281,6 @@ abstract class TestsForWeb extends \PHPUnit_Framework_TestCase
         $this->assertEquals('davert', $login['LoginForm']['username']);
         $this->assertEquals('123456', $login['LoginForm']['password']);
     }
-
 
     public function testTextFieldByLabel()
     {
@@ -387,6 +400,8 @@ abstract class TestsForWeb extends \PHPUnit_Framework_TestCase
         $this->assertEquals("Welcome to test app!", $result);
         $result = $this->module->grabTextFrom('descendant-or-self::h1');
         $this->assertEquals("Welcome to test app!", $result);
+        $result = $this->module->grabTextFrom('~Welcome to (\w+) app!~');
+        $this->assertEquals('test', $result);
     }
 
     public function testGrabValueFrom() {
@@ -396,6 +411,11 @@ abstract class TestsForWeb extends \PHPUnit_Framework_TestCase
         $result = $this->module->grabValueFrom("descendant-or-self::form/descendant::input[@name='action']");
         $this->assertEquals("kill_people", $result);
         $this->module->amOnPage('/form/textarea');
+        $result = $this->module->grabValueFrom('#description');
+        $this->assertEquals('sunrise', $result);
+        $this->module->amOnPage('/form/select');
+        $result = $this->module->grabValueFrom('#age');
+        $this->assertEquals('oldfag', $result);
     }
 
     public function testGrabAttributeFrom()
@@ -671,6 +691,15 @@ abstract class TestsForWeb extends \PHPUnit_Framework_TestCase
         $form = data::get('form');
         $this->assertEquals('Hello!', $form['text']);
     }
+    
+    /**
+     * https://github.com/Codeception/Codeception/issues/1381
+     */
+    public function testFillingFormFieldWithoutSubmitButton()
+    {
+        $this->module->amOnPage('/form/empty_fill');
+        $this->module->fillField('test', 'value');
+    }
 
     /**
      * @issue #1180
@@ -706,6 +735,153 @@ abstract class TestsForWeb extends \PHPUnit_Framework_TestCase
     protected function shouldFail()
     {
         $this->setExpectedException('PHPUnit_Framework_AssertionFailedError');
+    }
+
+    /**
+     * https://github.com/Codeception/Codeception/issues/1051
+     */
+    public function testSubmitFormWithTwoSubmitButtonsSubmitsCorrectValue()
+    {
+        $this->module->amOnPage('/form/example10');
+        $this->module->seeElement("#button2");
+        $this->module->click("#button2");
+        $form = data::get('form');
+        $this->assertTrue(isset($form['button2']));
+        $this->assertTrue(isset($form['username']));
+        $this->assertEquals('value2', $form['button2']);
+        $this->assertEquals('fred', $form['username']);
+    }
+
+    /**
+     * https://github.com/Codeception/Codeception/issues/1051
+     */
+    public function testSubmitFormWithTwoSubmitButtonsSubmitsCorrectValueAfterFillField()
+    {
+        $this->module->amOnPage('/form/example10');
+        $this->module->fillField("username", "bob");
+        $this->module->click("#button2");
+        $form = data::get('form');
+        $this->assertTrue(isset($form['button2']));
+        $this->assertTrue(isset($form['username']));
+        $this->assertEquals('value2', $form['button2']);
+        $this->assertEquals('bob', $form['username']);
+    }
+
+    /*
+     * https://github.com/Codeception/Codeception/issues/1274
+     */
+    public function testSubmitFormWithDocRelativePathForAction()
+    {
+        $this->module->amOnPage('/form/example12');
+        $this->module->submitForm('form', array(
+            'test' => 'value'
+        ));
+        $this->module->seeCurrentUrlEquals('/form/example11');
+    }
+    
+    /*
+     * https://github.com/Codeception/Codeception/issues/1507
+     */
+    public function testSubmitFormWithDefaultRadioAndCheckboxValues()
+    {
+        $this->module->amOnPage('/form/example16');
+        $this->module->submitForm('form', array(
+            'test' => 'value'
+        ));
+        $form = data::get('form');
+        $this->assertTrue(isset($form['checkbox1']), 'Checkbox value not sent');
+        $this->assertTrue(isset($form['radio1']), 'Radio button value not sent');
+        $this->assertEquals($form['checkbox1'], 'testing');
+        $this->assertEquals($form['radio1'], 'to be sent');
+    }
+    
+    public function testSubmitFormWithButtons()
+    {
+        $this->module->amOnPage('/form/form_with_buttons');
+        $this->module->submitForm('form', array(
+            'test' => 'value',
+        ));
+        $form = data::get('form');
+        $this->assertFalse(isset($form['button1']) || isset($form['button2']) || isset($form['button3']) || isset($form['button4']), 'Button values should not be set');
+        
+        $this->module->amOnPage('/form/form_with_buttons');
+        $this->module->submitForm('form', array(
+            'test' => 'value',
+        ), 'button3');
+        $form = data::get('form');
+        $this->assertFalse(isset($form['button1']) || isset($form['button2']) || isset($form['button4']), 'Button values for buttons 1, 2 and 4 should not be set');
+        $this->assertTrue(isset($form['button3']), 'Button value for button3 should be set');
+        $this->assertEquals($form['button3'], 'third', 'Button value for button3 should equal third');
+        
+        $this->module->amOnPage('/form/form_with_buttons');
+        $this->module->submitForm('form', array(
+            'test' => 'value',
+        ), 'button4');
+        $form = data::get('form');
+        $this->assertFalse(isset($form['button1']) || isset($form['button2']) || isset($form['button3']), 'Button values for buttons 1, 2 and 3 should not be set');
+        $this->assertTrue(isset($form['button4']), 'Button value for button4 should be set');
+        $this->assertEquals($form['button4'], 'fourth', 'Button value for button4 should equal fourth');
+    }
+
+    /**
+     * https://github.com/Codeception/Codeception/issues/1409
+     */
+    public function testWrongXpath()
+    {
+        $this->shouldFail();
+        $this->module->amOnPage('/');
+        $this->module->seeElement('//aas[asd}[sd]a[/[');
+    }
+
+    public function testFormWithFilesArray()
+    {
+        $this->module->amOnPage('/form/example13');
+        $this->module->attachFile('foo[bar]', 'app/avatar.jpg');
+        $this->module->attachFile('foo[baz]', 'app/avatar.jpg');
+        $this->module->click('Submit');
+        $this->assertNotEmpty(data::get('files'));
+        $files = data::get('files');
+        $this->assertArrayHasKey('bar', $files['foo']['name']);
+        $this->assertArrayHasKey('baz', $files['foo']['name']);
+    }
+
+    public function testFormWithFileSpecialCharNames()
+    {
+        $this->module->amOnPage('/form/example14');
+        $this->module->attachFile('foo bar', 'app/avatar.jpg');
+        $this->module->attachFile('foo.baz', 'app/avatar.jpg');
+        $this->module->click('Submit');
+        $this->assertNotEmpty(data::get('files'));
+        $files = data::get('files');
+        $this->assertNotEmpty($files);
+        $this->assertArrayHasKey('foo_bar', $files);
+        $this->assertArrayHasKey('foo_baz', $files);
+    }
+
+    /**
+     * @Issue https://github.com/Codeception/Codeception/issues/1454
+     */
+    public function testTextFieldByNameFirstNotCss()
+    {
+        $this->module->amOnPage('/form/example15');
+        $this->module->fillField('title', 'Special Widget');
+        $this->module->fillField('description', 'description');
+        $this->module->fillField('price', '19.99');
+        $this->module->click('Create');
+        $data = data::get('form');
+        $this->assertEquals('Special Widget', $data['title']);
+    }
+
+    /**
+     * @Issue https://github.com/Codeception/Codeception/issues/1535
+     */
+    public function testCheckingOptionsWithComplexNames()
+    {
+        $this->module->amOnPage('/form/bug1535');
+        $this->module->checkOption('#bmessage-topicslinks input[value="4"]');
+        $this->module->click('Submit');
+        $data = data::get('form');
+        $this->assertContains(4, $data['BMessage']['topicsLinks']);
     }
 
 }

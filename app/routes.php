@@ -11,7 +11,18 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'DashboardController@index');
+
+/*** 
+Dashboard Routes
+***/
+
+Route::get('/dashboard', 'DashboardController@index');
+
+/*** Rooms Routes ***/ 
+
+Route::get('/rooms', 'RoomsController@index');
+
+/*** Room Booking Routes ***/
+
+Route::get('/booking/{room}', 'BookingController@room');
