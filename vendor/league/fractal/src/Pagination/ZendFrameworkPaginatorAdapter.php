@@ -11,32 +11,41 @@
 
 namespace League\Fractal\Pagination;
 
-use Illuminate\Pagination\Paginator;
+use Zend\Paginator\Paginator;
 
 /**
- * A paginator adapter for illuminate/pagination.
+ * A paginator adapter for zendframework/zend-paginator.
  *
- * @author Marc Addeo <marcaddeo@gmail.com>
+ * @author Abdul Malik Ikhsan <samsonasik@gmail.com>
  */
-class IlluminatePaginatorAdapter implements PaginatorInterface
+class ZendFrameworkPaginatorAdapter implements PaginatorInterface
 {
     /**
      * The paginator instance.
      *
-     * @var \Illuminate\Pagination\Paginator
+     * @var \Zend\Paginator\Paginator
      */
     protected $paginator;
 
     /**
-     * Create a new illuminate pagination adapter.
+     * The route generator.
      *
-     * @param \Illuminate\Pagination\Paginator $paginator
+     * @var callable
+     */
+    protected $routeGenerator;
+
+    /**
+     * Create a new zendframework pagination adapter.
+     *
+     * @param \Zend\Paginator\Paginator $paginator
+     * @param callable                  $routeGenerator
      *
      * @return void
      */
-    public function __construct(Paginator $paginator)
+    public function __construct(Paginator $paginator, $routeGenerator)
     {
         $this->paginator = $paginator;
+        $this->routeGenerator = $routeGenerator;
     }
 
     /**
@@ -46,7 +55,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getCurrentPage()
     {
-        return $this->paginator->getCurrentPage();
+        return $this->paginator->getCurrentPageNumber();
     }
 
     /**
@@ -56,7 +65,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getLastPage()
     {
-        return $this->paginator->getLastPage();
+        return $this->paginator->count();
     }
 
     /**
@@ -66,7 +75,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getTotal()
     {
-        return $this->paginator->getTotal();
+        return $this->paginator->getTotalItemCount();
     }
 
     /**
@@ -76,7 +85,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getCount()
     {
-        return $this->paginator->count();
+        return $this->paginator->getCurrentItemCount();
     }
 
     /**
@@ -86,7 +95,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getPerPage()
     {
-        return $this->paginator->getPerPage();
+        return $this->paginator->getItemCountPerPage();
     }
 
     /**
@@ -98,16 +107,26 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getUrl($page)
     {
-        return $this->paginator->getUrl($page);
+        return call_user_func($this->routeGenerator, $page);
     }
 
     /**
      * Get the paginator instance.
      *
-     * @return \Illuminate\Paginator\Paginator
+     * @return \Zend\Paginator\Paginator
      */
     public function getPaginator()
     {
         return $this->paginator;
+    }
+
+    /**
+     * Get the the route generator.
+     *
+     * @return callable
+     */
+    public function getRouteGenerator()
+    {
+        return $this->routeGenerator;
     }
 }

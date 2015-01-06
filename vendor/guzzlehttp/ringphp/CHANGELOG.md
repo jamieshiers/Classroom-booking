@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.5 - 2014-12-10
+
+* Adding more error information to PHP stream wrapper exceptions.
+* Added digest auth integration test support to test server.
+
 ## 1.0.4 - 2014-12-01
 
 * Added support for older versions of cURL that do not have CURLOPT_TIMEOUT_MS.

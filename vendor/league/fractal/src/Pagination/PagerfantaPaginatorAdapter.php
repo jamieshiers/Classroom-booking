@@ -11,32 +11,41 @@
 
 namespace League\Fractal\Pagination;
 
-use Illuminate\Pagination\Paginator;
+use Pagerfanta\Pagerfanta;
 
 /**
- * A paginator adapter for illuminate/pagination.
+ * A paginator adapter for pagerfanta/pagerfanta.
  *
- * @author Marc Addeo <marcaddeo@gmail.com>
+ * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class IlluminatePaginatorAdapter implements PaginatorInterface
+class PagerfantaPaginatorAdapter implements PaginatorInterface
 {
     /**
      * The paginator instance.
      *
-     * @var \Illuminate\Pagination\Paginator
+     * @var \Pagerfanta\Pagerfanta
      */
     protected $paginator;
 
     /**
-     * Create a new illuminate pagination adapter.
+     * The route generator.
      *
-     * @param \Illuminate\Pagination\Paginator $paginator
+     * @var callable
+     */
+    protected $routeGenerator;
+
+    /**
+     * Create a new pagerfanta pagination adapter.
+     *
+     * @param \Pagerfanta\Pagerfanta $paginator
+     * @param callable               $routeGenerator
      *
      * @return void
      */
-    public function __construct(Paginator $paginator)
+    public function __construct(Pagerfanta $paginator, $routeGenerator)
     {
         $this->paginator = $paginator;
+        $this->routeGenerator = $routeGenerator;
     }
 
     /**
@@ -56,7 +65,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getLastPage()
     {
-        return $this->paginator->getLastPage();
+        return $this->paginator->getNbPages();
     }
 
     /**
@@ -66,7 +75,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getTotal()
     {
-        return $this->paginator->getTotal();
+        return count($this->paginator);
     }
 
     /**
@@ -76,7 +85,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getCount()
     {
-        return $this->paginator->count();
+        return count($this->paginator->getCurrentPageResults());
     }
 
     /**
@@ -86,7 +95,7 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getPerPage()
     {
-        return $this->paginator->getPerPage();
+        return $this->paginator->getMaxPerPage();
     }
 
     /**
@@ -98,16 +107,26 @@ class IlluminatePaginatorAdapter implements PaginatorInterface
      */
     public function getUrl($page)
     {
-        return $this->paginator->getUrl($page);
+        return call_user_func($this->routeGenerator, $page);
     }
 
     /**
      * Get the paginator instance.
      *
-     * @return \Illuminate\Paginator\Paginator
+     * @return \Pagerfanta\Pagerfanta
      */
     public function getPaginator()
     {
         return $this->paginator;
+    }
+
+    /**
+     * Get the the route generator.
+     *
+     * @return callable
+     */
+    public function getRouteGenerator()
+    {
+        return $this->routeGenerator;
     }
 }

@@ -1,9 +1,8 @@
 <?php
 
-use App\Transformers\RoomsTransformer;
 
 
-class RoomsController extends ApiController {
+class RoomsController extends BaseController {
 
     /**
      * Display a listing of the resource.
@@ -16,9 +15,11 @@ class RoomsController extends ApiController {
     
         // Grab the rooms from the database and then pass straight to the view
         
-        $rooms = Rooms::take(10); 
+        $rooms = Rooms::all(); 
 
-        return $this->respondWithCollection($rooms, new RoomsTransformer);
+        return View::make('rooms/index')->with('rooms', $rooms);
+
+       
 
     }
 

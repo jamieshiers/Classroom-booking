@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', 'DashboardController@index');
+Route::get('/login', 'AuthController@login');
+
+//Route::group(array('before' => 'auth'), function()
+//{
+//   Route::get('/', 'DashboardController@index');
+//});
 
 /*** 
 Dashboard Routes
@@ -21,8 +26,13 @@ Route::get('/dashboard', 'DashboardController@index');
 
 /*** Rooms Routes ***/ 
 
-Route::get('/rooms', 'RoomsController@index');
+Route::resource('/rooms', 'RoomsController');
+Route::resource('/holidays', 'HolidayController');
+Route::resource('/year', 'YearController');
+Route::resource('/subject', 'SubjectController');
+Route::resource('/period', 'PeriodController');
+Route::resource('/week', 'WeekController');
+Route::resource('/groups', 'GroupController');
+Route::resource('/users', 'UserController');
 
-/*** Room Booking Routes ***/
 
-Route::get('/booking/{room}', 'BookingController@room');

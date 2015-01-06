@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fca989d5e766755967bd133d0fffd535",
+    "hash": "e06e2a691a2da4600c1c8723a34ba3db",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -352,16 +352,16 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.10.0",
+            "version": "0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "557e1803dabe8ce252a4549a29da6d439f62d3c2"
+                "reference": "5abf7b1ce12fea1e575355f76f4f58f15dba4be4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/557e1803dabe8ce252a4549a29da6d439f62d3c2",
-                "reference": "557e1803dabe8ce252a4549a29da6d439f62d3c2",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/5abf7b1ce12fea1e575355f76f4f58f15dba4be4",
+                "reference": "5abf7b1ce12fea1e575355f76f4f58f15dba4be4",
                 "shasum": ""
             },
             "require": {
@@ -370,11 +370,15 @@
             "require-dev": {
                 "illuminate/pagination": "~4.1",
                 "mockery/mockery": "~0.9",
+                "pagerfanta/pagerfanta": "~1.0.0",
                 "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
+                "squizlabs/php_codesniffer": "~1.5",
+                "zendframework/zend-paginator": "~2.3"
             },
             "suggest": {
-                "illuminate/pagination": "The Illuminate Pagination component."
+                "illuminate/pagination": "The Illuminate Pagination component.",
+                "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+                "zendframework/zend-paginator": "Zend Framework Paginator"
             },
             "type": "library",
             "extra": {
@@ -407,7 +411,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2014-10-17 17:12:38"
+            "time": "2014-12-10 16:59:07"
         },
         {
             "name": "monolog/monolog",
@@ -1692,6 +1696,52 @@
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
             "time": "2014-12-02 20:15:53"
+        },
+        {
+            "name": "wells/l4-ldap-ntlm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wells/l4-ldap-ntlm.git",
+                "reference": "325876bb202c8ad68cec992c4847713360b854e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wells/l4-ldap-ntlm/zipball/325876bb202c8ad68cec992c4847713360b854e7",
+                "reference": "325876bb202c8ad68cec992c4847713360b854e7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Wells\\L4LdapNtlm": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Wells",
+                    "email": "wells@users.noreply.github.com"
+                }
+            ],
+            "description": "An LDAP/Active Directory/NTLM authentication driver for Laravel 4.",
+            "homepage": "https://github.com/wells/l4-ldap-ntlm",
+            "keywords": [
+                "Authentication",
+                "L4",
+                "Laravel 4",
+                "auth",
+                "laravel",
+                "ldap"
+            ],
+            "time": "2014-12-16 15:29:35"
         }
     ],
     "packages-dev": [
@@ -1977,16 +2027,16 @@
         },
         {
             "name": "guzzlehttp/ringphp",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/RingPHP.git",
-                "reference": "9187999f80720b9494692d2167d75144acb2ad05"
+                "reference": "a903f51b692427318bc813217c0e6505287e79a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/9187999f80720b9494692d2167d75144acb2ad05",
-                "reference": "9187999f80720b9494692d2167d75144acb2ad05",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/a903f51b692427318bc813217c0e6505287e79a4",
+                "reference": "a903f51b692427318bc813217c0e6505287e79a4",
                 "shasum": ""
             },
             "require": {
@@ -2023,7 +2073,7 @@
                     "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "time": "2014-12-02 05:01:22"
+            "time": "2014-12-11 05:50:32"
         },
         {
             "name": "guzzlehttp/streams",
@@ -2906,9 +2956,12 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "wells/l4-ldap-ntlm": 20
+    },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }

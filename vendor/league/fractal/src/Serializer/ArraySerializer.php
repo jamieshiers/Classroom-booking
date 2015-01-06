@@ -13,51 +13,56 @@ namespace League\Fractal\Serializer;
 
 use League\Fractal\Pagination\CursorInterface;
 use League\Fractal\Pagination\PaginatorInterface;
+use League\Fractal\Resource\ResourceInterface;
 
 class ArraySerializer extends SerializerAbstract
 {
     /**
-     * Serialize a collection
+     * Serialize a collection.
      *
-     * @param  string  $resourceKey
-     * @param  array  $data
+     * @param string $resourceKey
+     * @param array  $data
+     *
      * @return array
-     **/
+     */
     public function collection($resourceKey, array $data)
     {
         return array($resourceKey ?: 'data' => $data);
     }
 
     /**
-     * Serialize an item
+     * Serialize an item.
      *
-     * @param  string  $resourceKey
-     * @param  array  $data
+     * @param string $resourceKey
+     * @param array  $data
+     *
      * @return array
-     **/
+     */
     public function item($resourceKey, array $data)
     {
         return $data;
     }
 
     /**
-     * Serialize the included data
+     * Serialize the included data.
      *
-     * @param  string  $resourceKey
-     * @param  array  $data
+     * @param ResourceInterface $resource
+     * @param array             $data
+     *
      * @return array
-     **/
-    public function includedData($resourceKey, array $data)
+     */
+    public function includedData(ResourceInterface $resource, array $data)
     {
         return $data;
     }
 
     /**
-     * Serialize the meta
+     * Serialize the meta.
      *
-     * @param  array  $meta
+     * @param array $meta
+     *
      * @return array
-     **/
+     */
     public function meta(array $meta)
     {
         if (empty($meta)) {
@@ -68,11 +73,12 @@ class ArraySerializer extends SerializerAbstract
     }
 
     /**
-     * Serialize the paginator
+     * Serialize the paginator.
      *
-     * @param  PaginatorInterface $paginator
+     * @param PaginatorInterface $paginator
+     *
      * @return array
-     **/
+     */
     public function paginator(PaginatorInterface $paginator)
     {
         $currentPage = (int) $paginator->getCurrentPage();
@@ -100,11 +106,12 @@ class ArraySerializer extends SerializerAbstract
     }
 
     /**
-     * Serialize the cursor
+     * Serialize the cursor.
      *
-     * @param  CursorInterface  $cursor
+     * @param CursorInterface $cursor
+     *
      * @return array
-     **/
+     */
     public function cursor(CursorInterface $cursor)
     {
         $cursor = array(

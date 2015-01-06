@@ -2,7 +2,7 @@
 
 class Rooms extends Eloquent {
 
-    protected $table = 'Rooms';
+    protected $table = 'rooms';
 
-    protected $fillable = [];
+    protected $fillable = ['RoomName', 'RoomType', 'BookingType', 'Active'];
 }

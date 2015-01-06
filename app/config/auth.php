@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'eloquent',
+	'driver' => 'ldap',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -67,5 +67,25 @@ return array(
 		'expire' => 60,
 
 	),
+
+
+    'ldap' => array(
+        // Domain Controller
+        'host'      => $_ENV['HOST'],
+        'domain'    => 'hoe.local',
+        'timeout'   => 3,
+        'basedn'    => $_ENV['BASEDN'],
+        'groupdn'   => $_ENV['GROUPDN'],
+
+        'dn_user'   => $_ENV['DOMAIN_USER'],
+        'dn_pass'   => $_ENV['DOMAIN_PASS'],
+
+        'attributes'=> array(
+            'dn',
+            'samaccountname',
+            'memberof'
+        )
+
+    )
 
 );
