@@ -10,7 +10,9 @@ class YearController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$years = Year::all();
+
+        return View::make('year/index')->with('years', $years);
 	}
 
 	/**

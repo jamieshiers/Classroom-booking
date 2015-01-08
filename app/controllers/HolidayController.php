@@ -10,8 +10,10 @@ class HolidayController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
-	}
+		$holidays = Holiday::all();
+        return  View::make('holiday/index')->with('holidays', $holidays);
+
+    }
 
 	/**
 	 * Show the form for creating a new resource.

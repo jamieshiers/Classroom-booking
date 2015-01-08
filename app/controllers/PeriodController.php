@@ -10,7 +10,11 @@ class PeriodController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+
+    $periods = Period::all();
+
+        return View::make('period/index')->with('periods', $periods);
+
 	}
 
 	/**

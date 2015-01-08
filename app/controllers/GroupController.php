@@ -10,7 +10,9 @@ class GroupController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+        $groups = Group::all();
+
+        return View::make('groups/index')->with('groups', $groups);
 	}
 
 	/**

@@ -26,13 +26,13 @@ Route::get('/dashboard', 'DashboardController@index');
 
 /*** Rooms Routes ***/ 
 
-Route::resource('/rooms', 'RoomsController');
-Route::resource('/holidays', 'HolidayController');
+Route::resource('/room', 'RoomsController');
+Route::resource('/holiday', 'HolidayController');
 Route::resource('/year', 'YearController');
 Route::resource('/subject', 'SubjectController');
 Route::resource('/period', 'PeriodController');
 Route::resource('/week', 'WeekController');
-Route::resource('/groups', 'GroupController');
-Route::resource('/users', 'UserController');
+Route::resource('/group', 'GroupController');
+Route::resource('/user', 'UserController');
 
 
