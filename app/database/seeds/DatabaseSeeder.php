@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder {
         }
 
         $this->call('RoomsTableSeeder');
-
+        $this->call('BookingTableSeeder');
 	}
 
 }

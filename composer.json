@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"league/fractal": "~0.11",
-		"wells/l4-ldap-ntlm": "dev-master"
+		"wells/l4-ldap-ntlm": "dev-master",
+		"league/period": "~2.3@dev"
 	},
     "require-dev": {
        "Way/Generators": "~2.0",

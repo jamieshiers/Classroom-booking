@@ -24,6 +24,9 @@ Dashboard Routes
 
 Route::get('/dashboard', 'DashboardController@index');
 
+
+Route::get('/booking/{id}', array('uses' => 'BookingController@show'));
+
 /*** Rooms Routes ***/ 
 
 Route::resource('/room', 'RoomsController');
