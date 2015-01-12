@@ -1,6 +1,5 @@
 <?php
 
-use League\Period\Period;
 use Carbon\Carbon;
 
 class BookingController extends \BaseController {
@@ -49,17 +48,14 @@ class BookingController extends \BaseController {
 	public function show($id)
 	{
         // Get the current Date
-        $dateNow = Carbon::now();
-        $startDate = $dateNow->toDateString();
-        $startOfWeek = $dateNow->startOfWeek();
-        $endDate = $dateNow->endOfWeek();
 
-        $bookings =  Booking::where('startDate', '>', $startOfWeek )->where('endDate', '<', $endDate);
+        $startDate = Carbon::now()->toDateString();
+        $startOfWeek = Carbon::now()->startOfWeek();
+        $endDate = Carbon::now()->endOfWeek();
 
-        foreach($bookings as $booking)
-        {
-            echo $booking['id'];
-        }
+        $bookings =  Booking::where('startDate', '>=', $startDate)->where('endDate', '<=', $endDate)->get();
+
+        return View::make('booking/index')->with('bookings', $bookings);
 
 
 

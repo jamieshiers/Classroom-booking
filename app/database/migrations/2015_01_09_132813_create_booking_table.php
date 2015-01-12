@@ -20,8 +20,8 @@ class CreateBookingTable extends Migration {
             $table->string('username');
             $table->string('class');
             $table->string('lesson');
-            $table->date('startDate');
-            $table->date('endDate');
+            $table->datetime('startDate');
+            $table->datetime('endDate');
             $table->boolean('block');
             $table->integer('weekNum');
 			$table->timestamps();
