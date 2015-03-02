@@ -5,8 +5,12 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*"
-	},
+		"laravel/framework": "5.0.*",
+		"league/period": "~2.4",
+		"league/fractal": "0.11.*",
+		"laravelcollective/annotations": "~5.0",
+		"fzaninotto/faker": "~1.4"
+    },
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1"

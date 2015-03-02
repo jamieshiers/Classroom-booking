@@ -2879,5 +2879,363 @@
             "testing",
             "tests"
         ]
+    },
+    {
+        "name": "league/period",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/period.git",
+            "reference": "5cd66b4e1c4e530f11030d2045a949e71af3afbd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/period/zipball/5cd66b4e1c4e530f11030d2045a949e71af3afbd",
+            "reference": "5cd66b4e1c4e530f11030d2045a949e71af3afbd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "replace": {
+            "bakame/period": "*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2014-12-18 08:23:19",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Period\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ignace Nyamagana Butera",
+                "email": "nyamsprod@gmail.com",
+                "homepage": "https://github.com/nyamsprod/",
+                "role": "Developer"
+            }
+        ],
+        "description": "A time range immutable value object",
+        "keywords": [
+            "date",
+            "dateinterval",
+            "dateperiod",
+            "datetime",
+            "interval",
+            "range",
+            "time"
+        ]
+    },
+    {
+        "name": "league/fractal",
+        "version": "0.11.0",
+        "version_normalized": "0.11.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/fractal.git",
+            "reference": "5abf7b1ce12fea1e575355f76f4f58f15dba4be4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/fractal/zipball/5abf7b1ce12fea1e575355f76f4f58f15dba4be4",
+            "reference": "5abf7b1ce12fea1e575355f76f4f58f15dba4be4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "illuminate/pagination": "~4.1",
+            "mockery/mockery": "~0.9",
+            "pagerfanta/pagerfanta": "~1.0.0",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~1.5",
+            "zendframework/zend-paginator": "~2.3"
+        },
+        "suggest": {
+            "illuminate/pagination": "The Illuminate Pagination component.",
+            "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+            "zendframework/zend-paginator": "Zend Framework Paginator"
+        },
+        "time": "2014-12-10 16:59:07",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.10-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Fractal\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Phil Sturgeon",
+                "email": "me@philsturgeon.uk",
+                "homepage": "http://philsturgeon.uk/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Handle the output of complex data structures ready for JSON output.",
+        "homepage": "http://fractal.thephpleague.com/",
+        "keywords": [
+            "api",
+            "json",
+            "league",
+            "rest"
+        ]
+    },
+    {
+        "name": "doctrine/lexer",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/lexer.git",
+            "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
+            "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "time": "2014-09-09 13:34:57",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\Common\\Lexer\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com"
+            }
+        ],
+        "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "lexer",
+            "parser"
+        ]
+    },
+    {
+        "name": "doctrine/annotations",
+        "version": "v1.2.3",
+        "version_normalized": "1.2.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/annotations.git",
+            "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/annotations/zipball/eeda578cbe24a170331a1cfdf78be723412df7a4",
+            "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/lexer": "1.*",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "doctrine/cache": "1.*",
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2014-12-20 20:49:38",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\Common\\Annotations\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com"
+            }
+        ],
+        "description": "Docblock Annotations Parser",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "annotations",
+            "docblock",
+            "parser"
+        ]
+    },
+    {
+        "name": "laravelcollective/annotations",
+        "version": "v5.0.3",
+        "version_normalized": "5.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LaravelCollective/annotations.git",
+            "reference": "b0aadc028f89305f536ebd06fa7a2053b708d023"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/LaravelCollective/annotations/zipball/b0aadc028f89305f536ebd06fa7a2053b708d023",
+            "reference": "b0aadc028f89305f536ebd06fa7a2053b708d023",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/annotations": "~1.0",
+            "illuminate/console": "~5.0",
+            "illuminate/filesystem": "~5.0",
+            "illuminate/support": "~5.0",
+            "php": ">=5.4.0",
+            "symfony/console": "2.6.*",
+            "symfony/finder": "2.6.*"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2015-02-25 18:50:53",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Collective\\Annotations\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Adam Engebretson",
+                "email": "adam@enge.me"
+            },
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            }
+        ],
+        "description": "Route Annotations for The Laravel Framework.",
+        "keywords": [
+            "annotations",
+            "framework",
+            "laravel"
+        ]
+    },
+    {
+        "name": "fzaninotto/faker",
+        "version": "v1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fzaninotto/Faker.git",
+            "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/010c7efedd88bf31141a02719f51fb44c732d5a0",
+            "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~1.5"
+        },
+        "time": "2014-06-04 14:43:02",
+        "type": "library",
+        "extra": {
+            "branch-alias": []
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Faker": "src/",
+                "Faker\\PHPUnit": "test/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "François Zaninotto"
+            }
+        ],
+        "description": "Faker is a PHP library that generates fake data for you.",
+        "keywords": [
+            "data",
+            "faker",
+            "fixtures"
+        ]
     }
 ]
