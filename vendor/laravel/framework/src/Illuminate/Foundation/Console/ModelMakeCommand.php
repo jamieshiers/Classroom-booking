@@ -27,6 +27,23 @@ class ModelMakeCommand extends GeneratorCommand {
 	protected $type = 'Model';
 
 	/**
+	 * Execute the console command.
+	 *
+	 * @return void
+	 */
+	public function fire()
+	{
+		parent::fire();
+
+		if ( ! $this->option('no-migration'))
+		{
+			$table = str_plural(snake_case(class_basename($this->argument('name'))));
+
+			$this->call('make:migration', ['name' => "create_{$table}_table", '--create' => $table]);
+		}
+	}
+
+	/**
 	 * Get the stub file for the generator.
 	 *
 	 * @return string
@@ -45,6 +62,18 @@ class ModelMakeCommand extends GeneratorCommand {
 	protected function getDefaultNamespace($rootNamespace)
 	{
 		return $rootNamespace;
+	}
+
+	/**
+	 * Get the console command options.
+	 *
+	 * @return array
+	 */
+	protected function getOptions()
+	{
+		return array(
+			array('no-migration', null, InputOption::VALUE_NONE, 'Do not create a new migration file.'),
+		);
 	}
 
 }

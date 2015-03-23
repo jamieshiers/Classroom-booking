@@ -70,7 +70,7 @@ class Builder {
 	 *
 	 * @param  mixed  $id
 	 * @param  array  $columns
-	 * @return \Illuminate\Database\Eloquent\Model|static|null
+	 * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|null
 	 */
 	public function find($id, $columns = array('*'))
 	{
@@ -87,15 +87,15 @@ class Builder {
 	/**
 	 * Find a model by its primary key.
 	 *
-	 * @param  array  $id
+	 * @param  array  $ids
 	 * @param  array  $columns
-	 * @return \Illuminate\Database\Eloquent\Model|Collection|static
+	 * @return \Illuminate\Database\Eloquent\Collection
 	 */
-	public function findMany($id, $columns = array('*'))
+	public function findMany($ids, $columns = array('*'))
 	{
-		if (empty($id)) return $this->model->newCollection();
+		if (empty($ids)) return $this->model->newCollection();
 
-		$this->query->whereIn($this->model->getQualifiedKeyName(), $id);
+		$this->query->whereIn($this->model->getQualifiedKeyName(), $ids);
 
 		return $this->get($columns);
 	}
@@ -243,7 +243,7 @@ class Builder {
 	 * @param  array  $columns
 	 * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
 	 */
-	public function paginate($perPage = 15, $columns = ['*'])
+	public function paginate($perPage = null, $columns = ['*'])
 	{
 		$total = $this->query->getCountForPagination();
 
@@ -252,7 +252,7 @@ class Builder {
 			$perPage = $perPage ?: $this->model->getPerPage()
 		);
 
-		return new LengthAwarePaginator($this->get($columns)->all(), $total, $perPage, $page, [
+		return new LengthAwarePaginator($this->get($columns), $total, $perPage, $page, [
 			'path' => Paginator::resolveCurrentPath()
 		]);
 	}
@@ -272,7 +272,7 @@ class Builder {
 
 		$this->skip(($page - 1) * $perPage)->take($perPage + 1);
 
-		return new Paginator($this->get($columns)->all(), $perPage, $page, [
+		return new Paginator($this->get($columns), $perPage, $page, [
 			'path' => Paginator::resolveCurrentPath()
 		]);
 	}
@@ -377,26 +377,11 @@ class Builder {
 	 */
 	public function getModels($columns = array('*'))
 	{
-		// First, we will simply get the raw results from the query builders which we
-		// can use to populate an array with Eloquent models. We will pass columns
-		// that should be selected as well, which are typically just everything.
 		$results = $this->query->get($columns);
 
 		$connection = $this->model->getConnectionName();
 
-		$models = array();
-
-		// Once we have the results, we can spin through them and instantiate a fresh
-		// model instance for each records we retrieved from the database. We will
-		// also set the proper connection name for the model after we create it.
-		foreach ($results as $result)
-		{
-			$models[] = $model = $this->model->newFromBuilder($result);
-
-			$model->setConnection($connection);
-		}
-
-		return $models;
+		return $this->model->hydrate($results, $connection)->all();
 	}
 
 	/**

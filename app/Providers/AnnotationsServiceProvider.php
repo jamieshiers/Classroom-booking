@@ -17,7 +17,9 @@ class AnnotationsServiceProvider extends ServiceProvider{
      *
      * @var array
      */
-    protected $scanRoutes = [];
+    protected $scanRoutes = [
+        'App\Http\Controllers\BookingController',
+    ];
 
     /**
      * Do we scan automatically when local?
@@ -26,12 +28,4 @@ class AnnotationsServiceProvider extends ServiceProvider{
      */
     protected $scanWhileLocal = true;
 
-    /**
-     * Should we automatically scan the controllers directory
-     * (App\Http\Controllers) for routes
-     *
-     * @var bool
-     */
-    protected $scanControllers = true;
-
-}
+  }

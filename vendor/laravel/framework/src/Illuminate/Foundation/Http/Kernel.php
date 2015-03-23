@@ -3,6 +3,7 @@
 use Exception;
 use Illuminate\Routing\Router;
 use Illuminate\Pipeline\Pipeline;
+use Illuminate\Support\Facades\Facade;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\TerminableMiddleware;
 use Illuminate\Contracts\Http\Kernel as KernelContract;
@@ -80,14 +81,18 @@ class Kernel implements KernelContract {
 	{
 		try
 		{
-			return $this->sendRequestThroughRouter($request);
+			$response = $this->sendRequestThroughRouter($request);
 		}
 		catch (Exception $e)
 		{
 			$this->reportException($e);
 
-			return $this->renderException($request, $e);
+			$response = $this->renderException($request, $e);
 		}
+
+		$this->app['events']->fire('kernel.handled', [$request, $response]);
+
+		return $response;
 	}
 
 	/**
@@ -99,6 +104,8 @@ class Kernel implements KernelContract {
 	protected function sendRequestThroughRouter($request)
 	{
 		$this->app->instance('request', $request);
+
+		Facade::clearResolvedInstance('request');
 
 		$this->bootstrap();
 
@@ -117,7 +124,9 @@ class Kernel implements KernelContract {
 	 */
 	public function terminate($request, $response)
 	{
-		foreach ($this->middleware as $middleware)
+		$routeMiddlewares = $this->gatherRouteMiddlewares($request);
+
+		foreach (array_merge($routeMiddlewares, $this->middleware) as $middleware)
 		{
 			$instance = $this->app->make($middleware);
 
@@ -128,6 +137,54 @@ class Kernel implements KernelContract {
 		}
 
 		$this->app->terminate();
+	}
+
+	/**
+	 * Gather the route middleware for the given request.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return array
+	 */
+	protected function gatherRouteMiddlewares($request)
+	{
+		if ($request->route())
+		{
+			return $this->router->gatherRouteMiddlewares($request->route());
+		}
+
+		return [];
+	}
+
+	/**
+	 * Add a new middleware to beginning of the stack if it does not already exist.
+	 *
+	 * @param  string  $middleware
+	 * @return $this
+	 */
+	public function prependMiddleware($middleware)
+	{
+		if (array_search($middleware, $this->middleware) === false)
+		{
+			array_unshift($this->middleware, $middleware);
+		}
+
+		return $this;
+	}
+
+	/**
+	 * Add a new middleware to end of the stack if it does not already exist.
+	 *
+	 * @param  string  $middleware
+	 * @return $this
+	 */
+	public function pushMiddleware($middleware)
+	{
+		if (array_search($middleware, $this->middleware) === false)
+		{
+			$this->middleware[] = $middleware;
+		}
+
+		return $this;
 	}
 
 	/**

@@ -20,6 +20,13 @@ trait ApplicationTrait {
 	protected $response;
 
 	/**
+	 * The last code returned by artisan cli
+	 *
+	 * @var int
+	 */
+	protected $code;
+
+	/**
 	 * Refresh the application instance.
 	 *
 	 * @return void
@@ -27,7 +34,7 @@ trait ApplicationTrait {
 	protected function refreshApplication()
 	{
 		putenv('APP_ENV=testing');
-		
+
 		$this->app = $this->createApplication();
 	}
 
@@ -170,7 +177,19 @@ trait ApplicationTrait {
 	 */
 	public function seed($class = 'DatabaseSeeder')
 	{
-		$this->app['Illuminate\Contracts\Console\Kernel']->call('db:seed', array('--class' => $class));
+		$this->artisan('db:seed', ['--class' => $class]);
+	}
+
+	/**
+	 * Call artisan command and return code
+	 *
+	 * @param string  $command
+	 * @param array   $parameters
+	 * @return int
+	 */
+	public function artisan($command, $parameters = [])
+	{
+		return $this->code = $this->app['Illuminate\Contracts\Console\Kernel']->call($command, $parameters);
 	}
 
 }

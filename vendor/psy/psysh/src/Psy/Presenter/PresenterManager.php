@@ -106,10 +106,10 @@ class PresenterManager implements Presenter, \IteratorAggregate
     /**
      * Present a reference to the value.
      *
-     *
      * @param mixed $value
      *
      * @throws \InvalidArgumentException If no Presenter is registered for $value
+     *
      * @return string
      */
     public function presentRef($value)
@@ -124,17 +124,23 @@ class PresenterManager implements Presenter, \IteratorAggregate
     /**
      * Present a full representation of the value.
      *
+     * If $depth is 0, the value will be presented as a ref instead.
      *
      * @param mixed $value
      * @param int   $depth   (default: null)
      * @param int   $options One of Presenter constants
      *
      * @throws \InvalidArgumentException If no Presenter is registered for $value
+     *
      * @return string
      */
     public function present($value, $depth = null, $options = 0)
     {
         if ($presenter = $this->getPresenter($value)) {
+            if ($depth === 0) {
+                return $presenter->presentRef($value);
+            }
+
             return $presenter->present($value, $depth, $options);
         }
 

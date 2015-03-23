@@ -12,8 +12,9 @@
 namespace Psy\ExecutionLoop;
 
 use Psy\Configuration;
-use Psy\Shell;
 use Psy\Exception\BreakException;
+use Psy\Exception\ThrowUpException;
+use Psy\Shell;
 
 /**
  * The Psy Shell execution loop.
@@ -21,7 +22,10 @@ use Psy\Exception\BreakException;
 class Loop
 {
     /**
-     * The non-forking loop doesn't have much use for Configuration :)
+     * Loop constructor.
+     *
+     * The non-forking loop doesn't have much use for Configuration, so we'll
+     * just ignore it.
      *
      * @param Configuration $config
      */
@@ -32,6 +36,8 @@ class Loop
 
     /**
      * Run the execution loop.
+     *
+     * @throws ThrowUpException if thrown by the `throw-up` command.
      *
      * @param Shell $shell
      */
@@ -61,16 +67,17 @@ class Loop
                     $__psysh__->getInput();
 
                     // evaluate the current code buffer
-                    ob_start();
+                    ob_start(
+                        array($__psysh__, 'writeStdout'),
+                        version_compare(PHP_VERSION, '5.4', '>=') ? 1 : 2
+                    );
 
                     set_error_handler(array($__psysh__, 'handleError'));
                     $_ = eval($__psysh__->flushCode());
                     restore_error_handler();
 
-                    $__psysh_out__ = ob_get_contents();
-                    ob_end_clean();
+                    ob_end_flush();
 
-                    $__psysh__->writeStdout($__psysh_out__);
                     $__psysh__->writeReturnValue($_);
                 } catch (BreakException $_e) {
                     restore_error_handler();
@@ -80,6 +87,14 @@ class Loop
                     $__psysh__->writeException($_e);
 
                     return;
+                } catch (ThrowUpException $_e) {
+                    restore_error_handler();
+                    if (ob_get_level() > 0) {
+                        ob_end_clean();
+                    }
+                    $__psysh__->writeException($_e);
+
+                    throw $_e;
                 } catch (\Exception $_e) {
                     restore_error_handler();
                     if (ob_get_level() > 0) {
@@ -106,7 +121,7 @@ class Loop
             if (is_object($that)) {
                 $loop = $loop->bindTo($that, get_class($that));
             } else {
-                $loop = $loop->bindTo(null);
+                $loop = $loop->bindTo(null, null);
             }
         }
 

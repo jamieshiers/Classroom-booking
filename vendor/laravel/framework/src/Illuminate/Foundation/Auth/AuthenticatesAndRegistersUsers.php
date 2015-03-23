@@ -33,7 +33,7 @@ trait AuthenticatesAndRegistersUsers {
 	/**
 	 * Handle a registration request for the application.
 	 *
-	 * @param  \Illuminate\Foundation\Http\FormRequest  $request
+	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
 	public function postRegister(Request $request)
@@ -71,7 +71,7 @@ trait AuthenticatesAndRegistersUsers {
 	public function postLogin(Request $request)
 	{
 		$this->validate($request, [
-			'email' => 'required', 'password' => 'required',
+			'email' => 'required|email', 'password' => 'required',
 		]);
 
 		$credentials = $request->only('email', 'password');
@@ -81,11 +81,21 @@ trait AuthenticatesAndRegistersUsers {
 			return redirect()->intended($this->redirectPath());
 		}
 
-		return redirect('/auth/login')
-					->withInput($request->only('email'))
+		return redirect($this->loginPath())
+					->withInput($request->only('email', 'remember'))
 					->withErrors([
-						'email' => 'These credentials do not match our records.',
+						'email' => $this->getFailedLoginMessage(),
 					]);
+	}
+
+	/**
+	 * Get the failed login message.
+	 *
+	 * @return string
+	 */
+	protected function getFailedLoginMessage()
+	{
+		return 'These credentials do not match our records.';
 	}
 
 	/**
@@ -107,7 +117,22 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function redirectPath()
 	{
+		if (property_exists($this, 'redirectPath'))
+		{
+			return $this->redirectPath;
+		}
+
 		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+	}
+
+	/**
+	 * Get the path to the login route.
+	 *
+	 * @return string
+	 */
+	public function loginPath()
+	{
+		return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';
 	}
 
 }
