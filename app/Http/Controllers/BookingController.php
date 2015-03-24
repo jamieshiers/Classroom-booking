@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controllerx;
+use App\Http\Requests\CreateBookingRequest;
 use App\Transformers\BookingTransformer;
 use App\Booking;
 use Request;
@@ -33,23 +32,16 @@ class BookingController extends ApiController {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
+     *
+     * @Post("/bookings")
 	 */
-	public function store()
+	public function store(CreateBookingRequest $request)
 	{
-		//
+        $booking = Request::all();
+        Booking::create($booking);
 	}
 
 	/**
@@ -57,32 +49,34 @@ class BookingController extends ApiController {
 	 *
 	 * @param  int  $id
 	 * @return Response
+     *
+     * @Get("/bookings/{id}")
 	 */
 	public function show($id)
 	{
-		//
+       $booking = Booking::find($id);
+       if(! $booking)
+       {
+           return $this->errorNotFound('No Booking Found');
+       }
+        return $this->respondWithItem($booking, new BookingTransformer);
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
+     *
+     * @Put("/bookings/{id}")
 	 */
-	public function update($id)
+	public function update(CreateBookingRequest $request, $id)
 	{
-		//
+		$booking = Booking::find($id);
+        $booking->update($request->all());
+
+
 	}
 
 	/**
@@ -90,10 +84,14 @@ class BookingController extends ApiController {
 	 *
 	 * @param  int  $id
 	 * @return Response
+     *
+     * @Delete("/bookings/{id}")
+     *
 	 */
 	public function destroy($id)
 	{
-		//
+		$booking = Booking::find($id);
+        $booking->delete();
 	}
 
 }
