@@ -14,6 +14,7 @@ class BookingController extends ApiController {
 	 * @return Response
      *
      * @Get("/bookings")
+     * @middleware("jwt.auth")
 	 */
 	public function index()
 	{
@@ -27,8 +28,9 @@ class BookingController extends ApiController {
         $prevCursorStr = Request::get('prevCursor', 11);
         $newCursorStr = $booking->last()->id;
         $cursor = new Cursor($currentCursorStr, $prevCursorStr, $newCursorStr, $booking->count());
-        return $this->respondWithCursor($booking, new BookingTransformer, $cursor);
 
+
+        return $this->respondWithCursor($booking, new BookingTransformer, $cursor);
 	}
 
 	/**
@@ -79,6 +81,16 @@ class BookingController extends ApiController {
 
 	}
 
+
+	/**
+	*	
+	*/
+	public function refresh()
+	{
+		
+	}
+
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -91,7 +103,23 @@ class BookingController extends ApiController {
 	public function destroy($id)
 	{
 		$booking = Booking::find($id);
+
+        if(! $booking)
+        {
+            return $this->errorNotFound();
+        }
+        
         $booking->delete();
 	}
+
+    /**
+     *@Get("/bookings/find/{id}")
+     */
+    public function find($id)
+    {
+        $booking = Booking::find($id);
+        return $booking->user;
+
+    }
 
 }

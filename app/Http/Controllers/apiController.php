@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use League\Fractal\Manager;
@@ -22,6 +23,10 @@ class ApiController extends Controller
     public function __construct(Manager $fractal)
     {
         $this->fractal = $fractal;
+        if (isset($_GET['include'])) {
+            $fractal->parseIncludes($_GET['include']);
+        }
+
     }
 
     /**
