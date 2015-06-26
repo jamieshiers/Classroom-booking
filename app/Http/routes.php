@@ -1,6 +1,5 @@
 <?php
 
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,4 +11,6 @@
 |
 */
 
-Route::get('/bookings/refresh', ["uses" => "BookingController@refresh", "middleware" => "jwt.refresh"]);
+Route::get('/', function () {
+    return view('welcome');
+});

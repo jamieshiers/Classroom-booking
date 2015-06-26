@@ -17,7 +17,6 @@ class CreateBookingsTable extends Migration {
             $table->increments('id');
             $table->integer('roomId');
             $table->integer('periodId');
-            $table->string('username');
             $table->string('class');
             $table->string('lesson');
             $table->datetime('startDate');
