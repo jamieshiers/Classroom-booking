@@ -12,7 +12,12 @@ class CreateSubjectsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('subjects', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('name');
+        });
+
 	}
 
 	/**
@@ -22,7 +27,7 @@ class CreateSubjectsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('subjects');
 	}
 
 }

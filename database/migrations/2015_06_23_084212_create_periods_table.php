@@ -12,7 +12,14 @@ class CreatePeriodsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('periods', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('name');
+            $table->timeTz('start');
+            $table->timeTz('end');
+            $table->integer('bookable');
+        });
 	}
 
 	/**
@@ -22,7 +29,7 @@ class CreatePeriodsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('periods');
 	}
 
 }

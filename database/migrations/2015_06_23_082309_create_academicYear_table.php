@@ -12,7 +12,12 @@ class CreateAcademicYearTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('academicYear', function(Blueprint $table)
+        {
+           $table->increments('id');
+            $table->dateTimeTz('start');
+            $table->dateTimeTz('end');
+        });
 	}
 
 	/**
@@ -22,7 +27,7 @@ class CreateAcademicYearTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('academicYear');
 	}
 
 }
