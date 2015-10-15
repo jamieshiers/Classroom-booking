@@ -17,7 +17,6 @@ class Kernel extends HttpKernel
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \Booking\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -29,5 +28,7 @@ class Kernel extends HttpKernel
         'auth' => \Booking\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \Booking\Http\Middleware\RedirectIfAuthenticated::class,
+        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 }

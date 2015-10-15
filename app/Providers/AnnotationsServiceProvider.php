@@ -16,7 +16,9 @@ class AnnotationsServiceProvider extends ServiceProvider {
      *
      * @var array
      */
-    protected $scanRoutes = [];
+    protected $scanRoutes = [
+        App\Http\Controllers\roomController::class,
+    ];
 
     /**
      * The classes to scan for model annotations.

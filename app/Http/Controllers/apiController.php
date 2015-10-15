@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Booking\Http\Controllers;
 
 use Illuminate\Http\Request;
 use League\Fractal\Resource\Collection;

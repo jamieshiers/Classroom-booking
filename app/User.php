@@ -1,6 +1,4 @@
-<?php
-
-namespace Booking;
+<?php namespace Booking;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

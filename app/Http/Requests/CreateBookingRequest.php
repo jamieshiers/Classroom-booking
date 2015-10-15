@@ -1,6 +1,6 @@
-<?php namespace App\Http\Requests;
+<?php namespace Booking\Http\Requests;
 
-use App\Http\Requests\Request;
+use Request;
 use Illuminate\Http\Response;
 
 class CreateBookingRequest extends Request {
@@ -31,13 +31,13 @@ class CreateBookingRequest extends Request {
 		return [
             'roomId'        =>  'required|integer',
             'periodId'      =>  'required|integer',
-            'username'      =>  'required|string',
             'class'         =>  'required|string',
             'lesson'        =>  'required|string',
             'startDate'     =>  'required',
             'endDate'       =>  'required',
             'block'         =>  'required',
             'weekNum'       =>  'required',
+            'userId'        =>  'required|integer',
 		];
 	}
 

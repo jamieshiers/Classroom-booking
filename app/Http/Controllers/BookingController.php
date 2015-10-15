@@ -1,9 +1,10 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Booking\Http\Controllers;
 
-use App\Http\Requests\CreateBookingRequest;
-use App\Transformers\BookingTransformer;
-use App\Booking;
+use Booking\Http\Requests\CreateBookingRequest;
+use Booking\Transformers\BookingTransformer;
+use Booking\Booking;
 use Request;
+Use Booking\User;
 use League\Fractal\Pagination\Cursor;
 
 class BookingController extends ApiController {
@@ -14,7 +15,7 @@ class BookingController extends ApiController {
 	 * @return Response
      *
      * @Get("/bookings")
-     * @middleware("jwt.auth")
+     *
 	 */
 	public function index()
 	{
@@ -40,10 +41,15 @@ class BookingController extends ApiController {
      *
      * @Post("/bookings")
 	 */
-	public function store(CreateBookingRequest $request)
+	public function store(CreateBookingRequest $Request)
 	{
+        $userDetails = Request::get('user');
+        $userId = $userDetails['userId'];
+
         $booking = Request::all();
-        Booking::create($booking);
+        $newBooking = array_add($booking, 'userId', $userId);
+
+        Booking::create($newBooking);
 	}
 
 	/**

@@ -1,24 +1,24 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Booking\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Booking\Http\Requests;
+use Booking\Http\Controllers\ApiController;
 use App\Http\Requests\CreateBookingRequest;
 use League\Fractal\Pagination\Cursor;
-use App\Transformers\roomTransformer;
+use Booking\Transformers\roomTransformer;
 use Request;
-use App\Room;
+use Booking\Room;
 
-class roomController extends ApiController {
+class RoomController extends ApiController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
      *
      * @Get("/rooms")
-	 */
-	public function index()
-	{
+     */
+    public function index()
+    {
         if($currentCursorStr = Request::get('cursor', false))
         {
             $room = Room::where('id', '>', $currentCursorStr->take(10)->get());
@@ -32,70 +32,70 @@ class roomController extends ApiController {
 
 
         return $this->respondWithCursor($room, new roomTransformer, $cursor);
-	}
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        //
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        //
+    }
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        //
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
 }

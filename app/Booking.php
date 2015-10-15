@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace Booking;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -6,16 +6,16 @@ class Booking extends Model {
 
 	protected $table = "bookings";
 
-    protected $fillable = array('roomId', 'periodId', 'username', 'class', 'lesson', 'startDate', 'endDate', 'weekNum');
+    protected $fillable = array('roomId', 'periodId', 'username', 'class', 'lesson', 'startDate', 'endDate', 'weekNum', 'userId');
 
     public function user()
     {
-        return $this->belongsTo('App\User', 'userId');
+        return $this->belongsTo('Booking\User', 'userId');
     }
 
     public function room()
     {
-        return $this->belongsTo('App\Room', 'roomId');
+        return $this->belongsTo('Booking\Room', 'roomId');
     }
 
 
