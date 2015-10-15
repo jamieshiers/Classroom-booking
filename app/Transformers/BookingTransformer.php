@@ -1,4 +1,6 @@
-<?php namespace Booking\Transformers;
+<?php
+
+namespace Booking\Transformers;
 
 use Booking\Booking;
 use League\Fractal\TransformerAbstract;
@@ -19,5 +21,4 @@ class BookingTransformer extends TransformerAbstract
             'weekNum'   => $booking['weekNum'],
         ];
     }
-
 }

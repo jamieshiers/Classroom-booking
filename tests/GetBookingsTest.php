@@ -1,18 +1,15 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class GetBookingsTest extends TestCase
 {
     /**
-     * Get all bookings from the system
+     * Get all bookings from the system.
      *
-     * @return Void
+     * @return void
      */
-
     public function Get_Bookings_Test()
     {
-        $this->get('/bookings')->seeJson(['Test' => 'Test Data',]);
+        $this->get('/bookings')->seeJson(['Test' => 'Test Data']);
     }
 }

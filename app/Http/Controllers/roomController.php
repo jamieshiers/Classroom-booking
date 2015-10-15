@@ -1,15 +1,15 @@
-<?php namespace Booking\Http\Controllers;
+<?php
 
-use Booking\Http\Requests;
-use Booking\Http\Controllers\ApiController;
-use App\Http\Requests\CreateBookingRequest;
-use League\Fractal\Pagination\Cursor;
-use Booking\Transformers\roomTransformer;
-use Request;
+namespace Booking\Http\Controllers;
+
+
 use Booking\Room;
+use Booking\Transformers\roomTransformer;
+use League\Fractal\Pagination\Cursor;
+use Request;
 
-class RoomController extends ApiController {
-
+class roomController extends ApiController
+{
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +19,7 @@ class RoomController extends ApiController {
      */
     public function index()
     {
-        if($currentCursorStr = Request::get('cursor', false))
-        {
+        if ($currentCursorStr = Request::get('cursor', false)) {
             $room = Room::where('id', '>', $currentCursorStr->take(10)->get());
         } else {
             $room = Room::take(10)->get();
@@ -30,8 +29,7 @@ class RoomController extends ApiController {
         $newCursorStr = $room->last()->id;
         $cursor = new Cursor($currentCursorStr, $prevCursorStr, $newCursorStr, $room->count());
 
-
-        return $this->respondWithCursor($room, new roomTransformer, $cursor);
+        return $this->respondWithCursor($room, new roomTransformer(), $cursor);
     }
 
     /**
@@ -57,7 +55,8 @@ class RoomController extends ApiController {
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function show($id)
@@ -68,7 +67,8 @@ class RoomController extends ApiController {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function edit($id)
@@ -79,7 +79,8 @@ class RoomController extends ApiController {
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function update($id)
@@ -90,12 +91,12 @@ class RoomController extends ApiController {
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
     {
         //
     }
-
 }
