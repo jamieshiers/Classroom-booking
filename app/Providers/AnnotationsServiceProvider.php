@@ -1,18 +1,20 @@
-<?php namespace Booking\Providers;
+<?php
+
+namespace Booking\Providers;
 
 use Collective\Annotations\AnnotationsServiceProvider as ServiceProvider;
 
-class AnnotationsServiceProvider extends ServiceProvider {
-
+class AnnotationsServiceProvider extends ServiceProvider
+{
     /**
-     * The classes to scan for event annotations
+     * The classes to scan for event annotations.
      *
      * @var array
      */
     protected $scanEvents = [];
 
     /**
-     * The classes to scan for route Annotations
+     * The classes to scan for route Annotations.
      *
      * @var array
      */
@@ -34,7 +36,7 @@ class AnnotationsServiceProvider extends ServiceProvider {
 
     /**
      * Determines whether or not to automatically scan the controllers
-     * directory (Booking\Http\Controllers) for routes
+     * directory (Booking\Http\Controllers) for routes.
      *
      * @var bool
      */
@@ -47,9 +49,4 @@ class AnnotationsServiceProvider extends ServiceProvider {
      * @var bool
      */
     protected $scanEverything = true;
-
-
-
 }
-
-

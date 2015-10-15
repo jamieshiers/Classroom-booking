@@ -1,12 +1,14 @@
-<?php namespace App;
+<?php
+
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model {
+class Booking extends Model
+{
+    protected $table = 'bookings';
 
-	protected $table = "bookings";
-
-    protected $fillable = array('roomId', 'periodId', 'username', 'class', 'lesson', 'startDate', 'endDate', 'weekNum');
+    protected $fillable = ['roomId', 'periodId', 'username', 'class', 'lesson', 'startDate', 'endDate', 'weekNum'];
 
     public function user()
     {
@@ -17,7 +19,4 @@ class Booking extends Model {
     {
         return $this->belongsTo('App\Room', 'roomId');
     }
-
-
-
 }
