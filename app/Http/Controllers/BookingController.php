@@ -77,12 +77,12 @@ class BookingController extends ApiController
      *
      * @return Response
      *
-     * @Put("/bookings/{id}")
+     * @Patch("/bookings/{id}")
      */
     public function update(CreateBookingRequest $request, $id)
     {
         $booking = Booking::find($id);
-        $booking->update($request->all());
+        $booking->update(Request::all());
     }
 
     /**

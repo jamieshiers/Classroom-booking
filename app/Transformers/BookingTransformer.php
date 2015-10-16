@@ -7,6 +7,13 @@ use League\Fractal\TransformerAbstract;
 
 class BookingTransformer extends TransformerAbstract
 {
+
+    protected $defaultIncludes = [
+        'room',
+        'user',
+    ];
+
+
     public function transform(Booking $booking)
     {
         return [
@@ -20,5 +27,19 @@ class BookingTransformer extends TransformerAbstract
             'block'     => $booking['block'],
             'weekNum'   => $booking['weekNum'],
         ];
+    }
+
+    public function includeRoom(Booking $booking)
+    {
+        $room = $booking->room;
+
+        return $this->collection($room, new RoomTransformer());
+    }
+
+    public function includeUser(Booking $booking)
+    {
+        $user = $booking->user;
+
+        return $this->collection($user, new Usertransformer();)
     }
 }
