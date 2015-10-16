@@ -40,6 +40,6 @@ class BookingTransformer extends TransformerAbstract
     {
         $user = $booking->user;
 
-        return $this->collection($user, new Usertransformer();)
+        return $this->collection($user, new Usertransformer());
     }
 }
