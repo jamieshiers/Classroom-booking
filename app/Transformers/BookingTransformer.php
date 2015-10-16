@@ -7,12 +7,10 @@ use League\Fractal\TransformerAbstract;
 
 class BookingTransformer extends TransformerAbstract
 {
-
     protected $defaultIncludes = [
         'room',
         'user',
     ];
-
 
     public function transform(Booking $booking)
     {
